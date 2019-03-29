@@ -1,8 +1,8 @@
 <?php
 require_once '../vendor/autoload.php';
-require_once '../databases/ForumsDB.php';
-require_once '../rabbit/RabbitMQConnection.php';
-require_once '../logging/LogWriter.php';
+require_once 'databases/ForumsDB.php';
+require_once 'rabbit/RabbitMQConnection.php';
+require_once 'logging/LogWriter.php';
 use PhpAmqpLib\Message\AMQPMessage;
 use rabbit\RabbitMQConnection;
 use logging\LogWriter;
@@ -12,7 +12,7 @@ $rmq_channel = $rmq_connection->getChannel();
 
 //get forums
 $GetForums_callback = function ($request) {
-	$logger = new LogWriter('/var/log/dnd/getForums.log');
+	$logger = new LogWriter('/var/log/dnd/backend.log');
 	$db_connection = (new ForumsDB())->getConnection();
 
 	$requestData = unserialize($request->body);

@@ -1,9 +1,9 @@
 <?php
 require_once '../vendor/autoload.php';
-require_once '../databases/AuthDB.php';
-require_once '../rabbit/RabbitMQConnection.php';
-require_once '../logging/LogWriter.php';
-require_once '../databases/MongoConnector.php';
+require_once 'databases/AuthDB.php';
+require_once 'rabbit/RabbitMQConnection.php';
+require_once 'logging/LogWriter.php';
+require_once 'databases/MongoConnector.php';
 use PhpAmqpLib\Message\AMQPMessage;
 use logging\LogWriter;
 use rabbit\RabbitMQConnection;
@@ -15,7 +15,7 @@ $rmq_channel = $rmq_connection->getChannel();
 //register
 $register_callback = function ($request) {
 	$mysql_connection = (new AuthDB())->getConnection();
-	$logger = new LogWriter('/var/log/dnd/register.log');
+	$logger = new LogWriter('/var/log/dnd/backend.log');
 	$logger->info("Registering username...");
 	$requestData = unserialize($request->body);
 	$username = $requestData[0];

@@ -5,7 +5,7 @@ use MongoDB\Client;
 class MongoConnector {
 	private $connection;
 
-	private $host = '172.17.0.3:27017';
+	private $host = '172.17.0.6:27017';
 	private $user = 'root';
 	private $pass = 'pass';
 

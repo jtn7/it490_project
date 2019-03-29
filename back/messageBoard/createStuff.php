@@ -1,8 +1,8 @@
 <?php
 require_once '../vendor/autoload.php';
-require_once '../databases/ForumsDB.php';
-require_once '../rabbit/RabbitMQConnection.php';
-require_once '../logging/LogWriter.php';
+require_once 'databases/ForumsDB.php';
+require_once 'rabbit/RabbitMQConnection.php';
+require_once 'logging/LogWriter.php';
 use PhpAmqpLib\Message\AMQPMessage;
 use rabbit\RabbitMQConnection;
 use logging\LogWriter;
@@ -13,7 +13,7 @@ $rmq_channel = $rmq_connection->getChannel();
 
 //Create Stuff
 $createStuff_callback = function ($request) {
-	$logger = new LogWriter('/var/log/dnd/MessageBoard.create.log');
+	$logger = new LogWriter('/var/log/dnd/backend.log');
 	$logger->info("Creating stuff for User...");
 	$requestData = unserialize($request->body);
 	$requestFlow = $requestData[0];

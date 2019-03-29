@@ -22,20 +22,23 @@ class LogWriter {
 		'dateFormat' => 'd-M-Y H:i:s'
 	);
 
+	private $log_id;
+
 	/**
 	* Class constructor
 	* @param string $log_file - path and filename of log
 	* @param array $params
 	*/
 	public function __construct($log_file = 'error.txt', $params = array()){
+		$this->log_id = uniqid();
 		$this->log_file = $log_file;
 		$this->params = array_merge($this->options, $params);
 		//Create log file if it doesn't exist.
-		if(!file_exists($log_file)){               
+		if(!file_exists($log_file)){
 			fopen($log_file, 'w') or exit("Can't create $log_file!");
 		}
 		//Check permissions of file.
-		if(!is_writable($log_file)){   
+		if(!is_writable($log_file)){
 			//throw exception if not writable
 			throw new Exception("ERROR: Unable to write to file!", 1);
 		}
@@ -46,7 +49,11 @@ class LogWriter {
 	* @return void
 	*/
 	public function info($message){
-		$this->writeLog($message, 'INFO');
+		if (is_array($message)) {
+			$this->writeLog(print_r($message, true), 'INFO');
+		} else {
+			$this->writeLog($message, 'INFO');
+		}
 	}
 	/**
 	* Debug method (write debug message)
@@ -54,7 +61,11 @@ class LogWriter {
 	* @return void
 	*/
 	public function debug($message){
-		$this->writeLog($message, 'DEBUG');
+		if (is_array($message)) {
+			$this->writeLog(print_r($message, true), 'DEBUG');
+		} else {
+			$this->writeLog($message, 'DEBUG');
+		}
 	}
 	/**
 	* Warning method (write warning message)
@@ -62,7 +73,11 @@ class LogWriter {
 	* @return void
 	*/
 	public function warning($message){
-		$this->writeLog($message, 'WARNING');
+		if (is_array($message)) {
+			$this->writeLog(print_r($message, true), 'WARNING');
+		} else {
+			$this->writeLog($message, 'WARNING');
+		}
 	}
 	/**
 	* Error method (write error message)
@@ -70,7 +85,11 @@ class LogWriter {
 	* @return void
 	*/
 	public function error($message){
-		$this->writeLog($message, 'ERROR');
+		if (is_array($message)) {
+			$this->writeLog(print_r($message, true), 'ERROR');
+		} else {
+			$this->writeLog($message, 'ERROR');
+		}
 	}
 	/**
 	* Write to log file
@@ -84,9 +103,11 @@ class LogWriter {
 			$this->openLog();
 		}
 		//Grab time - based on timezone in php.ini
-		$time = date($this->params['dateFormat']);
+		// $time = date($this->params['dateFormat']);
+		date_default_timezone_set('America/New_York');
+		$time = (new \DateTime('now', new \DateTimeZone('America/New_York')))->format($this->params['dateFormat']);
 		// Write time, url, & message to end of file
-		fwrite($this->file, "[$time] : [$severity] - $message" . PHP_EOL);
+		fwrite($this->file, "[$time] [$this->log_id]: [$severity] - $message" . PHP_EOL);
 	}
 	/**
 	* Open log file
@@ -95,7 +116,7 @@ class LogWriter {
 	private function openLog(){
 		$openFile = $this->log_file;
 		// 'a' option = place pointer at end of file
-		$this->file = fopen($openFile, 'a') or exit("Can't open $openFile!");
+		$this->file = fopen($openFile, 'a') or exit("Couldn't open file");
 	}
 	/**
 	 * Class destructor
