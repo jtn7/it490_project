@@ -8,52 +8,58 @@ if(!empty($_POST)) {
 	$characterArr = array(
 		"username" => $_SESSION['username'],
 		"characterName" => "",
-		"age" => "",
+		"age" => 0,
 		"sex" => "",
 		"height" => "",
-		"weight" => "",
+		"weight" => 0,
 		"race" => "",
 		"subrace" => "",
 		"class" => "",
 		"subclass" => "",
-		"statsSTR" => "",
-		"statsDEX" => "",
-		"statsCONST" => "",
-		"statsINT" => "",
-		"statsWIS" => "",
-		"statsCHA" => "",
-		"passivePerception" => "",
-		"sthrowSTR" => "",
-		"sthrowDEX" => "",
-		"sthrowCONST" => "",
-		"sthrowINT" => "",
-		"sthrowWIS" => "",
-		"sthrowCHA" => "",
-		"armorClass" => "",
-		"speed" => "",
-		"maxHitPoint" => "",
-		"acrobatics" => "",
-		"animalHandling" => "",
-		"arcana" => "",
-		"athletic" => "",
-		"deception" => "",
-		"history" => "",
-		"insight" => "",
-		"investigation" => "",
-		"medicine" => "",
-		"nature" => "",
-		"perception" => "",
-		"performance" => "",
-		"persuation" => "",
-		"religion" => "",
-		"soHand" => "",
-		"stealth" => "",
-		"survival" => "",
-		"hkit" => "",
-		"equipment" => "",
-		"spell" => "",
-		"features" => "",
-		"traits" => "",
+		"stats" => array(
+			"strength" => 0,
+			"dexterity" => 0,
+			"constitution" => 0,
+			"intelligence" => 0,
+			"wisdom" => 0,
+			"charisma" => 0
+		),
+		"passivePerception" => 0,
+		"saving_throws" => array(
+			"strength" => 0,
+			"dexterity" => 0,
+			"constitution" => 0,
+			"intelligence" => 0,
+			"wisdom" => 0,
+			"charisma" => 0
+		),
+		"armorClass" => 0,
+		"speed" => 0,
+		"maxHitPoint" => 0,
+		"skills" => array(
+			"acrobatics" => 0,
+			"animalHandling" => 0,
+			"arcana" => 0,
+			"athletic" => 0,
+			"deception" => 0,
+			"history" => 0,
+			"insight" => 0,
+			"investigation" => 0,
+			"medicine" => 0,
+			"nature" => 0,
+			"perception" => 0,
+			"performance" => 0,
+			"persuation" => 0,
+			"religion" => 0,
+			"soHand" => 0,
+			"stealth" => 0,
+			"survival" => 0,
+			"herbalism_kit" => 0
+		),
+		"equipment" => array (),
+		"spells" => array(),
+		"features" => array(),
+		"traits" => array(),
 		"personalityTraits" => "",
 		"ideals" => "",
 		"bonds" => "",
@@ -62,8 +68,8 @@ if(!empty($_POST)) {
 	);
 
 	foreach ($characterArr as $key => $value) {
-		if(isset($_POST[$key])){
-			$characterArr[$key]=$_POST[$key];
+		if (isset($_POST[$key])) {
+			$characterArr[$key] = $_POST[$key];
 		}
 	}
 
@@ -79,10 +85,8 @@ if(!empty($_POST)) {
 	}
 }
 
-if(isset($_GET['success'])){
-	if($_GET['success']==="F"){
-		echo "<script type='text/javascript'>alert('There was an error in creating a character. Try Again.');</script>";
-	}
+if (isset($_GET['success']) && $_GET['success'] === 'F') {
+	echo "<script type='text/javascript'>alert('There was an error in creating a character. Try Again.');</script>";
 }
 
 ?>
