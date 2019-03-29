@@ -1,0 +1,119 @@
+{
+	"username": "str",
+	"character_name": "str",
+	"age": "int",
+	"sex": "str",
+	"height": "str",
+	"race": "str",
+	"subrace": "str",
+	"class": "str",
+	"subclass": "str",
+	"level": "int",
+	"background": "str",
+	"alignment": "str",
+	"exp_points": "int",
+	"stats": {
+		"strength": "int",
+		"dexterity": "int",
+		"constitution": "int",
+		"intelligence": "int",
+		"wisdom": "int",
+		"charisma": "int"
+	},
+	"hit_dice": {
+		"count": "int",
+		"value": "int"
+	},
+	"passive_perception":"int",
+	"saving_throws": {
+		"strength": "int",
+		"dexterity": "int",
+		"constitution": "int",
+		"intelligence": "int",
+		"wisdom": "int",
+		"charisma": "int"
+	},
+	"armor_class":"int",
+	"speed":"int",
+	"hit_point_max":"int",
+	"skills": {
+		"acrobatics": "int",
+		"animal_handling": "int",
+		"arcana": "int",
+		"athletic": "int",
+		"deception": "int",
+		"history": "int",
+		"insight": "int",
+		"investigation": "int",
+		"medicine": "int",
+		"nature": "int",
+		"perception": "int",
+		"performance": "int",
+		"persuation": "int",
+		"religion": "int",
+		"sleight_of_hand": "int",
+		"stealth":"int",
+		"survival":"int",
+		"herbalism_kit":"int"
+	},
+	"weapons": [
+		{
+			"name": "str",
+			"type": "str",
+			"subtype:": "str",
+			"weapon_range": "str",
+			"weapon_category": "str",
+			"cost": {
+				"quantity": "int",
+				"unit": "str"
+			},
+			"damage": {
+				"dice_count": "int",
+				"dice_value": "int",
+				"damage_type": {
+					"url": "",
+					"name": "str"
+				}
+			},
+			"weight": "int",
+			"properties": [
+				"str"
+			],
+			"url": "int"
+		}
+	],
+	"spells": [
+		{
+			"name": "str",
+			"url": "str"
+		}
+	],
+	"equipment": [
+		{
+			"name": "str",
+			"url": "str"
+		}
+	],
+	"features_and_traits": [
+		{
+			"name": "str",
+			"url": "str"
+		}
+	],
+	"proficiencies": [
+		{
+			"name": "str",
+			"url": "str"
+		}
+	],
+	"languages": [
+		{
+			"name": "str",
+			"url": "str"
+		}
+	],
+	"personality_traits":"str",
+	"ideals": "str",
+	"bonds": "str",
+	"flaws": "str"
+}
