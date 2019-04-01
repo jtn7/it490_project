@@ -35,7 +35,7 @@
 	},
 	"armor_class":"int",
 	"speed":"int",
-	"hit_point_max":"int",
+	"max_hit_points":"int",
 	"skills": {
 		"acrobatics": "int",
 		"animal_handling": "int",
