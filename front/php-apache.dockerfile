@@ -22,4 +22,6 @@ RUN apt-get update \
         bcmath \
         sockets
 
+RUN mkdir /var/log/dnd && chmod 777 /var/log/dnd
+
 COPY --from=vendor /app/vendor /var/www/html/vendor

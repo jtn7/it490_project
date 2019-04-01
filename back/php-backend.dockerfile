@@ -38,6 +38,8 @@ RUN apk --no-cache add alpine-sdk \
     && echo "extension=mongodb.so" > /usr/local/etc/php/conf.d/mongodb.ini \
     && docker-php-ext-enable mongodb
 
+RUN mkdir /var/log/dnd && chmod 777 /var/log/dnd
+
 COPY --from=vendor /app/vendor /step2/vendor
 
 WORKDIR /step2
