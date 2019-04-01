@@ -37,8 +37,8 @@ if(isset($_GET['success']) && $_GET === 'F'){
 
 <?php include 'header.php';?>
 
-<div class="Body">
-	<div class="Content">
+<div class="body">
+	<div class="content">
 		<?php
 		$Thread = unserialize($response1);
 		echo

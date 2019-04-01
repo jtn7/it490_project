@@ -14,8 +14,8 @@ $response = $forums_rpc->call($getForums);
 
 <?php include 'header.php' ?>
 
-<div class="Body">
-	<div class="Content">
+<div class="body">
+	<div class="content">
 		<h1>Forums</h1>
 		<?php
 		// echo "<h2>";

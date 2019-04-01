@@ -33,7 +33,7 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 <?php include 'header.php' ?>
 
 <div class="uaBody">
-	<div class="Content">
+	<div class="content">
 		<h1>Log In</h1>
 		<form action="" method="POST">
 			<h4>Username:</h4>

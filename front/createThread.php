@@ -26,8 +26,8 @@ if(isset($_GET['success'])){
 
 <?php include 'header.php';?>
 
-<div class="Body">
-	<div class="Content">
+<div class="body">
+	<div class="content">
 		<h1>Create a Forum Thread</h1>
 		<form action="" id="createThread" method="POST">
 			Title:

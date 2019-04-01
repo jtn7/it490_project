@@ -35,8 +35,8 @@ if (!isset($_GET['load'])) {
 
 <?php include 'header.php' ?>
 
-<div class="Body">
-	<div class="Content">
+<div class="body">
+	<div class="content">
 		<h1>Character Dashboard</h1>
 		<?php
 		if (isset($_GET['load'])) {

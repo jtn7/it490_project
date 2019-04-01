@@ -15,8 +15,8 @@ $response = $threads_rpc->call($getThreads);
 
 <?php include 'header.php';?>
 
-<div class="Body">
-	<div class="Content">
+<div class="body">
+	<div class="content">
 		<?php
 		$ForumName = $_GET['forumName'];
 		echo '<h1>' . $ForumName . '</h1>';

@@ -26,7 +26,7 @@ if(isset($_GET['success'])){
 <?php include 'header.php';?>
 
 <div class="uaBody">
-	<div class="Content">
+	<div class="content">
 		<h1>Sign Up</h1>
 		<form action="" method="POST">
 			<h4>Enter Username:</h4>
