@@ -40,7 +40,7 @@ class LogWriter {
 		//Check permissions of file.
 		if(!is_writable($log_file)){
 			//throw exception if not writable
-			throw new Exception("ERROR: Unable to write to file!", 1);
+			throw new \Exception("ERROR: Unable to write to file!", 1);
 		}
 	}
 	/**
