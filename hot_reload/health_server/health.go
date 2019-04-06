@@ -10,7 +10,7 @@ import (
 func handler(w http.ResponseWriter, r *http.Request) {
 	timeOfAccess := time.Now()
 	fmt.Println(
-		timeOfAccess.Format("Jan-02-2006 15:04:05.123") +
+		timeOfAccess.Format("Jan-02-2006 15:04:05.000") +
 			" /health accessed",
 	)
 	w.WriteHeader(http.StatusOK)
