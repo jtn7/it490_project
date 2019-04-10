@@ -55,7 +55,7 @@ sleep 3; echo "Patching task completed!\n"
 
 
 #Back End
-sleep 1; echo "Polishing the back-end. \n"
+sleep 1; echo "Polishing the back-end.\n"
 sleep 5; docker run --rm -d -v $PWD/back:/step2/back -w /step2/back --name back jtn7/php-backend ./start.sh
 
 
