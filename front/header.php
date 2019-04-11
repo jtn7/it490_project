@@ -11,12 +11,15 @@ session_start();
 		<title>Dungeons & Dragons by POGO</title>
 
 		<!--Link / Script -->
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	</head>
 
 	<body>
 		<!--Navigation Bars for all-purpose-->
-		<nav class="navbar navbar-default">
+		<nav class="navbar navbar-expand-md bg-dark navbar-dark">
 			<div class="container-fluid">
 				<!--Navi Bar Left Contents-->
 				<div class="navbar-header">
