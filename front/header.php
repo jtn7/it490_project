@@ -20,7 +20,7 @@ session_start();
 			<div class="container-fluid">
 				<!--Navi Bar Left Contents-->
 				<div class="navbar-header">
-					<a href ="index.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons"></a>
+					<a class ="navbar-brand" href ="index.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:60px;"></a>
 				</div>
 				<!--Navi Bar Middle Contents-->
 				<ul class="nav navbar-nav">
