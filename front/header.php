@@ -22,10 +22,10 @@ if(isset($_POST['login'])){
 		header("Location: index.php");
 	}
 	else{	
-		header("Location: login.php?success=F");
+		header("Location: login.php?success=FL");
 	}
 }
-if(isset($_GET['success']) && $_GET['success'] === 'F') {
+if(isset($_GET['success']) && $_GET['success'] === 'FL') {
 	echo "<script type='text/javascript'>alert('Failed to Log In! Please try Again.');</script>";
 }
 
@@ -38,11 +38,11 @@ if(isset($_POST['register'])){
 		header('Location: index.php');
 	}
 	else {
-		header('Location: login.php?success=F');
+		header('Location: login.php?success=FR');
 	}
 }
 if(isset($_GET['success'])){
-	if($_GET['success']==="F"){
+	if($_GET['success']==="FR"){
 		echo "<script type='text/javascript'>alert('Error! Username may have already been registered. Try Again.');</script>";
 	}
 }
