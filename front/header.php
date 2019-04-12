@@ -27,6 +27,8 @@ if(isset($_POST['login'])){
 }
 if(isset($_GET['success']) && $_GET['success'] === 'LoginFail') {
 	echo "<script type='text/javascript'>alert('Failed to Log In! Please try Again.');</script>";
+	echo "";
+	echo "";
 }
 
 if(isset($_POST['register'])){
@@ -44,8 +46,8 @@ if(isset($_POST['register'])){
 if(isset($_GET['success'])){
 	if($_GET['success']==="RegisterFail"){
 		echo "<script type='text/javascript'>alert('Error! Username may have already been registered. Try Again.');</script>";
-		echo ""
-		echo ""
+		echo "";
+		echo "";
 	}
 }
 ?>
