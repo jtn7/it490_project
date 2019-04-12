@@ -10,7 +10,7 @@ move to the Production environment.
 - [x] Require that packages match a defined naming pattern
 - [x] Deny packages of the same version being uploaded
 - [x] Overwrite existing source files when package is extracted
-- [ ] Create Backup of package
+- [x] Create Backup of package
 	* The deployment package needs to be versioned using the name of the package
 	file
 - [ ] Create an endpoint for rolling back production to the previous version
