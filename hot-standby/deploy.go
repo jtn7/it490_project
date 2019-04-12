@@ -10,17 +10,24 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+	"time"
 )
 
 func uploadPackage(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("File Upload Endpoint Hit")
+	timeOfAccess := time.Now()
+
+	// Log the time that this route was accessed
+	fmt.Println(
+		timeOfAccess.Format("Jan-02-2006 15:04:05.000") +
+			" /upload request received",
+	)
 
 	// FormFile returns the first file for the given key `myFile`
 	// it also returns the FileHeader so we can get the Filename,
 	// the Header and the size of the file
 	file, handler, err := r.FormFile("package")
 	if err != nil {
-		fmt.Println("Error Retrieving the File")
+		fmt.Println("error retrieving the file")
 		fmt.Println(err)
 		w.WriteHeader(http.StatusInternalServerError)
 		return
@@ -34,7 +41,7 @@ func uploadPackage(w http.ResponseWriter, r *http.Request) {
 	// byte array
 	fileBytes, err := ioutil.ReadAll(file)
 	if err != nil {
-		fmt.Println("Error Reading the File")
+		fmt.Println("Error reading the file")
 		fmt.Println(err)
 		w.WriteHeader(http.StatusInternalServerError)
 		return
@@ -42,31 +49,34 @@ func uploadPackage(w http.ResponseWriter, r *http.Request) {
 
 	// Write byte array to file
 	name := filepath.Join("packages", handler.Filename)
-	fileErr := ioutil.WriteFile(name, fileBytes, 0444)
+	fileErr := ioutil.WriteFile(name, fileBytes, os.ModePerm)
 	if fileErr != nil {
+		w.WriteHeader(http.StatusInternalServerError)
 		fmt.Println("Could not write file")
 		fmt.Println(fileErr)
-		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
 
-	// return that we have successfully uploaded our file!
-	fmt.Fprint(w, "Successfully Uploaded Package\n")
+	// Extract code changes for deployment
+	if _, err := Unzip(name, "extracted"); err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		w.Write([]byte("error occurred while extracting\n"))
+		w.Write([]byte(err.Error()))
+		return
+	}
 
-	Unzip(name, "extracted")
-
-	fmt.Fprint(w, "Successfully Uploaded Package\n")
+	fmt.Fprint(w, "Package upload and deplotment were successful")
 }
 
 // Unzip will decompress a zip archive, moving all files and folders
 // within the zip file (src) to an output directory (dest).
 func Unzip(src string, dest string) ([]string, error) {
 
-	var filenames []string
+	var fileNames []string
 
 	zipReader, err := zip.OpenReader(src)
 	if err != nil {
-		return filenames, err
+		return fileNames, err
 	}
 	defer zipReader.Close()
 
@@ -77,10 +87,10 @@ func Unzip(src string, dest string) ([]string, error) {
 
 		// Check for ZipSlip. More Info: http://bit.ly/2MsjAWE
 		if !strings.HasPrefix(fpath, filepath.Clean(dest)+string(os.PathSeparator)) {
-			return filenames, fmt.Errorf("%s: illegal file path", fpath)
+			return fileNames, fmt.Errorf("%s: illegal file path", fpath)
 		}
 
-		filenames = append(filenames, fpath)
+		fileNames = append(fileNames, fpath)
 
 		if f.FileInfo().IsDir() {
 			// Make Folder
@@ -90,30 +100,30 @@ func Unzip(src string, dest string) ([]string, error) {
 
 		// Make File
 		if err = os.MkdirAll(filepath.Dir(fpath), os.ModePerm); err != nil {
-			return filenames, err
+			return fileNames, err
 		}
 
-		outFile, err := os.OpenFile(fpath, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, f.Mode())
+		// Create empty file with path of the current index
+		outputFile, err := os.OpenFile(fpath, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, f.Mode())
 		if err != nil {
-			return filenames, err
+			return fileNames, err
 		}
 
-		rc, err := f.Open()
+		inputFile, err := f.Open()
 		if err != nil {
-			return filenames, err
+			return fileNames, err
 		}
 
-		_, err = io.Copy(outFile, rc)
+		_, err = io.Copy(outputFile, inputFile)
 
-		// Close the file without defer to close before next iteration of loop
-		outFile.Close()
-		rc.Close()
+		outputFile.Close()
+		inputFile.Close()
 
 		if err != nil {
-			return filenames, err
+			return fileNames, err
 		}
 	}
-	return filenames, nil
+	return fileNames, nil
 }
 
 func setupRoutes() {
