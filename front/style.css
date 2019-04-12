@@ -5,7 +5,7 @@ body {
 }
 
 /*uaBody = body for login, signup*/
-/*.uaBody {
+.uaBody {
 	background-color: white;
 	border-radius: 15px;
 	border: 2px solid ; 
@@ -75,7 +75,7 @@ body {
 
 .Character input[type=number] {
 	width: 50px;
-}*/
+}
 
 /*This is for the navigation bar right side dropdown registration*/
 #login-dp{

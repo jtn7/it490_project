@@ -44,6 +44,8 @@ if(isset($_POST['register'])){
 if(isset($_GET['success'])){
 	if($_GET['success']==="RegisterFail"){
 		echo "<script type='text/javascript'>alert('Error! Username may have already been registered. Try Again.');</script>";
+		echo ""
+		echo ""
 	}
 }
 ?>
