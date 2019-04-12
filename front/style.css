@@ -4,67 +4,6 @@ body {
 	background-color: #141414;
 }
 
-.navBar {
-	overflow: hidden;
-	background-color: #333;
-	font-family: Trebuchet MS;
-	margin-bottom: 6px;
-}
-
-.content .navBar {
-	width:auto;
-}
-
-.navBar a {
-	float: left;
-	font-size: 16px;
-	color: white;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-}
-
-.dropdown .dropbtn {
-	font-size: 16px; 
-	border: none;
-	outline: none;
-	color: white;
-	padding: 14px 16px;
-	background-color: inherit;
-	font-family: inherit;
-	margin: 0;
-}
-
-.navBar a:hover, .dropdown:hover .dropbtn {
-	background-color: #1F1F1F;
-}
-
-.dropdownContent {
-	display: none;
-	position: absolute;
-	background-color: #f9f9f9;
-	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	z-index: 1;
-}
-
-.dropdownContent a {
-	float: none;
-	color: black;
-	padding: 12px 16px;
-	text-decoration: none;
-	display: block;
-	text-align: left;
-}
-
-.dropdownContent a:hover {
-	background-color: #ddd;
-}
-
-.dropdown:hover .dropdownContent {
-	display: block;
-}
-
 /*uaBody = body for login, signup*/
 .uaBody {
 	background-color: white;
