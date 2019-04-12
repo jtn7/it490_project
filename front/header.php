@@ -96,11 +96,11 @@ if(isset($_GET['success'])){
 					<li>
 						<form class="form-inline" action="" method="POST">
 							<div class="form-group md-form my-0">
-								<label for="loginUN"><b>ID </b></label>
+								<label for="loginUN"><font color="white">ID </font></label>
 								<input type="text" name="loginUN" class="form-control mr-sm-2" placeholder="ID" required="required">
 							</div>
 							<div class="form-group md-form my-0">
-								<label for="loginPW"><b>Password </b></label>
+								<label for="loginPW"><font color="white">Password </font></label>
 								<input type="password" name="loginPW" class="form-control mr-sm-2" placeholder="Password" required="required">
 							</div>
 							<button type="submit" name="loginSubmit" class="btn btn-default navbar-btn mb-2" value="login"><span class='glyphicon glyphicon-log-in'></span> Log In </button>
