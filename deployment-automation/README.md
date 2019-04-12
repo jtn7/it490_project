@@ -7,9 +7,9 @@ move to the Production environment.
 ### TODO:
 - [x] Create a server executable that accepts a zip file upload
 - [x] Make the server extract its contents to the code directory
-- [ ] Require that packages match a defined naming pattern
-- [ ] Deny packages of the same version being uploaded
-- [ ] Take the paths and overwrite the files that are changed
+- [x] Require that packages match a defined naming pattern
+- [x] Deny packages of the same version being uploaded
+- [x] Overwrite existing source files when package is extracted
 - [ ] Create Backup of package
 	* The deployment package needs to be versioned using the name of the package
 	file
