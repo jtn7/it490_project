@@ -4,6 +4,9 @@ session_start();
 ?>
 <html lang="en">
 <head>
+	<!--Icon image -->
+	<link rel="icon" href="assets/dnd_icon.ico">
+	
 	<!--Meta / Title -->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
