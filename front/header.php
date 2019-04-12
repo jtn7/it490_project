@@ -1,4 +1,23 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--Icon image -->
+	<link rel="icon" type="image/ico" href="assets/favicon.ico">
+	
+	<!--Meta / Title -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width = device-width, initial-scale = 1, shrink-to-fit=no">
+	<title>Dungeons & Dragons by POGO</title>
+
+	<!--Link / Script -->
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
 
 <?php
 session_start();
@@ -48,25 +67,6 @@ if(isset($_GET['success'])){
 }
 ?>
 
-<html lang="en">
-<head>
-	<!--Icon image -->
-	<link rel="icon" type="image/ico" href="assets/favicon.ico">
-	
-	<!--Meta / Title -->
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width = device-width, initial-scale = 1, shrink-to-fit=no">
-	<title>Dungeons & Dragons by POGO</title>
-
-	<!--Link / Script -->
-	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-</head>
-
-<body>
 	<!--Navigation Bars for all-purpose-->
 	<nav class="navbar navbar-inverse justify-content-between">
 		<div class="container-fluid">
