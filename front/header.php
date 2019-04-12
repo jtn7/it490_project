@@ -38,7 +38,7 @@ if(isset($_POST['register'])){
 		header('Location: login.php');
 	}
 	else {
-		header('Location: signup.php?success=RegisterFail');
+		header('Location: login.php?success=RegisterFail');
 	}
 }
 if(isset($_GET['success'])){
