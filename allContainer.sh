@@ -17,22 +17,22 @@ docker pull mongo:4 ; echo ""
 
 #MYSQL Database
 echo "Let's start with the MYSQL Database!\n"
-sleep 1; docker run --rm -d -e MYSQL_ROOT_PASSWORD=pass --name mydb jtn7/db
+docker run --rm -d -e MYSQL_ROOT_PASSWORD=pass --name mydb jtn7/db
 
 
 #Mongo Database
 echo "\nMongo Database next! \n"
-sleep 1; docker run --rm -d -e MONGO_INITDB_ROOT_USERNAME=root -e MONGO_INITDB_ROOT_PASSWORD=pass --name mymongo mongo:4
+docker run --rm -d -e MONGO_INITDB_ROOT_USERNAME=root -e MONGO_INITDB_ROOT_PASSWORD=pass --name mymongo mongo:4
 
 
 #RabbitMQ
 echo "\nCatching rabbits to run rabbitMQ. . . \n"
-sleep 1; docker run --rm -d -p 15672:15672 --name rabbit jtn7/rabbit
+docker run --rm -d -p 15672:15672 --name rabbit jtn7/rabbit
 
 
 #Front End
 echo "\nHere comes front-end. \n"
-sleep 1; docker run --rm -d -v $PWD/front:/var/www/html/front/ -p 80:80 --name front jtn7/php-apache
+docker run --rm -d -v $PWD/front:/var/www/html/front/ -p 80:80 --name front jtn7/php-apache
 
 
 #Editing the IP address in PHP file automatically
