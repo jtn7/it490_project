@@ -1,3 +1,4 @@
+/*Work done prior to joining the POGO group*/
 body {
 	font-family: Trebuchet MS, Helvetica, sans-serif;
 	background-color: #141414;
@@ -21,11 +22,6 @@ body {
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
-}
-
-.dropdown {
-	float: left;
-	overflow: hidden;
 }
 
 .dropdown .dropbtn {
@@ -142,6 +138,7 @@ body {
 	width: 50px;
 }
 
+/*This is for the navigation bar right side dropdown registration*/
 #login-dp{
     min-width: 250px;
     padding: 14px 14px 0;
