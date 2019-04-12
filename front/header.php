@@ -9,26 +9,27 @@ use rabbit\RPC;
 $logger = new LogWriter('/var/log/dnd/frontend.log');
 $logger->info('login page accessed');
 
-if(!empty($_POST['loginUN'])){
+if(isset($_POST['login'])){
 	$logger->info('POST recieved');
 	$logger->info($_POST);
 	$login_rpc = new RPC("login");
 	$user = $_POST['loginUN'];
 	$usernamepasswd = serialize(array($user, $_POST['loginPW']));
 	$response = $login_rpc->call($usernamepasswd);
-	if ($response === 'S'){
+	if($response === 'S'){
 		$logger->info('Successful Verification');
 		$_SESSION['username'] = $user;
 		header("Location: index.php");
-	} else {	
+	}
+	else{	
 		header("Location: login.php?success=LoginFail");
 	}
 }
-if (isset($_GET['success']) && $_GET['success'] === 'LoginFail') {
+if(isset($_GET['success']) && $_GET['success'] === 'LoginFail') {
 	echo "<script type='text/javascript'>alert('Failed to Log In! Please try Again.');</script>";
 }
 
-if(!empty($_POST['signUN'])){
+if(isset($_POST['register'])){
 	$signup_rpc = new RPC("register");
 	$user = $_POST['signUN'];
 	$usernamepasswd = serialize(array($user, $_POST['signPW']));
