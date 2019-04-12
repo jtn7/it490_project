@@ -9,7 +9,7 @@ use rabbit\RPC;
 $logger = new LogWriter('/var/log/dnd/frontend.log');
 $logger->info('login page accessed');
 
-if(!empty($_POST['login'])){
+if(!empty($_POST['loginUN'])){
 	$logger->info('POST recieved');
 	$logger->info($_POST);
 	$login_rpc = new RPC("login");
@@ -28,7 +28,7 @@ if (isset($_GET['success']) && $_GET['success'] === 'LoginFail') {
 	echo "<script type='text/javascript'>alert('Failed to Log In! Please try Again.');</script>";
 }
 
-if(!empty($_POST['register'])){
+if(!empty($_POST['signUN'])){
 	$signup_rpc = new RPC("register");
 	$user = $_POST['signUN'];
 	$usernamepasswd = serialize(array($user, $_POST['signPW']));
@@ -103,7 +103,7 @@ if(isset($_GET['success'])){
 								<label for="loginPW"><font color="white">Password </font></label>
 								<input type="password" name="loginPW" class="form-control mr-sm-2" placeholder="Password" required="required">
 							</div>
-							<button type="submit" name="loginSubmit" class="btn btn-default navbar-btn mb-2" value="login"><span class='glyphicon glyphicon-log-in'></span> Log In </button>
+							<button type="submit" name="loginSubmit" value="login" class="btn btn-default navbar-btn mb-2"><span class='glyphicon glyphicon-log-in'></span> Log In </button>
 						</form>
 					</li>
 					<li class="dropdown">
