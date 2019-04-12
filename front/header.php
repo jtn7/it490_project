@@ -5,7 +5,7 @@ session_start();
 <html lang="en">
 <head>
 	<!--Icon image -->
-	<link rel="icon" href="assets/dnd_icon.ico">
+	<link rel="icon" type="image/ico" href="assets/favicon.ico">
 	
 	<!--Meta / Title -->
 	<meta charset="utf-8">
