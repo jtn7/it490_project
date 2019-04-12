@@ -12,7 +12,7 @@ body {
 	width: 95%;
 	min-height: 100%;
 	margin: auto;
-}*/
+}
 
 .body {
 	position: absolute;
@@ -75,7 +75,7 @@ body {
 
 .Character input[type=number] {
 	width: 50px;
-}
+}*/
 
 /*This is for the navigation bar right side dropdown registration*/
 #login-dp{
