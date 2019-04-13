@@ -13,6 +13,7 @@ if(!empty($_POST)){
 	$logger->info($_POST);
 	$login_rpc = new RPC("login");
 	$user = $_POST['loginUN'];
+	$fullUrl = $_SESSION['fullUrl'];
 	$usernamepasswd = serialize(array($user, $_POST['loginPW']));
 
 	$response = $login_rpc->call($usernamepasswd);
@@ -22,7 +23,7 @@ if(!empty($_POST)){
 		header("Location: index.php");
 	}
 	else {
-		header("Location: login.php?success=F");
+		header("Location: $fullUrl?success=F");
 	}
 }
 

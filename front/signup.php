@@ -13,6 +13,7 @@ if(!empty($_POST)){
 	$logger->info($_POST);
 	$signup_rpc = new RPC("register");
 	$user = $_POST['signUN'];
+	$fullUrl = $_SESSION['fullUrl'];
 	$usernamepasswd = serialize(array($user, $_POST['signPW']));
 	
 	$response = $signup_rpc->call($usernamepasswd);
@@ -21,7 +22,7 @@ if(!empty($_POST)){
 		header('Location: login.php');
 	}
 	else {
-		header('Location: signup.php?success=F');
+		header('Location: $fullUrl?success=F');
 	}
 }
 

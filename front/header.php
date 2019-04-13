@@ -35,7 +35,7 @@ session_start();
 			<!--Navi Bar Middle Contents - Only Available Upon Logon-->
 			<?php 
 				if(isset($_SESSION['username'])){
-				$fullUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+				$_SESSION[$fullUrl] = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 				if (strpos($fullUrl, "index.php") == true){
 					echo '<ul class="nav navbar-nav">';
 						echo '<li class="active"><a href="index.php">Home</a></li>';
