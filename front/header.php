@@ -35,7 +35,9 @@ session_start();
 			<!--Navi Bar Middle Contents - Only Available Upon Logon-->
 			<?php 
 				if(isset($_SESSION['username'])){
-				$_SESSION[$fullUrl] = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+				$fullUrl 	= "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+				$_SESSION['fullUrl'] = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+				
 				//alerting the user if there's any error in login or registration
 				if (strpos($fullUrl, "?login=F") == true){
 					echo '<script type="text/javascript">swal("Uh Oh", "ID and Password doesn\'t match! :(", "error");</script>';
