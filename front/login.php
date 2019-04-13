@@ -27,7 +27,7 @@ if(!empty($_POST)){
 }
 
 if (isset($_GET['success']) && $_GET['success'] === 'F') {
-/*	echo '<script type="text/javascript">swal("Uh Oh", "Login Failed :(", "error");</script>';*/
+	echo '<script type="text/javascript">swal("Uh Oh", "Login Failed :(", "error");</script>';
 }
 ?>
 

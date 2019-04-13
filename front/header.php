@@ -32,7 +32,7 @@ session_start();
 				<a class ="navbar-brand" href ="index.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:80px;"></a>
 			</div>
 			
-			<!--Navi Bar Middle Contents Only Available Upon Logon-->
+			<!--Navi Bar Middle Contents - Only Available Upon Logon-->
 			<?php 
 				if(isset($_SESSION['username'])){
 				$fullUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
