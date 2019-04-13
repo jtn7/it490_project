@@ -32,11 +32,30 @@ session_start();
 			</div>
 			
 			<!--Navi Bar Middle Contents-->
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="index.php">Home</a><li>
-				<li><a href="createCharacter.php">Create Character</a></li>
-				<li><a href="forums.php">Forums</a><li>
-			</ul>
+			<?php { ?>
+				$fullUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+				if (strpos($fullUrl, "index.php") == true){
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="index.php">Home</a><li>
+						<li><a href="createCharacter.php">Create Character</a></li>
+						<li><a href="forums.php">Forums</a><li>
+					</ul>
+				}
+				elseif (strpos($fullUrl, "createCharacter.php") == true){
+					<ul class="nav navbar-nav">
+						<li><a href="index.php">Home</a><li>
+						<li class="active"><a href="createCharacter.php">Create Character</a></li>
+						<li><a href="forums.php">Forums</a><li>
+					</ul>
+				}
+				elseif (strpos($fullUrl, "forums.php") == true){
+					<ul class="nav navbar-nav">
+						<li><a href="index.php">Home</a><li>
+						<li><a href="createCharacter.php">Create Character</a></li>
+						<li class="active"><a href="forums.php">Forums</a><li>
+					</ul>
+				}
+			<?php } ?>
 			
 			<!--Navi Bar Right Contents-->
 			<?php if(isset($_SESSION['username'])){ ?>
