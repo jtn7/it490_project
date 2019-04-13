@@ -16,7 +16,7 @@ if(!empty($_POST)){
 	$usernamepasswd = serialize(array($user, $_POST['loginPW']));
 
 	$response = $login_rpc->call($usernamepasswd);
-	if ($response === 'S'){
+	if ($response==="S"){
 		$logger->info('Successful Verification');
 		$_SESSION['username'] = $user;
 		header("Location: index.php");
