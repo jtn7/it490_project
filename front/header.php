@@ -1,53 +1,7 @@
 <!DOCTYPE html>
 
-<?php
+<?php 
 session_start();
-require_once 'RPC.php';
-require_once 'logging/LogWriter.php';
-use logging\LogWriter;
-use rabbit\RPC;
-$logger = new LogWriter('/var/log/dnd/frontend.log');
-$logger->info('login page accessed');
-
-if(!empty($_POST)){
-	$logger->info('Login information recieved');
-	$logger->info($_POST);
-	$login_rpc = new RPC("login");
-	$user = $_POST['loginUN'];
-	$usernamepasswd = serialize(array($user, $_POST['loginPW']));
-	$response = $login_rpc->call($usernamepasswd);
-	if($response === 'S'){
-		$logger->info('Successful Verification');
-		$_SESSION['username'] = $user;
-		header("Location: index.php");
-	}
-	else{	
-		header("Location: login.php?success=FL");
-	}
-}
-if(isset($_GET['success']) && $_GET['success'] === 'FL') {
-	echo "<script type='text/javascript'>alert('Failed to Log In! Please try Again.');</script>";
-}
-
-if(!empty($_POST)){
-	$logger->info('Registration information recieved');
-	$logger->info($_POST);
-	$signup_rpc = new RPC("register");
-	$user = $_POST['signUN'];
-	$usernamepasswd = serialize(array($user, $_POST['signPW']));
-	$response = $signup_rpc->call($usernamepasswd);
-	if ($response==="S"){
-		header('Location: index.php');
-	}
-	else {
-		header('Location: login.php?success=FR');
-	}
-}
-if(isset($_GET['success'])){
-	if($_GET['success']==="FR"){
-		echo "<script type='text/javascript'>alert('Error! Username may have already been registered. Try Again.');</script>";
-	}
-}
 ?>
 
 <html lang="en">
