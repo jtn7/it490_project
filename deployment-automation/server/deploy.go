@@ -176,12 +176,12 @@ func setupRoutes() {
 }
 
 func main() {
-	file, err := os.OpenFile("logrus.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
-	if err == nil {
-		log.SetOutput(file)
-	} else {
-		log.Info("Failed to log to file, using default stderr")
-	}
+	// file, err := os.OpenFile("logrus.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+	// if err == nil {
+		log.SetOutput(os.Stdout)
+	// } else {
+	// 	log.Info("Failed to log to file, using default stderr")
+	// }
 
 	log.SetFormatter(&log.TextFormatter{
 		ForceColors:   true,
