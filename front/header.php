@@ -35,25 +35,25 @@ session_start();
 			<?php
 				$fullUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 				if (strpos($fullUrl, "index.php") == true){
-					echo "<ul class="nav navbar-nav">";
-						echo "<li class="active"><a href="index.php">Home</a></li>";
-						echo "<li><a href="createCharacter.php">Create Character</a></li>";
-						echo "<li><a href="forums.php">Forums</a></li>";
-					echo "</ul>";
+					echo '<ul class="nav navbar-nav">';
+					echo '<li class="active"><a href="index.php">Home</a></li>';
+					echo '<li><a href="createCharacter.php">Create Character</a></li>';
+					echo '<li><a href="forums.php">Forums</a></li>';
+					echo '</ul>';
 				}
 				elseif (strpos($fullUrl, "createCharacter.php") == true){
-					echo "<ul class="nav navbar-nav">";
-						echo "<li><a href="index.php">Home</a></li>";
-						echo "<li class="active"><a href="createCharacter.php">Create Character</a></li>";
-						echo "<li><a href="forums.php">Forums</a></li>";
-					echo "</ul>";
+					echo '<ul class="nav navbar-nav">';
+					echo '<li><a href="index.php">Home</a></li>';
+					echo '<li class="active"><a href="createCharacter.php">Create Character</a></li>';
+					echo '<li><a href="forums.php">Forums</a></li>';
+					echo '</ul>';
 				}
 				elseif (strpos($fullUrl, "forums.php") == true){
-					echo "<ul class="nav navbar-nav">";
-						echo "	<li><a href="index.php">Home</a></li>";
-						echo "	<li><a href="createCharacter.php">Create Character</a></li>";
-						echo "	<li class="active"><a href="forums.php">Forums</a></li>";
-					echo "</ul>";
+					echo '<ul class="nav navbar-nav">';
+					echo '	<li><a href="index.php">Home</a></li>';
+					echo '	<li><a href="createCharacter.php">Create Character</a></li>';
+					echo '	<li class="active"><a href="forums.php">Forums</a></li>';
+					echo '</ul>';
 				}
 			?>
 			
