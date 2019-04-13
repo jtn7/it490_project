@@ -32,7 +32,7 @@ session_start();
 			</div>
 			
 			<!--Navi Bar Middle Contents-->
-			<?php
+			<?php { ?>
 				$fullUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 				if (strpos($fullUrl, "index.php") == true){
 					<ul class="nav navbar-nav">
@@ -55,7 +55,7 @@ session_start();
 						<li class="active"><a href="forums.php">Forums</a></li>
 					</ul>
 				}
-			?>
+			<?php } ?>
 			
 			<!--Navi Bar Right Contents-->
 			<?php if(isset($_SESSION['username'])){ ?>
