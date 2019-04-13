@@ -44,9 +44,22 @@ func errorResponse(response http.ResponseWriter, message string, statusCode int)
 	log.Info("Returning: ", statusCode, " response")
 }
 
+func respondWithClient(resp http.ResponseWriter) {
+	clientPage, _ := os.Open("../client/client.html")
+	contents, _ := ioutil.ReadAll(clientPage)
+	resp.Write(contents)
+}
 func uploadPackage(httpResponse http.ResponseWriter, httpRequest *http.Request) {
 	log.Info("/upload accessed")
 
+	switch httpRequest.Method {
+	case http.MethodGet:
+		log.Info("Processing GET request")
+		respondWithClient(httpResponse)
+		return
+	}
+
+	log.Info("Processing POST request")
 	requestor := httpRequest.FormValue("requestor")
 	if requestor == "" {
 		log.Info("Requestor is not set")
@@ -66,7 +79,7 @@ func uploadPackage(httpResponse http.ResponseWriter, httpRequest *http.Request) 
 	}
 	defer file.Close()
 	log.Info("Uploaded Package: ", packageMetaData.Filename)
-	log.Infof("File Size: %.2f MB", float32(packageMetaData.Size)/float32(1024))
+	log.Infof("File Size: %.2f KB", float32(packageMetaData.Size)/float32(1024))
 
 	if validatePackageName(packageMetaData.Filename) != nil {
 		httpResponse.WriteHeader(http.StatusBadRequest)
