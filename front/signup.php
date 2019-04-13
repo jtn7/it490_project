@@ -18,8 +18,6 @@ if(!empty($_POST)){
 	$response = $signup_rpc->call($usernamepasswd);
 	if ($response==="S"){
 		$logger->info('Successful Registration');
-		echo '<script type="text/javascript">swal("Good job!", "Login Successful :)", "success");</script>';
-		sleep(2);
 		header('Location: login.php');
 	}
 	else {
