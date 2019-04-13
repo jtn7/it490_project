@@ -19,14 +19,17 @@ if(!empty($_POST)){
 	if ($response === 'S'){
 		$logger->info('Successful Verification');
 		$_SESSION['username'] = $user;
+		echo "<script type='text/javascript'>swal("Good job!", "Login Successful :)", "success");</script>";
+		sleep(int 2);
 		header("Location: index.php");
-	} else {
+	}
+	else {
 		header("Location: login.php?success=F");
 	}
 }
 
 if (isset($_GET['success']) && $_GET['success'] === 'F') {
-	echo "<script type='text/javascript'>alert('Failed to Log In! Try Again.');</script>";
+	echo "<script type='text/javascript'>swal("Uh Oh", "Login Failed :(", "error");</script>";
 }
 ?>
 

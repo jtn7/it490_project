@@ -18,6 +18,8 @@ if(!empty($_POST)){
 	$response = $signup_rpc->call($usernamepasswd);
 	if ($response==="S"){
 		$logger->info('Successful Registration');
+		echo "<script type='text/javascript'>swal("Good job!", "Login Successful :)", "success");</script>";
+		sleep(int 2);
 		header('Location: login.php');
 	}
 	else {
@@ -25,10 +27,8 @@ if(!empty($_POST)){
 	}
 }
 
-if(isset($_GET['success'])){
-	if($_GET['success']==="F"){
-		echo "<script type='text/javascript'>alert('Error! Username may have already been registered. Try Again.');</script>";
-	}
+if (isset($_GET['success']) && $_GET['success'] === 'F') {
+	echo "<script type='text/javascript'>swal("Uh Oh", "Registration Error! :(", "error");</script>";
 }
 ?>
 
