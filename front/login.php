@@ -19,7 +19,7 @@ if(!empty($_POST)){
 	if ($response === 'S'){
 		$logger->info('Successful Verification');
 		$_SESSION['username'] = $user;
-		echo "<script type='text/javascript'>swal("Good job!", "Login Successful :)", "success");</script>";
+		echo '<script type='text/javascript'>swal("Good job!", "Login Successful :)", "success");</script>';
 		sleep(int 2);
 		header("Location: index.php");
 	}
