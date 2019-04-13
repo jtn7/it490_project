@@ -38,17 +38,6 @@ session_start();
 				$fullUrl 	= "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 				$_SESSION['fullUrl'] = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
-				//alerting the user if there's any error in login or registration
-				if (strpos($fullUrl, "login=F") == true){
-					echo '<script type="text/javascript">swal("Wait a minute!", "ID and Password doesn\'t match :(", "error");</script>';
-				}
-				if (strpos($fullUrl, "signup=F") == true){
-					echo '<script type="text/javascript">swal("Wait a minute!", "Registration Error :(", "error");</script>';
-				}
-				elseif (strpos($fullUrl, "signup=S") == true){
-					echo '<script type="text/javascript">swal("Great Job!", "Registration Completed :)", "success");</script>';
-				}
-
 				//Navi Bar Responsive Active Class
 				if (strpos($fullUrl, "index.php") == true){
 					echo '<ul class="nav navbar-nav">';
@@ -141,3 +130,16 @@ session_start();
 			<?php } ?>
 		</div>
 	</nav>
+	<?php
+	//alerting the user if there's any error in login or registration
+		$fullUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+		if (strpos($fullUrl, "login=F") == true){
+			echo '<script type="text/javascript">swal("Wait a minute!", "ID and Password doesn\'t match :(", "error");</script>';
+		}
+		if (strpos($fullUrl, "signup=F") == true){
+			echo '<script type="text/javascript">swal("Wait a minute!", "Registration Error :(", "error");</script>';
+		}
+		elseif (strpos($fullUrl, "signup=S") == true){
+			echo '<script type="text/javascript">swal("Great Job!", "Registration Completed :)", "success");</script>';
+		}
+	?>
