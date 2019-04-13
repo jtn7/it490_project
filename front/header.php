@@ -39,13 +39,13 @@ session_start();
 				$_SESSION['fullUrl'] = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
 				//alerting the user if there's any error in login or registration
-				if (strpos($fullUrl, "?login=F")){
+				if (strpos($fullUrl, "login=F") == true){
 					echo '<script type="text/javascript">swal("Wait a minute!", "ID and Password doesn\'t match :(", "error");</script>';
 				}
-				if (strpos($fullUrl, "?signup=F")){
+				if (strpos($fullUrl, "signup=F") == true){
 					echo '<script type="text/javascript">swal("Wait a minute!", "Registration Error :(", "error");</script>';
 				}
-				elseif (strpos($fullUrl, "?signup=S")){
+				elseif (strpos($fullUrl, "signup=S") == true){
 					echo '<script type="text/javascript">swal("Great Job!", "Registration Completed :)", "success");</script>';
 				}
 
