@@ -19,7 +19,7 @@ if(!empty($_POST)){
 	if ($response==="S"){
 		$logger->info('Successful Registration');
 		echo '<script type="text/javascript">swal("Good job!", "Login Successful :)", "success");</script>';
-		sleep(int 2);
+		sleep(2);
 		header('Location: login.php');
 	}
 	else {
@@ -28,7 +28,7 @@ if(!empty($_POST)){
 }
 
 if (isset($_GET['success']) && $_GET['success'] === 'F') {
-	echo "<script type='text/javascript'>swal("Uh Oh", "Registration Error! :(", "error");</script>";
+	echo '<script type="text/javascript">swal("Uh Oh", "Registration Error! :(", "error");</script>';
 }
 ?>
 

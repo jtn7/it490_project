@@ -20,7 +20,7 @@ if(!empty($_POST)){
 		$logger->info('Successful Verification');
 		$_SESSION['username'] = $user;
 		echo '<script type="text/javascript">swal("Good job!", "Login Successful :)", "success");</script>';
-		sleep(int 2);
+		sleep(2);
 		header("Location: index.php");
 	}
 	else {
