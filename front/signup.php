@@ -19,15 +19,11 @@ if(!empty($_POST)){
 	$response = $signup_rpc->call($usernamepasswd);
 	if ($response==="S"){
 		$logger->info('Successful Registration');
-		header('Location: login.php');
+		header("Location: $fullUrl?signup=S");
 	}
 	else {
-		header('Location: $fullUrl?success=F');
+		header("Location: $fullUrl?signup=F");
 	}
-}
-
-if (isset($_GET['success']) && $_GET['success'] === 'F') {
-	echo '<script type="text/javascript">swal("Uh Oh", "Registration Error! :(", "error");</script>';
 }
 ?>
 

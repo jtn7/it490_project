@@ -36,6 +36,18 @@ session_start();
 			<?php 
 				if(isset($_SESSION['username'])){
 				$_SESSION[$fullUrl] = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+				//alerting the user if there's any error in login or registration
+				if (strpos($fullUrl, "?login=F") == true){
+					echo '<script type="text/javascript">swal("Uh Oh", "ID and Password doesn\'t match! :(", "error");</script>';
+				}
+				if (strpos($fullUrl, "?signup=F") == true){
+					echo '<script type="text/javascript">swal("Uh Oh", "Registration Error! :(", "error");</script>';
+				}
+				elseif (strpos($fullUrl, "?signup=S") == true){
+					echo '<script type="text/javascript">swal("Great Job!", "Registration Completed! :(", "success");</script>';
+				}
+
+				//Navi Bar Responsive Active Class
 				if (strpos($fullUrl, "index.php") == true){
 					echo '<ul class="nav navbar-nav">';
 						echo '<li class="active"><a href="index.php">Home</a></li>';
@@ -65,6 +77,7 @@ session_start();
 					echo '</ul>';
 					}
 				}
+
 			?>
 			
 			<!--Navi Bar Right Contents-->

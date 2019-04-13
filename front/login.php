@@ -23,12 +23,8 @@ if(!empty($_POST)){
 		header("Location: index.php");
 	}
 	else {
-		header("Location: $fullUrl?success=F");
+		header("Location: $fullUrl?login=F");
 	}
-}
-
-if (isset($_GET['success']) && $_GET['success'] === 'F') {
-	echo '<script type="text/javascript">swal("Uh Oh", "Login Failed :(", "error");</script>';
 }
 ?>
 
