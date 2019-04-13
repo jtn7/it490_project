@@ -21,7 +21,6 @@ session_start();
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
 </head>
 
 <body>
@@ -33,8 +32,8 @@ session_start();
 				<a class ="navbar-brand" href ="index.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:80px;"></a>
 			</div>
 			
-			<!--Navi Bar Middle Contents-->
-			<?php
+			<!--Navi Bar Middle Contents Only Available Upon Logon-->
+			<?php if(isset($_SESSION['username'])){ ?>
 				$fullUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 				if (strpos($fullUrl, "index.php") == true){
 					echo '<ul class="nav navbar-nav">';
@@ -64,7 +63,7 @@ session_start();
 						echo '	<li><a href="forums.php">Forums</a></li>';
 					echo '</ul>';
 				}
-			?>
+			<?php } ?>
 			
 			<!--Navi Bar Right Contents-->
 			<?php if(isset($_SESSION['username'])){ ?>
