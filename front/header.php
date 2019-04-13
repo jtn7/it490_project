@@ -135,10 +135,10 @@ session_start();
 	//alerting the user if there's any error in login or registration
 		$fullUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 		if (strpos($fullUrl, "login=F") == true){
-			echo '<script type="text/javascript">swal("Wait A Minute!", "Wrong Credentials :(", "error");</script>';
+			echo '<script type="text/javascript">swal("Wait a Minute!", "Wrong Credentials :(", "error");</script>';
 		}
 		if (strpos($fullUrl, "signup=F") == true){
-			echo '<script type="text/javascript">swal("Wait A Minute!", "Registration Error :(", "error");</script>';
+			echo '<script type="text/javascript">swal("Wait a Minute!", "Registration Error :(", "error");</script>';
 		}
 		elseif (strpos($fullUrl, "signup=S") == true){
 			echo '<script type="text/javascript">swal("Great Job!", "Registration Completed :)", "success");</script>';
