@@ -9,8 +9,8 @@ use rabbit\RPC;
 $logger = new LogWriter('/var/log/dnd/frontend.log');
 $logger->info('login page accessed');
 
-if(isset($_POST['login'])){
-	$logger->info('POST recieved');
+if(!empty($_POST)){
+	$logger->info('Login information recieved');
 	$logger->info($_POST);
 	$login_rpc = new RPC("login");
 	$user = $_POST['loginUN'];
@@ -29,7 +29,9 @@ if(isset($_GET['success']) && $_GET['success'] === 'FL') {
 	echo "<script type='text/javascript'>alert('Failed to Log In! Please try Again.');</script>";
 }
 
-if(isset($_POST['register'])){
+if(!empty($_POST)){
+	$logger->info('Registration information recieved');
+	$logger->info($_POST);
 	$signup_rpc = new RPC("register");
 	$user = $_POST['signUN'];
 	$usernamepasswd = serialize(array($user, $_POST['signPW']));
@@ -95,7 +97,7 @@ if(isset($_GET['success'])){
 				<!--Logged off status menu bar-->
 				<ul class="nav navbar-nav navbar-right">
 					<li>
-						<form class="form-inline" action="" method="POST">
+						<form class="form-inline" action="login.php" method="POST">
 							<div class="form-group md-form my-0">
 								<label for="loginUN"><font color="white">ID </font></label>
 								<input type="text" name="loginUN" class="form-control mr-sm-2" placeholder="ID" required="required">
@@ -119,7 +121,7 @@ if(isset($_GET['success'])){
 												<a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
 											</div>
 											or create an account
-											 <form class="form" action="" method="POST" accept-charset="UTF-8" id="login-nav">
+											 <form class="form" action="signup.php" method="POST" accept-charset="UTF-8" id="login-nav">
 													<div class="form-group">
 														 <label class="sr-only" for="signUN">ID</label>
 														 <input type="text" name="signUN" class="form-control" placeholder="ID" required="required">
