@@ -21,23 +21,6 @@ session_start();
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-	<!--Login and Registration on same page -->
-	<script>
-		function login()
-		{
-			var name =document.getElementById('loginUN').value;
-			var pass =document.getElementById('loginPW').value;
-			var dataString='loginUN='+name+'loginPW='+pass;
-			$.ajax({
-				type:"post",
-				url: "login.php",
-				data:dataString,
-				cache:false,
-			});
-			return false;
-		}
-	</script>
 </head>
 
 <body>
@@ -100,16 +83,16 @@ session_start();
 				<!--Logged off status menu bar-->
 				<ul class="nav navbar-nav navbar-right">
 					<li>
-						<form class="form-inline" action="" method="POST">
+						<form class="form-inline" action="z" method="POST">
 							<div class="form-group md-form my-0">
 								<label for="loginUN"><font color="white">ID </font></label>
-								<input type="text" name="loginUN" class="form-control mr-sm-2" placeholder="ID" required="required" id="loginUN">
+								<input type="text" name="loginUN" class="form-control mr-sm-2" placeholder="ID" required="required">
 							</div>
 							<div class="form-group md-form my-0">
 								<label for="loginPW"><font color="white">Password </font></label>
-								<input type="password" name="loginPW" class="form-control mr-sm-2" placeholder="Password" required="required" id="loginPW">
+								<input type="password" name="loginPW" class="form-control mr-sm-2" placeholder="Password" required="required">
 							</div>
-							<button type="submit" name="loginSubmit" value="login" class="btn btn-default navbar-btn mb-2" onclick="return login()"><span class='glyphicon glyphicon-log-in'></span> Log In </button>
+							<button type="submit" name="loginSubmit" value="login" class="btn btn-default navbar-btn mb-2"><span class='glyphicon glyphicon-log-in'></span> Log In </button>
 						</form>
 					</li>
 					<li class="dropdown">
