@@ -83,7 +83,7 @@ session_start();
 				<!--Logged off status menu bar-->
 				<ul class="nav navbar-nav navbar-right">
 					<li>
-						<form class="form-inline" action="z" method="POST">
+						<form class="form-inline" action="login.php" method="POST">
 							<div class="form-group md-form my-0">
 								<label for="loginUN"><font color="white">ID </font></label>
 								<input type="text" name="loginUN" class="form-control mr-sm-2" placeholder="ID" required="required">
