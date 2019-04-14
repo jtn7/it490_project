@@ -22,7 +22,7 @@ if(!empty($_POST)){
 		header("Location: index.php");
 	}
 	else {
-		header("Location: login?login=F");
+		header("Location: login.php?login=F");
 	}
 }
 ?>
