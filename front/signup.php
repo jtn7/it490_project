@@ -13,21 +13,30 @@ if(!empty($_POST)){
 	$logger->info($_POST);
 	$signup_rpc = new RPC("register");
 	$user = $_POST['signUN'];
-	$fullUrl = $_SESSION['fullUrlPass'];
 	$usernamepasswd = serialize(array($user, $_POST['signPW']));
 	
 	$response = $signup_rpc->call($usernamepasswd);
 	if ($response==="S"){
 		$logger->info('Successful Registration');
-		header("Location: $fullUrl?signup=S");
+		header("Location: signup.php?signup=S");
 	}
 	else {
-		header("Location: $fullUrl?signup=F");
+		header("Location: signup.php?signup=F");
 	}
 }
 ?>
 
 <?php include 'header.php';?>
+
+<!-- Sweet Alert for the Registration-->
+<?php
+if (strpos($fullUrl, "signup=F") == true){
+	echo '<script type="text/javascript">swal("Wait a minute!", "Registration error :(", "error");</script>';
+	}
+elseif (strpos($fullUrl, "signup=S") == true){
+	echo '<script type="text/javascript">swal("Great job!", "Registration completed :)", "success");</script>';
+	}
+?>
 
 <div class="uaBody">
 	<div class="content">

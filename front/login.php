@@ -13,7 +13,6 @@ if(!empty($_POST)){
 	$logger->info($_POST);
 	$login_rpc = new RPC("login");
 	$user = $_POST['loginUN'];
-	$fullUrl = $_SESSION['fullUrlPass'];
 	$usernamepasswd = serialize(array($user, $_POST['loginPW']));
 
 	$response = $login_rpc->call($usernamepasswd);
@@ -23,12 +22,19 @@ if(!empty($_POST)){
 		header("Location: index.php");
 	}
 	else {
-		header("Location: $fullUrl?login=F");
+		header("Location: login?login=F");
 	}
 }
 ?>
 
 <?php include 'header.php' ?>
+
+<!-- Sweet Alert for the login-->
+<?php
+		if (strpos($fullUrl, "login=F") == true){
+			echo '<script type="text/javascript">swal("Wait a minute!", "Wrong credentials :(", "error");</script>';
+		}
+?>
 
 <div class="uaBody">
 	<div class="content">

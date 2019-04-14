@@ -36,7 +36,6 @@ session_start();
 			<?php 
 				if(isset($_SESSION['username'])){
 				$fullUrl 	= "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-				$_SESSION['fullUrlPass'] = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
 				//Navi Bar Responsive Active Class
 				if (strpos($fullUrl, "index.php") == true){
@@ -129,17 +128,3 @@ session_start();
 			<?php } ?>
 		</div>
 	</nav>
-
-	<?php
-	//alerting the user if there's any error in login or registration
-		$fullUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-		if (strpos($fullUrl, "login=F") == true){
-			echo '<script type="text/javascript">swal("Wait a minute!", "Wrong credentials :(", "error");</script>';
-		}
-		if (strpos($fullUrl, "signup=F") == true){
-			echo '<script type="text/javascript">swal("Wait a minute!", "Registration error :(", "error");</script>';
-		}
-		elseif (strpos($fullUrl, "signup=S") == true){
-			echo '<script type="text/javascript">swal("Great job!", "Registration completed :)", "success");</script>';
-		}
-	?>
