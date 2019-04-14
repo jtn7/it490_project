@@ -45,5 +45,4 @@ if(!empty($_POST)){
 	</div>
 </div>
 
-
 <?php include 'footer.php' ?>
