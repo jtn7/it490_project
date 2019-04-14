@@ -14,6 +14,8 @@ move to the Production environment.
 	* The deployment package needs to be versioned using the name of the package
 	file
 - [x] Create client for uploading packages to deployment server
+- [ ] Implement flag usage for providing package and out dir's
+	* also something for the client.html
 - [ ] Create an endpoint for rolling back production to the previous version
 	* The previous version will only be pushed to production in the first place
 	if it passed QA
