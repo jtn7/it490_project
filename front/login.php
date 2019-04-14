@@ -13,7 +13,7 @@ if(!empty($_POST)){
 	$logger->info($_POST);
 	$login_rpc = new RPC("login");
 	$user = $_POST['loginUN'];
-	$fullUrl = $_SESSION['fullUrl'];
+	$fullUrl = $_SESSION['fullUrlPass'];
 	$usernamepasswd = serialize(array($user, $_POST['loginPW']));
 
 	$response = $login_rpc->call($usernamepasswd);

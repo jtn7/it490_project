@@ -13,7 +13,7 @@ if(!empty($_POST)){
 	$logger->info($_POST);
 	$signup_rpc = new RPC("register");
 	$user = $_POST['signUN'];
-	$fullUrl = $_SESSION['fullUrl'];
+	$fullUrl = $_SESSION['fullUrlPass'];
 	$usernamepasswd = serialize(array($user, $_POST['signPW']));
 	
 	$response = $signup_rpc->call($usernamepasswd);
