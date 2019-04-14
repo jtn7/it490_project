@@ -31,9 +31,10 @@ if(!empty($_POST)){
 
 <!-- Sweet Alert for the login-->
 <?php
-		if (strpos($fullUrl, "login=F") == true){
-			echo '<script type="text/javascript">swal("Wait a minute!", "Wrong credentials :(", "error");</script>';
-		}
+	$fullUrl 	= "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+	if (strpos($fullUrl, "login=F") == true){
+		echo '<script type="text/javascript">swal("Wait a minute!", "Wrong credentials :(", "error");</script>';
+	}
 ?>
 
 <div class="uaBody">

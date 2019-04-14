@@ -30,11 +30,12 @@ if(!empty($_POST)){
 
 <!-- Sweet Alert for the Registration-->
 <?php
-if (strpos($fullUrl, "signup=F") == true){
-	echo '<script type="text/javascript">swal("Wait a minute!", "Registration error :(", "error");</script>';
+	$fullUrl 	= "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+	if (strpos($fullUrl, "signup=F") == true){
+		echo '<script type="text/javascript">swal("Wait a minute!", "Registration error :(", "error");</script>';
 	}
-elseif (strpos($fullUrl, "signup=S") == true){
-	echo '<script type="text/javascript">swal("Great job!", "Registration completed :)", "success");</script>';
+	elseif (strpos($fullUrl, "signup=S") == true){
+		echo '<script type="text/javascript">swal("Great job!", "Registration completed :)", "success");</script>';
 	}
 ?>
 
