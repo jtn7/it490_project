@@ -106,4 +106,7 @@ if(!empty($_POST)){
 </div>
 </body>
 
+<!-- Custom scripts for login.php page-->
+<script src="js/template.min.js"></script>
+
 <?php include 'footer.php' ?>

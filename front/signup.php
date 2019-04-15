@@ -26,7 +26,7 @@ if(!empty($_POST)){
 }
 ?>
 
-<?php include 'header_plain.php';?>
+<?php include 'header_plain.php'w;?>
 
 <!-- Sweet Alert for the Registration-->
 <?php
@@ -56,5 +56,8 @@ if(!empty($_POST)){
 		</form>
 	</div>
 </div>
+
+<!-- Custom scripts for signup.php page-->
+<script src="js/template.min.js"></script>
 
 <?php include 'footer.php';?>
