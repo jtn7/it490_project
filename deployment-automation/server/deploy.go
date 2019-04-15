@@ -74,6 +74,15 @@ func init() {
 		log.SetOutput(os.Stdout)
 	}
 
+	// Checking packageDir
+	_, err := os.Stat(packageDir)
+	if err != nil {
+		err = os.MkdirAll(packageDir, os.ModePerm)
+		if err != nil {
+			log.Fatal("Could not make package directory: ", packageDir)
+		}
+	}
+
 	ln, err := net.Listen("tcp", ":"+daemonPort)
 	if err != nil {
 		log.Fatal("Cannot listen on port: ", daemonPort, err)
@@ -257,7 +266,7 @@ func uploadPackage(response http.ResponseWriter, request *http.Request) {
 	}
 
 	// Write byte array to file
-	name := filepath.Join("packages", packageMetaData.Filename)
+	name := filepath.Join(packageDir, packageMetaData.Filename)
 	err = ioutil.WriteFile(name, fileBytes, os.ModePerm)
 	if err != nil {
 		newDeployError("Could not write upload to file", internalError, err).handleError(response)
@@ -265,13 +274,24 @@ func uploadPackage(response http.ResponseWriter, request *http.Request) {
 	}
 
 	// Extract code changes for deployment
-	if derr = unzip(name, "extracted"); derr != nil {
+	if derr = unzip(name, outputDir); derr != nil {
 		derr.handleError(response)
 		return
 	}
 
 	response.Write([]byte("Package upload and deployment were successful"))
+	savePackageVersion(packageMetaData.Filename)
 	log.Info("Request was Successful")
+}
+
+// savePackageVersion saves successful package names to a file
+func savePackageVersion(packageName string) {
+	file, err := os.OpenFile("package.history", os.O_WRONLY|os.O_CREATE|os.O_APPEND, os.ModePerm)
+	if err != nil {
+		log.Error("Could not open package.history")
+	}
+	file.WriteString(packageName + "\n")
+	file.Close()
 }
 
 // rollBack is the handler for requests to /rollback
