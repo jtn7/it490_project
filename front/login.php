@@ -49,7 +49,7 @@ if(!empty($_POST)){
             <!-- Nested Row within Card Body -->
             <div class="row">
               <div class="col-lg-6 d-none d-lg-block">
-			  	<img src="assets/login_background.jpg" alt="Dungeons & Dragons" class="img-fluid">
+			  	<a href="login.php"><img src="assets/login_background.jpg" alt="Dungeons & Dragons" class="img-fluid"></a>
 			  </div>
               <div class="col-lg-6">
                 <div class="p-5">
