@@ -23,9 +23,9 @@ move to the Production environment.
 
  Flag | Description
  --- | -----------
-`-p` `--package-dir` | the path for uploaded packages (Defaults to `./packages`)
-`-o` `--output` | the path for extracted packages (Defaults to `./output`)
-`-c` `--client` | the path to find client.html (Defaults to `./client.html`)
+`-p` `--package-dir` | a directory path for uploaded packages (Defaults to `./packages`)
+`-o` `--output` | a directory path for extracted package files (Defaults to `./output`)
 `--port` | the binding port of the daemon (Defaults to `80`)
+`-l` `--log-dir` | a directory path to store the log
 
 > Paths can be absolute or relative to the binary

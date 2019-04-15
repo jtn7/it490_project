@@ -45,7 +45,7 @@ func init() {
 	flag.StringVar(&outputDir, "output", defaultOutputDir, odUsage)
 	flag.StringVar(&outputDir, "o", defaultOutputDir, odUsage+" (shorthand)")
 	// Log path
-	flag.StringVar(&logOutput, "log-path", "", lUsage)
+	flag.StringVar(&logOutput, "log-dir", "", lUsage)
 	flag.StringVar(&logOutput, "l", "", lUsage+" (shorthand)")
 	// Daemon port
 	flag.StringVar(&daemonPort, "port", defaultPort, pUsage)
