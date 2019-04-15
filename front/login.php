@@ -37,6 +37,9 @@ if(!empty($_POST)){
 	}
 ?>
 
+<!-- Custom styles-->
+<link href="css/template.min.css" rel="stylesheet">
+
 <body class="bg-gradient-danger">
 <div class="container">
 
