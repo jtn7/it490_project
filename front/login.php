@@ -93,5 +93,6 @@ if(!empty($_POST)){
       	</div>
     </div>
 </div>
+</body>
 
 <?php include 'footer.php' ?>
