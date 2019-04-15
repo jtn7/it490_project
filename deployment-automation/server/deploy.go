@@ -129,7 +129,7 @@ func (derr *deployError) handleError(resp http.ResponseWriter) {
 	switch derr.httpStatus {
 	case http.StatusUnauthorized:
 		log.Info(derr.Error())
-		resp.Header().Add("WWW-Authenticate", "Basic realm=\"User Visible Realm\"")
+		resp.Header().Add("WWW-Authenticate", "Basic realm=\"Access to upload portal\"")
 		resp.WriteHeader(derr.httpStatus)
 	case internalError:
 		log.Error(derr.Error())
@@ -190,6 +190,7 @@ func respondWithClient(resp http.ResponseWriter) *deployError {
 	return nil
 }
 
+// authenticate verifies the if the passed credentials match an authorized user
 func authenticate(user string, pass string) bool {
 	if user == "bob" && pass == "pass" {
 		return true
