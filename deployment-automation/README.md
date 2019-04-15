@@ -14,8 +14,18 @@ move to the Production environment.
 	* The deployment package needs to be versioned using the name of the package
 	file
 - [x] Create client for uploading packages to deployment server
-- [ ] Implement flag usage for providing package and out dir's
-	* also something for the client.html
+- [x] Implement flag usage for providing package and out dir's
 - [ ] Create an endpoint for rolling back production to the previous version
 	* The previous version will only be pushed to production in the first place
 	if it passed QA
+
+## Argument Flags
+
+ Flag | Description
+ --- | -----------
+`-p` `--package-dir` | the path for uploaded packages (Defaults to `./packages`)
+`-o` `--output` | the path for extracted packages (Defaults to `./output`)
+`-c` `--client` | the path to find client.html (Defaults to `./client.html`)
+`--port` | the binding port of the daemon (Defaults to `80`)
+
+> Paths can be absolute or relative to the binary

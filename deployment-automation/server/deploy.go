@@ -2,9 +2,11 @@ package main
 
 import (
 	"archive/zip"
+	"flag"
 	"fmt"
 	"io"
 	"io/ioutil"
+	"net"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -17,7 +19,80 @@ import (
 const (
 	internalError = http.StatusInternalServerError
 	badRequest    = http.StatusBadRequest
+
+	defaultPackageDir = "./packages"
+	pdUsage           = "the path for the uploaded packages."
+
+	defaultOutputDir = "./output"
+	odUsage          = "the path for the extracted packages."
+
+	defaultPort = "80"
+	pUsage      = "the port for the daemon to listen on."
+
+	lUsage = "the path to place the log in (defaults to stdout)"
 )
+
+var packageDir string
+var outputDir string
+var daemonPort string
+var logOutput string
+
+func init() {
+	// Uploaded packages path
+	flag.StringVar(&packageDir, "package-dir", defaultPackageDir, pdUsage)
+	flag.StringVar(&packageDir, "p", defaultPackageDir, pdUsage+" (shorthand)")
+	// Extracted contents path
+	flag.StringVar(&outputDir, "output", defaultOutputDir, odUsage)
+	flag.StringVar(&outputDir, "o", defaultOutputDir, odUsage+" (shorthand)")
+	// Log path
+	flag.StringVar(&logOutput, "log-path", "", lUsage)
+	flag.StringVar(&logOutput, "l", "", lUsage+" (shorthand)")
+	// Daemon port
+	flag.StringVar(&daemonPort, "port", defaultPort, pUsage)
+
+	flag.Parse()
+
+	log.SetFormatter(&log.TextFormatter{
+		ForceColors:   true,
+		FullTimestamp: true,
+	})
+
+	flag.Visit(checkArguments)
+
+	ln, err := net.Listen("tcp", ":"+daemonPort)
+	if err != nil {
+		log.Fatal("Cannot listen on port: ", daemonPort, err)
+	}
+	_ = ln.Close()
+}
+
+// checkArguments validates all set arguments
+func checkArguments(f *flag.Flag) {
+	if f.Value.String() == "" {
+		log.Fatal("Passed paths must not be empty")
+	}
+	checkPath(string(f.Value.String()))
+}
+
+// checkPath validates if a given path exists
+// if the path does not exist this function attempts
+// to create the path
+func checkPath(path string) {
+	fi, err := os.Stat(path)
+	if err != nil {
+		log.Warn("Path: ", path, " does not exist. Attempting to create path...")
+		// Path does not exist so try to make directory
+		err := os.MkdirAll(path, os.ModePerm)
+		if err != nil {
+			log.Fatal("Could not create path: ", err)
+		}
+		log.Info("Created path: ", path)
+		fi, _ = os.Stat(path)
+	}
+	if !fi.IsDir() {
+		log.Fatal("Argument paths should be to a directory, not a file")
+	}
+}
 
 type deployError struct {
 	message    string
@@ -26,15 +101,18 @@ type deployError struct {
 }
 
 func (derr *deployError) Error() string {
-	return fmt.Sprintf("%s: %s", derr.message, derr.origin.Error())
+	if derr.origin != nil {
+		return fmt.Sprintf("%s: %s", derr.message, derr.origin.Error())
+	}
+	return derr.message
 }
 
 func (derr *deployError) handleError(resp http.ResponseWriter) {
 	switch derr.httpStatus {
-	case http.StatusBadRequest:
+	case badRequest:
 		log.Info(derr.Error())
 		http.Error(resp, derr.message, derr.httpStatus)
-	case http.StatusInternalServerError:
+	case internalError:
 		log.Errorf(derr.Error())
 		http.Error(resp, http.StatusText(derr.httpStatus), derr.httpStatus)
 	}
@@ -60,7 +138,7 @@ func validatePackageName(fileName string) *deployError {
 }
 
 func isDuplicatePackageVersion(fileName string) *deployError {
-	files, err := ioutil.ReadDir("./packages/")
+	files, err := ioutil.ReadDir(packageDir)
 	if err != nil {
 		return newDeployError("Could not locate ./packages", internalError, err)
 	}
@@ -75,15 +153,7 @@ func isDuplicatePackageVersion(fileName string) *deployError {
 }
 
 func respondWithClient(resp http.ResponseWriter) *deployError {
-	clientPage, err := os.Open("../client/client.html")
-	if err != nil {
-		return newDeployError("Could not open client page file", internalError, err)
-	}
-	contents, err := ioutil.ReadAll(clientPage)
-	if err != nil {
-		return newDeployError("Could not read client file", internalError, err)
-	}
-	resp.Write(contents)
+	resp.Write([]byte(client))
 
 	return nil
 }
@@ -221,20 +291,22 @@ func unzip(src string, dest string) *deployError {
 func setupRoutes() {
 	http.HandleFunc("/upload", uploadPackage)
 	http.HandleFunc("/rollback", rollBack)
-	log.Fatal(http.ListenAndServe(":80", nil))
+	log.Fatal(http.ListenAndServe(":"+daemonPort, nil))
 }
 
 func main() {
-	// file, err := os.OpenFile("logrus.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
-	// if err == nil {
-	log.SetOutput(os.Stdout)
-	// } else {
-	// 	log.Info("Failed to log to file, using default stderr")
-	// }
+	if logOutput != "" {
+		path := filepath.Join(logOutput, "deploy.log")
+		file, err := os.OpenFile(path, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+		if err != nil {
+			log.Error("Could not open log file stream. Using stdout instead:", err)
+			log.SetOutput(os.Stdout)
+		} else {
+			log.SetOutput(file)
+		}
+	} else {
+		log.SetOutput(os.Stdout)
+	}
 
-	log.SetFormatter(&log.TextFormatter{
-		ForceColors:   true,
-		FullTimestamp: true,
-	})
 	setupRoutes()
 }
