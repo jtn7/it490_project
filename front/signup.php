@@ -26,7 +26,7 @@ if(!empty($_POST)){
 }
 ?>
 
-<?php include 'header.php';?>
+<?php include 'header_plain.php';?>
 
 <!-- Sweet Alert for the Registration-->
 <?php
@@ -38,6 +38,9 @@ if(!empty($_POST)){
 		echo '<script type="text/javascript">swal("Great job!", "Registration completed :)", "success");</script>';
 	}
 ?>
+
+<!-- Custom styles-->
+<link href="css/template.min.css" rel="stylesheet">
 
 <div class="uaBody">
 	<div class="content">

@@ -27,7 +27,7 @@ if(!empty($_POST)){
 }
 ?>
 
-<?php include 'header.php' ?>
+<?php include 'header_plain.php' ?>
 
 <!-- Sweet Alert for the login-->
 <?php
@@ -104,10 +104,6 @@ if(!empty($_POST)){
       	</div>
     </div>
 </div>
-
-<!-- Custom scripts for all pages-->
-<script src="js/template.min.js"></script>
-
 </body>
 
 <?php include 'footer.php' ?>
