@@ -57,7 +57,21 @@ func init() {
 		FullTimestamp: true,
 	})
 
+	// Run validation on set arguments
 	flag.Visit(checkArguments)
+
+	if logOutput != "" {
+		path := filepath.Join(logOutput, "deploy.log")
+		file, err := os.OpenFile(path, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+		if err != nil {
+			log.Error("Could not open log file stream. Using stdout instead:", err)
+			log.SetOutput(os.Stdout)
+		} else {
+			log.SetOutput(file)
+		}
+	} else {
+		log.SetOutput(os.Stdout)
+	}
 
 	ln, err := net.Listen("tcp", ":"+daemonPort)
 	if err != nil {
@@ -295,18 +309,5 @@ func setupRoutes() {
 }
 
 func main() {
-	if logOutput != "" {
-		path := filepath.Join(logOutput, "deploy.log")
-		file, err := os.OpenFile(path, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
-		if err != nil {
-			log.Error("Could not open log file stream. Using stdout instead:", err)
-			log.SetOutput(os.Stdout)
-		} else {
-			log.SetOutput(file)
-		}
-	} else {
-		log.SetOutput(os.Stdout)
-	}
-
 	setupRoutes()
 }
