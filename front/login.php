@@ -87,9 +87,9 @@ if(!empty($_POST)){
                       <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
                     </a>
                   </form>
-				  <br>
+				  <br><br>
                   <hr>
-				  <br>
+				  <br><br>
                   <div class="text-center">
                     <a class="small" href="forgot-password.php">Forgot Password?</a>
                   </div>
