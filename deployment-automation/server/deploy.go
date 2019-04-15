@@ -127,12 +127,16 @@ func (derr *deployError) Error() string {
 // handleError logs the error and calls http.Error
 func (derr *deployError) handleError(resp http.ResponseWriter) {
 	switch derr.httpStatus {
-	case badRequest:
+	case http.StatusUnauthorized:
 		log.Info(derr.Error())
-		http.Error(resp, derr.message, derr.httpStatus)
+		resp.Header().Add("WWW-Authenticate", "Basic realm=\"User Visible Realm\"")
+		resp.WriteHeader(derr.httpStatus)
 	case internalError:
 		log.Error(derr.Error())
 		http.Error(resp, http.StatusText(derr.httpStatus), derr.httpStatus)
+	default:
+		log.Info(derr.Error())
+		http.Error(resp, derr.message, derr.httpStatus)
 	}
 }
 
@@ -178,11 +182,19 @@ func isDuplicatePackageVersion(fileName string) *deployError {
 // respondWithClient writes an html document to the response body for uploading
 // packages to the daemon
 func respondWithClient(resp http.ResponseWriter) *deployError {
+	resp.Header().Add("Content-Type", "text/html")
 	_, err := resp.Write([]byte(client))
 	if err != nil {
 		return newDeployError("Writing to response interface failed", internalError, err)
 	}
 	return nil
+}
+
+func authenticate(user string, pass string) bool {
+	if user == "bob" && pass == "pass" {
+		return true
+	}
+	return false
 }
 
 // uploadPackage is the handler for requests to /upload
@@ -191,6 +203,12 @@ func uploadPackage(response http.ResponseWriter, request *http.Request) {
 
 	if request.Method == http.MethodGet {
 		log.Info("Processing GET request")
+		user, pass, _ := request.BasicAuth()
+		if !authenticate(user, pass) {
+			newDeployError("Incorrect credentials", http.StatusUnauthorized, nil).handleError(response)
+			return
+		}
+		log.Info("Credentials Validated")
 		derr := respondWithClient(response)
 		if derr != nil {
 			derr.handleError(response)
