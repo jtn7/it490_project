@@ -37,6 +37,7 @@ var outputDir string
 var daemonPort string
 var logOutput string
 
+// init sets up cli flags and log settings.
 func init() {
 	// Uploaded packages path
 	flag.StringVar(&packageDir, "package-dir", defaultPackageDir, pdUsage)
@@ -80,7 +81,7 @@ func init() {
 	_ = ln.Close()
 }
 
-// checkArguments validates all set arguments
+// checkArguments validates all set arguments.
 func checkArguments(f *flag.Flag) {
 	if f.Value.String() == "" {
 		log.Fatal("Passed paths must not be empty")
@@ -88,9 +89,8 @@ func checkArguments(f *flag.Flag) {
 	checkPath(string(f.Value.String()))
 }
 
-// checkPath validates if a given path exists
-// if the path does not exist this function attempts
-// to create the path
+// checkPath validates if a given path exists.
+// If the path does not exist this function attempts to create that path
 func checkPath(path string) {
 	fi, err := os.Stat(path)
 	if err != nil {
@@ -108,12 +108,15 @@ func checkPath(path string) {
 	}
 }
 
+// deployError is a struct that implements the error interface
 type deployError struct {
 	message    string
 	origin     error
 	httpStatus int
 }
 
+// Error returns the message field and the message from the original error, if
+// one is set
 func (derr *deployError) Error() string {
 	if derr.origin != nil {
 		return fmt.Sprintf("%s: %s", derr.message, derr.origin.Error())
@@ -121,17 +124,19 @@ func (derr *deployError) Error() string {
 	return derr.message
 }
 
+// handleError logs the error and calls http.Error
 func (derr *deployError) handleError(resp http.ResponseWriter) {
 	switch derr.httpStatus {
 	case badRequest:
 		log.Info(derr.Error())
 		http.Error(resp, derr.message, derr.httpStatus)
 	case internalError:
-		log.Errorf(derr.Error())
+		log.Error(derr.Error())
 		http.Error(resp, http.StatusText(derr.httpStatus), derr.httpStatus)
 	}
 }
 
+// newDeployError initializes a deployError and returns a pointer
 func newDeployError(msg string, status int, orig error) *deployError {
 	return &deployError{
 		message:    msg,
@@ -140,6 +145,8 @@ func newDeployError(msg string, status int, orig error) *deployError {
 	}
 }
 
+// validatePackageName checks if the name of the uploaded package matches
+// the required regular expression
 func validatePackageName(fileName string) *deployError {
 	isMatch, err := regexp.MatchString(`^dndProj-([0-9]+\.){3}pkg$`, fileName)
 	if err != nil {
@@ -151,10 +158,12 @@ func validatePackageName(fileName string) *deployError {
 	return nil
 }
 
+// isDuplicatePackageVersion checks whether there is a package file with the
+// same name as the uploaded package
 func isDuplicatePackageVersion(fileName string) *deployError {
 	files, err := ioutil.ReadDir(packageDir)
 	if err != nil {
-		return newDeployError("Could not locate ./packages", internalError, err)
+		return newDeployError("Could not locate package directory", internalError, err)
 	}
 
 	for _, f := range files {
@@ -166,12 +175,17 @@ func isDuplicatePackageVersion(fileName string) *deployError {
 	return nil
 }
 
+// respondWithClient writes an html document to the response body for uploading
+// packages to the daemon
 func respondWithClient(resp http.ResponseWriter) *deployError {
-	resp.Write([]byte(client))
-
+	_, err := resp.Write([]byte(client))
+	if err != nil {
+		return newDeployError("Writing to response interface failed", internalError, err)
+	}
 	return nil
 }
 
+// uploadPackage is the handler for requests to /upload
 func uploadPackage(response http.ResponseWriter, request *http.Request) {
 	log.Info("/upload accessed")
 
@@ -241,11 +255,12 @@ func uploadPackage(response http.ResponseWriter, request *http.Request) {
 	log.Info("Request was Successful")
 }
 
+// rollBack is the handler for requests to /rollback
 func rollBack(response http.ResponseWriter, request *http.Request) {
 	log.Info("/rollback accessed")
 }
 
-// Unzip will decompress a zip archive, moving all files and folders
+// unzip decompresses a zip archive, moving all files and folders
 // within the zip file (src) to an output directory (dest).
 func unzip(src string, dest string) *deployError {
 	var fileNames []string
