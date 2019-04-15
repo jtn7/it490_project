@@ -54,7 +54,9 @@ if(!empty($_POST)){
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
+				  	<br>
                     <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+					<br>
                   </div>
                   <form class="user">
                     <div class="form-group">
@@ -72,7 +74,9 @@ if(!empty($_POST)){
 					<div class="form-group">
                     	<input type="submit" class="btn btn-primary btn-user btn-block" name="loginSubmit" value="Log In">
                     </div>
+					<br>
 					<hr>
+					<br>
                     <a href="#" class="btn btn-google btn-user btn-block">
                       <i class="fab fa-google fa-fw"></i> Login with Google
                     </a>
@@ -80,7 +84,9 @@ if(!empty($_POST)){
                       <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
                     </a>
                   </form>
+				  <br>
                   <hr>
+				  <br>
                   <div class="text-center">
                     <a class="small" href="forgot-password.php">Forgot Password?</a>
                   </div>
