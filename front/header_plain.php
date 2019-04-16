@@ -30,21 +30,6 @@ session_start();
 
 	<!-- Custom styles-->
 	<link href="css/template.min.css" rel="stylesheet">	
-
-	<!-- Register password double check javascript-->
-	<script>
-	$('#signPW, #signPW-confirm').on('keyup', function () {
-		if ($('#signPW').val() == $('#signPW-confirm').val()) {
-			$('#message').html('Matching').css('color', 'green');
-			document.getElementById("signSubmit").disable = false;
-
-			}
-		else 
-			$('#message').html('Not Matching').css('color', 'red');
-			document.getElementById("signSubmit").disable = true;
-			}
-	);
-	</script>
 </head>
 
 <body>
