@@ -38,16 +38,14 @@ if(!empty($_POST)){
 
 <!-- Register password double check using javascript-->
 <script>
-$('#signPW, #signPW-confirm').on('keyup', function () {
-	if ($('#signPW').val() == $('#signPW-confirm').val()) {
-		$('#message').html('Matching').css('color', 'green');
-		document.getElementById("signSubmit").disable = false;
-		}
-	else 
-		$('#message').html('Not Matching').css('color', 'red');
-		document.getElementById("signSubmit").disable = true;
-		}
-);
+function check_pass() {
+    if (document.getElementById('signPW').value ==
+            document.getElementById('signPW-confirm').value) {
+        document.getElementById('signSubmit').disabled = false;
+    } else {
+        document.getElementById('signSubmit').disabled = true;
+    }
+}
 </script>
 
 <body class="bg-gradient-danger">
@@ -76,10 +74,10 @@ $('#signPW, #signPW-confirm').on('keyup', function () {
 						<input type="text" class="form-control form-control-user" name="signUN" required="required" placeholder="Enter User Name ...">
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" name="signPW" id="signPW" required="required" placeholder="Password">
+                      <input type="password" class="form-control form-control-user" name="signPW" id="signPW" required="required" placeholder="Password" onchange='check_pass();'>
                     </div>
 					<div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="signPW-confirm" required="required" placeholder="Confirm your password">
+                      <input type="password" class="form-control form-control-user" id="signPW-confirm" required="required" placeholder="Confirm your password" onchange='check_pass();'>
 					  <span id="message"></span>
                     </div>
 					<div class="form-group">

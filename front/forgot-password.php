@@ -13,7 +13,7 @@ if(!empty($_POST)){
   $logger->info($_POST);
 
   /*
-  Needs to be edited for password retrieval process
+  Need to implement mechanism for password retrieval process
   $login_rpc = new RPC("login");
   $user = $_POST['loginUN'];
   $usernamepasswd = serialize(array($user, $_POST['loginPW']));
