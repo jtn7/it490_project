@@ -18,7 +18,7 @@ if(!empty($_POST)){
 	$response = $signup_rpc->call($usernamepasswd);
 	if ($response==="S"){
 		$logger->info('Successful Registration');
-		header("Location: signup.php?signup=S");
+		header("Location: login.php?signup=S");
 	}
 	else {
 		header("Location: signup.php?signup=F");
@@ -34,24 +34,69 @@ if(!empty($_POST)){
 	if (strpos($fullUrl, "signup=F") == true){
 		echo '<script type="text/javascript">swal("Wait a minute!", "Registration error :(", "error");</script>';
 	}
-	elseif (strpos($fullUrl, "signup=S") == true){
-		echo '<script type="text/javascript">swal("Great job!", "Registration completed :)", "success");</script>';
-	}
 ?>
 
-<div class="uaBody">
-	<div class="content">
-		<h1>Sign Up</h1>
-		<form action="" method="POST">
-			<h4>Enter Username:</h4>
-			<input type="text" name="signUN" required>
-			<h4>Enter Password:</h4>
-			<input type="password" name="signPW" required>
-			<br><br>
-			Already have an account? <a href="login.php">Log In</a><br><br>
-			<input type="submit" name="signSubmit" value="Sign Up">
-		</form>
-	</div>
+<body class="bg-gradient-danger">
+<div class="container">
+
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+      	<div class="col-xl-10 col-lg-12 col-md-9">
+        <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body p-0">
+
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+              <div class="col-lg-6 d-none d-lg-block">
+			  	<img src="assets/signup_background.jpg" alt="Dungeons & Dragons" class="img-fluid">
+			  </div>
+              <div class="col-lg-6">
+                <div class="p-5">
+                  <div class="text-center">
+				  <br><br>
+                    <h1 class="h4 text-gray-900 mb-4"><b>Create an Account!</b></h1>
+					<br><br>
+                  </div>
+                  <form class="user" action="signup.php" method="POST">
+                    <div class="form-group">
+						<input type="text" class="form-control form-control-user" name="signUN" required="required" placeholder="Enter User Name ...">
+                    </div>
+                    <div class="form-group">
+                      <input type="password" class="form-control form-control-user" name="signPW" id="signPW" required="required" placeholder="Password">
+                    </div>
+					<div class="form-group">
+                      <input type="password" class="form-control form-control-user" id="signPW-confirm" required="required" placeholder="Confirm your password">
+					  <span id="message"></span>
+                    </div>
+					<div class="form-group">
+                    	<input type="submit" class="btn btn-primary btn-user btn-block" name="signSubmit" id="signSubmit" value="Register">
+                    </div>
+					<br><br>
+					<hr>
+					<br><br>
+                    <a href="#" class="btn btn-google btn-user btn-block">
+                      <i class="fab fa-google fa-fw"></i> Register with Google
+                    </a>
+                    <a href="#" class="btn btn-facebook btn-user btn-block">
+                      <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
+                    </a>
+                  </form>
+				  <br><br>
+          		  <hr>
+				  <br><br>
+					<div class="text-center">
+						<a class="small" href="forgot-password.php">Forgot Password?</a>
+					</div>
+					<div class="text-center">
+						<a class="small" href="login.php">Already have an account? Log in!</a>
+					</div>
+                </div>
+              </div>
+            </div>
+        </div>
+        </div>
+      	</div>
+    </div>
 </div>
 
 <!-- Custom scripts for login.php page-->

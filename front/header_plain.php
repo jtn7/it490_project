@@ -30,13 +30,28 @@ session_start();
 
 	<!-- Custom styles-->
 	<link href="css/template.min.css" rel="stylesheet">	
+
+	<!-- Register password double check javascript-->
+	<script>
+	$('#signPW, #signPW-confirm').on('keyup', function () {
+		if ($('#signPW').val() == $('#signPW-confirm').val()) {
+			$('#message').html('Matching').css('color', 'green');
+			document.getElementById("signSubmit").disable = false;
+
+			}
+		else 
+			$('#message').html('Not Matching').css('color', 'red');
+			document.getElementById("signSubmit").disable = true;
+			}
+	);
+	</script>
 </head>
 
 <body>
 	<!--Navigation Bars for all-purpose-->
 	<nav class="navbar navbar-inverse justify-content-between">
 		<div class="container-fluid">
-			<!--Navi Bar Left Contents-->
+			<!--Navi Bar Middle Contents-->
 			<div class="navbar-header">
 				<a class ="navbar-brand" href ="index.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:120px;"></a>
 			</div>
