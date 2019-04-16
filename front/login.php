@@ -57,11 +57,11 @@ if(!empty($_POST)){
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
-				  	<br><br>
+				  <br><br>
                     <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
 					<br><br>
                   </div>
-                  <form class="user">
+                  <form class="user" action="login.php" method="POST">
                     <div class="form-group">
 						<input type="text" class="form-control form-control-user" name="loginUN" required="required" placeholder="Enter User Name ...">
                     </div>
@@ -80,15 +80,15 @@ if(!empty($_POST)){
 					<br><br>
 					<hr>
 					<br><br>
-                    <a href="#" class="btn btn-google btn-user btn-block">
+                    <a href="#" class="btn-google btn-user btn-block">
                       <i class="fab fa-google fa-fw"></i> Login with Google
                     </a>
-                    <a href="#" class="btn btn-facebook btn-user btn-block">
+                    <a href="#" class="btn-facebook btn-user btn-block">
                       <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
                     </a>
                   </form>
 				  <br><br>
-                  <hr>
+          <hr>
 				  <br><br>
                   <div class="text-center">
                     <a class="small" href="forgot-password.php">Forgot Password?</a>

@@ -108,8 +108,8 @@ session_start();
 										<div class="col-md-12">
 											Register via
 											<div class="social-buttons">
-												<a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
-												<a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+												<a href="#" class="btn-google"><i class="fa fa-google"></i> Google</a>
+												<a href="#" class="btn-facebook"><i class="fa fa-facebook"></i> Facebook</a>
 											</div>
 											or create an account
 											 <form class="form" action="signup.php" method="POST" accept-charset="UTF-8" id="login-nav">
