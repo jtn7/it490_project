@@ -55,7 +55,7 @@ if(!empty($_POST)){
                 <div class="p-5">
                   <div class="text-center">
 				  <br><br>
-                    <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                    <h1 class="h4 text-gray-900 mb-4"><b>Welcome Back!</b></h1>
 					<br><br>
                   </div>
                   <form class="user" action="login.php" method="POST">
