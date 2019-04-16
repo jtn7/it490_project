@@ -39,9 +39,6 @@ if(!empty($_POST)){
 	}
 ?>
 
-<!-- Custom styles-->
-<link href="css/template.min.css" rel="stylesheet">
-
 <div class="uaBody">
 	<div class="content">
 		<h1>Sign Up</h1>
