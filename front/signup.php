@@ -39,10 +39,10 @@ if(!empty($_POST)){
 <!-- Register password double check using javascript-->
 <script>
 function check_pass() {
-    if ((document.getElementById('signPW').value == document.getElementById('signPW-confirm').value) && (document.getElementById('signPW-confirm') != null)) {
+    if (document.getElementById('signPW').value == document.getElementById('signPW-confirm').value) {
         document.getElementById('signSubmit').disabled = false;
     } 
-		else {
+		elseif (document.getElementById('signPW-confirm') != null) {
 				swal("Wait a minute!", "Password does not match. . .", "error");
         document.getElementById('signSubmit').disabled = true;
 		}
