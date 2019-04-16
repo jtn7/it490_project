@@ -48,7 +48,7 @@ if(!empty($_POST)){
             <!-- Nested Row within Card Body -->
             <div class="row">
               <div class="col-lg-6 d-none d-lg-block">
-			  	<img src="assets/signup_background.jpg" alt="Dungeons & Dragons" class="img-fluid">
+			  	<img src="assets/signup_background.jpg" alt="Dungeons & Dragons" class="img-responsive">
 			  </div>
               <div class="col-lg-6">
                 <div class="p-5">
