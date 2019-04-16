@@ -26,7 +26,7 @@ if(!empty($_POST)){
 }
 ?>
 
-<?php include 'header_plain.php'w;?>
+<?php include 'header_plain.php'?>
 
 <!-- Sweet Alert for the Registration-->
 <?php
