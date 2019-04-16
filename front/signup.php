@@ -113,7 +113,7 @@ $('#signPW, #signPW-confirm').on('keyup', function () {
     </div>
 </div>
 
-<!-- Custom scripts for login.php page-->
+<!-- Custom scripts for signup.php page-->
 <script src="js/template.min.js"></script>
 
 </body>
