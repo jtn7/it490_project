@@ -44,6 +44,8 @@ function check_pass() {
         document.getElementById('signSubmit').disabled = false;
     } else {
         document.getElementById('signSubmit').disabled = true;
+				echo '<script type="text/javascript">swal("Wait a minute!", "Password does not match. . .", "error");</script>';
+	}
     }
 }
 </script>
