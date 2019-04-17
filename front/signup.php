@@ -113,7 +113,7 @@ function check_pass() {
 </div>
 
 <!-- Custom spacer so footer doesn't block the content-->
-<div style="margin-bottom:300px;">
+<div style="margin-bottom:230px;">
 </div>
 
 <!-- Custom scripts for signup.php page-->
