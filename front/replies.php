@@ -37,7 +37,10 @@ if(isset($_GET['success']) && $_GET === 'F'){
 
 <?php include 'header.php';?>
 
-<div class="body">
+<!-- Begin Page Content -->
+<div class="container-fluid">
+<!-- Page Heading -->
+<h1 class="h3 mb-4 text-gray-800">Replies</h1>
 	<div class="content">
 		<?php
 		$Thread = unserialize($response1);
@@ -81,5 +84,6 @@ if(isset($_GET['success']) && $_GET === 'F'){
 		</script>
 	</div>
 </div>
+<!-- /.container-fluid -->
 
 <?php include 'footer.php';?>

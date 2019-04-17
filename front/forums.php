@@ -14,7 +14,10 @@ $response = $forums_rpc->call($getForums);
 
 <?php include 'header.php' ?>
 
-<div class="body">
+<!-- Begin Page Content -->
+<div class="container-fluid">
+<!-- Page Heading -->
+<h1 class="h3 mb-4 text-gray-800">Forums</h1>
 	<div class="content">
 		<h1>Forums</h1>
 		<?php
@@ -41,5 +44,6 @@ $response = $forums_rpc->call($getForums);
 		?>
 	</div>
 </div>
+<!-- /.container-fluid -->
 
 <?php include 'footer.php' ?>

@@ -15,7 +15,10 @@ $response = $threads_rpc->call($getThreads);
 
 <?php include 'header.php';?>
 
-<div class="body">
+<!-- Begin Page Content -->
+<div class="container-fluid">
+<!-- Page Heading -->
+<h1 class="h3 mb-4 text-gray-800">Threads</h1>
 	<div class="content">
 		<?php
 		$ForumName = $_GET['forumName'];
@@ -43,5 +46,6 @@ $response = $threads_rpc->call($getThreads);
 		?>
 	</div>
 </div>
+<!-- /.container-fluid -->
 
 <?php include 'footer.php';?>

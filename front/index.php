@@ -35,7 +35,10 @@ if (!isset($_GET['load'])) {
 
 <?php include 'header.php' ?>
 
-<div class="body">
+<!-- Begin Page Content -->
+<div class="container-fluid">
+<!-- Page Heading -->
+<h1 class="h3 mb-4 text-gray-800"></h1>
 	<div class="content">
 		<h1>Character Dashboard</h1>
 		<?php
@@ -65,5 +68,6 @@ if (!isset($_GET['load'])) {
 		?>
 	</div>
 </div>
+<!-- /.container-fluid -->
 
 <?php include 'footer.php' ?>
