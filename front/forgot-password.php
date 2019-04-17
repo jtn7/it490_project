@@ -47,7 +47,7 @@ if(!empty($_POST)){
 
             <!-- Nested Row within Card Body -->
             <div class="row">
-              <div class="col-lg-6 d-none d-lg-block">
+              <div class="col-lg-6 d-none d-lg-block" style="max-width:100%; max-height:100%;">
 			  	<img src="assets/forgot-password_background.jpg" alt="Dungeons & Dragons" class="img-responsive">
 			  </div>
               <div class="col-lg-6">
