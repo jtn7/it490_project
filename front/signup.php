@@ -42,7 +42,7 @@ function check_pass() {
     if (document.getElementById('signPW').value == document.getElementById('signPW-confirm').value) {
         document.getElementById('signSubmit').disabled = false;
     } 
-		else if ((document.getElementById('signPW-confirm').value) != null) {
+		else if ((document.getElementById('signPW-confirm').value) !== null) {	
 				swal("Wait a minute!", "Password does not match. . .", "error");
         document.getElementById('signSubmit').disabled = true;
 		}
