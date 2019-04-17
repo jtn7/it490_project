@@ -111,12 +111,6 @@ function check_pass() {
     </div>
 </div>
 
-<!-- Custom empty space for signup.php page-->
-<!--<div class="row justify-content-center">
-	<div class="col-xl-10 col-lg-12 col-md-9" style="margin-bottom:220px">
-	</div>
-</div>
--->
 <!-- Custom scripts for signup.php page-->
 <script src="js/template.min.js"></script>
 
