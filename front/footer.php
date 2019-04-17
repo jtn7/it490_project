@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="footer narbar-inverse navbar-fixed-bottom"">
+<nav class="navbar narbar-inverse navbar-fixed-bottom"">
 
     <!-- Footer Links -->
     <div class="container text-center text-md-left">
@@ -113,7 +113,7 @@
     </div>
     <!-- Copyright -->
 
-</footer>
+</nav>
   
 </body>
 </html>
