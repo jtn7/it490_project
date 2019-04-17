@@ -33,7 +33,7 @@ if (!isset($_GET['load'])) {
 
 ?>
 
-<?php include 'blank.php' ?>
+<?php include 'header.php' ?>
 
 <div class="body">
 	<div class="content">
