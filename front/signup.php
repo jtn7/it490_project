@@ -113,9 +113,9 @@ function check_pass() {
 </div>
 
 <!-- Custom spacer so footer doesn't block the content-->
-<div class="row justify-content-center" style="margin-bottom:215px;">
+<!--<div class="row justify-content-center" style="margin-bottom:215px;">
 </div>
-
+-->
 <!-- Custom scripts for signup.php page-->
 <script src="js/template.min.js"></script>
 
