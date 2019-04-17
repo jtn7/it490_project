@@ -116,4 +116,4 @@ function check_pass() {
 
 </body>
 
-<?php include 'footer.php' ?>
+<?php include 'footer_plain.php' ?>

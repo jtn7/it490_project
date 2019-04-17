@@ -89,4 +89,4 @@ if(!empty($_POST)){
 
 </body>
 
-<?php include 'footer.php' ?>
+<?php include 'footer_plain.php' ?>
