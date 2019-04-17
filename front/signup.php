@@ -49,7 +49,7 @@ function check_pass() {
   }
 </script>
 
-<body class="bg-gradient-danger">
+<body class="bg-gradient-danger" stype="margin-bottom:100px;">
 <div class="container">
 
     <!-- Outer Row -->
@@ -111,8 +111,7 @@ function check_pass() {
       	</div>
     </div>
 </div>
-<br><br>
-<br><br>
+
 
 <!-- Custom scripts for signup.php page-->
 <script src="js/template.min.js"></script>
