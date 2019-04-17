@@ -18,7 +18,6 @@ session_start();
 	<meta name="author" content="POGO">
 
 	<!--Link / Script -->
-	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -385,7 +384,7 @@ session_start();
         </div>
       </div>
     </div>
-  </div>
+    </div>
 
-</body>
-</html>
+    <!-- Custom scripts for login.php page-->
+    <script src="js/template.min.js"></script>
