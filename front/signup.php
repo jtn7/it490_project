@@ -112,14 +112,14 @@ function check_pass() {
     </div>
 </div>
 
-<!-- Custom spacer so footer doesn't block the content-->
+<!-- Custom spacer so footer doesn't block the content
 <div class="card o-hidden border-0 shadow-lg my-5">
 	<div class="card-body p-0">
 		<div class="row justify-content-center" style="margin-bottom:215px;">
 		</div>
 	</div>
 </div>
-
+-->
 <!-- Custom scripts for signup.php page-->
 <script src="js/template.min.js"></script>
 
