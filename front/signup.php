@@ -49,7 +49,7 @@ function check_pass() {
   }
 </script>
 
-<body class="bg-gradient-danger" stype="margin-bottom:100px;">
+<body class="bg-gradient-danger" stype="margin-bottom:300px;">
 <div class="container">
 
     <!-- Outer Row -->
