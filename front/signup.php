@@ -100,7 +100,7 @@ function check_pass() {
 					<div class="text-center">
 						<a class="small" href="forgot-password.php">Forgot Password?</a>
 					</div>
-					<div class="text-center">
+					<div class="text-center" style="margin-bottom:500px;">
 						<a class="small" href="login.php">Already have an account? Log in!</a>
 					</div>
                 </div>
