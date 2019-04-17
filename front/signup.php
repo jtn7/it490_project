@@ -47,6 +47,12 @@ function check_pass() {
         document.getElementById('signSubmit').disabled = true;
 		}
   }
+
+	$( "signPW-confirm" ).click(function() {
+		check_pass();
+		}
+	);
+
 </script>
 
 <body class="bg-gradient-danger">
