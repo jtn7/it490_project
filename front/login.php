@@ -51,8 +51,8 @@ if(!empty($_POST)){
 
             <!-- Nested Row within Card Body -->
             <div class="row">
-              <div class="col-lg-6 d-none d-lg-block" style="max-width:100%; max-height:100%;">
-			  	      <img src="assets/login_background.jpg" alt="Dungeons & Dragons" class="img-responsive">
+              <div class="col-lg-6 d-none d-lg-block">
+			  	      <img src="assets/login_background.jpg" alt="Dungeons & Dragons" class="img-responsive" style="max-width:100%; max-height:100%;">
 			        </div>
               <div class="col-lg-6">
                 <div class="p-5">
@@ -63,7 +63,7 @@ if(!empty($_POST)){
                   </div>
                   <form class="user" action="login.php" method="POST">
                     <div class="form-group">
-						<input type="text" class="form-control form-control-user" name="loginUN" required="required" placeholder="Enter User Name ...">
+						          <input type="text" class="form-control form-control-user" name="loginUN" required="required" placeholder="Enter User Name ...">
                     </div>
                     <div class="form-group">
                       <input type="password" class="form-control form-control-user" name="loginPW" required="required" placeholder="Password">
@@ -74,7 +74,7 @@ if(!empty($_POST)){
                         <label class="custom-control-label" for="customCheck">Remember Me</label>
                       </div>
                     </div>
-					<div class="form-group">
+					          <div class="form-group">
                     	<input type="submit" class="btn btn-primary btn-user btn-block" name="loginSubmit" value="Log In">
                     </div>
 					<br><br>
