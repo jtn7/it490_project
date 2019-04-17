@@ -111,6 +111,8 @@ function check_pass() {
       	</div>
     </div>
 </div>
+<br><br>
+<br><br>
 
 <!-- Custom scripts for signup.php page-->
 <script src="js/template.min.js"></script>
