@@ -53,7 +53,7 @@ function check_pass() {
 <div class="container">
 
     <!-- Outer Row -->
-    <div class="row justify-content-center" stype="margin-bottom:500px;">
+    <div class="row justify-content-center">
       	<div class="col-xl-10 col-lg-12 col-md-9">
         <div class="card o-hidden border-0 shadow-lg my-5">
         <div class="card-body p-0">
@@ -100,7 +100,7 @@ function check_pass() {
 					<div class="text-center">
 						<a class="small" href="forgot-password.php">Forgot Password?</a>
 					</div>
-					<div class="text-center" style="margin-bottom:500px;">
+					<div class="text-center">
 						<a class="small" href="login.php">Already have an account? Log in!</a>
 					</div>
                 </div>
@@ -112,6 +112,9 @@ function check_pass() {
     </div>
 </div>
 
+<!-- Custom spacer so footer doesn't block the content-->
+<div style="margin-bottom:300px;">
+</div>
 
 <!-- Custom scripts for signup.php page-->
 <script src="js/template.min.js"></script>
