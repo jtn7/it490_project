@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="page-footer font-small mdb-color lighten-3 pt-4">
+<footer class="navbar narbar-inverse navbar-fixed-bottom"">
 
     <!-- Footer Links -->
     <div class="container text-center text-md-left">
