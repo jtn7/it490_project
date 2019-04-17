@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-
-<?php 
-session_start();
-?>
-
 <?php include 'header_plain.php' ?>
 
 <!-- Begin Page Content -->
