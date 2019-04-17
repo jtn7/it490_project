@@ -77,7 +77,7 @@ if(!empty($_POST)){
 					          <div class="form-group">
                     	<input type="submit" class="btn btn-primary btn-user btn-block" name="loginSubmit" value="Log In">
                     </div>
-					<br><br>
+					<br>
 					<hr>
 					<br><br>
                     <a href="#" class="btn btn-google btn-user btn-block">
