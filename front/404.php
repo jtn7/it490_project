@@ -1,5 +1,8 @@
-<?php include 'header_plain.php' ?>
+<?php
+session_start();
+?>
 
+<?php include 'header_plain.php' ?>
 
 <div class="container-fluid">
 
