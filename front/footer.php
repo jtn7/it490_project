@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="navbar navbar-inverse justify-content-between navbar-fixed-bottom">
+<footer class="navbar navbar-inverse navbar-fixed-bottom">
 
     <!-- Footer Links -->
     <div class="container text-center text-md-left">
