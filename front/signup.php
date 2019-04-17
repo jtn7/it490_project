@@ -84,9 +84,9 @@ function check_pass() {
 					<div class="form-group">
                     	<input type="submit" class="btn btn-primary btn-user btn-block" name="signSubmit" id="signSubmit" value="Register">
                     </div>
-					<br><br>
+					<br>
 					<hr>
-					<br><br>
+					<br>
                     <a href="#" class="btn btn-google btn-user btn-block">
                       <i class="fab fa-google fa-fw"></i> Register with Google
                     </a>
@@ -96,7 +96,7 @@ function check_pass() {
                   </form>
 				  <br><br>
           		  <hr>
-				  <br><br>
+				  <br>
 					<div class="text-center">
 						<a class="small" href="forgot-password.php">Forgot Password?</a>
 					</div>
