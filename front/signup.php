@@ -77,11 +77,10 @@ function check_pass() {
                     <div class="form-group">
                       <input type="password" class="form-control form-control-user" name="signPW" id="signPW" required="required" placeholder="Password" onchange='check_pass();'>
                     </div>
-					<div class="form-group">
+										<div class="form-group">
                       <input type="password" class="form-control form-control-user" id="signPW-confirm" required="required" placeholder="Confirm your password" onchange='check_pass();'>
-					  <span id="message"></span>
                     </div>
-					<div class="form-group">
+										<div class="form-group">
                     	<input type="submit" class="btn btn-primary btn-user btn-block" name="signSubmit" id="signSubmit" value="Register">
                     </div>
 							<br>
@@ -94,7 +93,7 @@ function check_pass() {
                       <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
                     </a>
                   </form>
-							<br><br>
+							<br>
 							<hr>
 							<br>
 					<div class="text-center">
