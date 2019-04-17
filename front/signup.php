@@ -111,6 +111,10 @@ function check_pass() {
     </div>
 </div>
 
+<!-- Custom empty space for signup.php page-->
+<div class="row justify-content-center" style="margin-bottom:220px">
+</div>
+
 <!-- Custom scripts for signup.php page-->
 <script src="js/template.min.js"></script>
 
