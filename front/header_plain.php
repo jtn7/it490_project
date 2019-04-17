@@ -34,7 +34,7 @@ session_start();
 
 <body>
 	<!--Navigation Bars for all-purpose-->
-	<nav class="navbar navbar-inverse justify-content-between">
+	<nav class="navbar navbar-inverse justify-content-between" role="navigation">
 		<div class="container-fluid">
 			<!--Navi Bar Middle Contents-->
 			<div class="navbar-header">
