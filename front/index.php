@@ -27,13 +27,13 @@ if (!isset($_GET['load'])) {
 		$characters = unserialize($response);
 		$logger->debug($characters);
 	} else {
-		header('Location index.php?load=F');
+		header('Location: index.php?load=F');
 	}
 }
 
 ?>
 
-<?php include 'header.php' ?>
+<?php include 'blank.php' ?>
 
 <div class="body">
 	<div class="content">
