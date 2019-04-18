@@ -19,7 +19,6 @@ $response = $forums_rpc->call($getForums);
 <!-- Page Heading -->
 <h1 class="h3 mb-4 text-gray-800">Forums</h1>
 	<div class="content">
-		<h1>Forums</h1>
 		<?php
 		// echo "<h2>";
 		// print_r($response);
