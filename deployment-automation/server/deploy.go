@@ -11,6 +11,7 @@ import (
 	"os"
 	"path/filepath"
 	"regexp"
+	"sort"
 	"strings"
 
 	log "github.com/sirupsen/logrus"
@@ -237,12 +238,12 @@ func uploadPackage(response http.ResponseWriter, request *http.Request) {
 	// FormFile returns the file for the given key `package`
 	// it also returns the FileHeader so we can get the Filename,
 	// the Header and the size of the file
-	file, packageMetaData, err := request.FormFile("package")
+	packageFile, packageMetaData, err := request.FormFile("package")
 	if err != nil {
 		newDeployError("Could not retrieve form file", internalError, err).handleError(response)
 		return
 	}
-	defer file.Close()
+	defer packageFile.Close()
 	log.Info("Uploaded Package: ", packageMetaData.Filename)
 	log.Infof("File Size: %.2f KB", float32(packageMetaData.Size)/float32(1024))
 
@@ -259,22 +260,22 @@ func uploadPackage(response http.ResponseWriter, request *http.Request) {
 	}
 
 	// read all of the contents of our uploaded file into a byte array
-	fileBytes, err := ioutil.ReadAll(file)
+	packageBytes, err := ioutil.ReadAll(packageFile)
 	if err != nil {
 		newDeployError("Could not read bytes from uploaded file", internalError, err).handleError(response)
 		return
 	}
 
 	// Write byte array to file
-	name := filepath.Join(packageDir, packageMetaData.Filename)
-	err = ioutil.WriteFile(name, fileBytes, os.ModePerm)
+	packagePath := filepath.Join(packageDir, packageMetaData.Filename)
+	err = ioutil.WriteFile(packagePath, packageBytes, os.ModePerm)
 	if err != nil {
 		newDeployError("Could not write upload to file", internalError, err).handleError(response)
 		return
 	}
 
 	// Extract code changes for deployment
-	if derr = unzip(name, outputDir); derr != nil {
+	if derr = unzip(packagePath, outputDir); derr != nil {
 		derr.handleError(response)
 		return
 	}
@@ -289,14 +290,63 @@ func savePackageVersion(packageName string) {
 	file, err := os.OpenFile("package.history", os.O_WRONLY|os.O_CREATE|os.O_APPEND, os.ModePerm)
 	if err != nil {
 		log.Error("Could not open package.history")
+		return
 	}
-	file.WriteString(packageName + "\n")
-	file.Close()
+	defer file.Close()
+
+	info, _ := file.Stat()
+	if info.Size() == 0 {
+		file.WriteString(packageName)
+	} else {
+		file.WriteString("\n" + packageName)
+	}
 }
 
 // rollBack is the handler for requests to /rollback
 func rollBack(response http.ResponseWriter, request *http.Request) {
 	log.Info("/rollback accessed")
+
+	files, err := ioutil.ReadDir(packageDir)
+	if err != nil {
+		newDeployError("Package directory not found", internalError, err).
+		handleError(response)
+		return
+	}
+	sort.Slice(files, func(i, j int) bool {
+		return files[i].ModTime().Unix() < files[j].ModTime().Unix()
+	})
+
+	numberOfPackages := len(files)
+	if numberOfPackages < 2 {
+		log.Info()
+		newDeployError(
+			"Insufficient number of packages to process rollback",
+			internalError,
+			nil,
+		).handleError(response)
+		return
+	}
+
+	currentPackage := files[numberOfPackages - 1].Name()
+	rollbackPackage := files[numberOfPackages - 2].Name()
+
+	err = os.Remove(filepath.Join(packageDir, currentPackage))
+	if err != nil {
+		newDeployError(
+			"Could not remove currently deployed package",
+			internalError,
+			err,
+		).handleError(response)
+	}
+
+	log.Info("Rolling back to: ", rollbackPackage)
+	derr := unzip(filepath.Join(packageDir, rollbackPackage), outputDir)
+	if derr != nil {
+		derr.handleError(response)
+		return
+	}
+	log.Info("Rollback successful")
+	return
 }
 
 // unzip decompresses a zip archive, moving all files and folders
