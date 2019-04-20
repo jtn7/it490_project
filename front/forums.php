@@ -18,7 +18,7 @@ $response = $forums_rpc->call($getForums);
 <div class="row">
 
 	<!-- Content Column -->
-	<div class="col-lg-6 mb-4">
+	<div class="col-12">
 
 		<!-- Project Card Example -->
 		<div class="card shadow mb-4">
