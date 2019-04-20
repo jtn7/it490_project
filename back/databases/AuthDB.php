@@ -2,7 +2,7 @@
 class AuthDB {
 	private $connection;
 
-	private $host = '172.17.0.5';
+	private $host = 'sqldb';
 	private $user = 'auth-client';
 	private $pass = 'pass';
 	private $name = 'users';

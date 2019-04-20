@@ -1,0 +1,55 @@
+version: '3.7'
+services:
+
+  rabbit:
+    image: jtn7/rabbit
+    ports:
+      - "15672:15672"
+    networks:
+      - frontend
+
+  front:
+    image: jtn7/php-apache
+    ports:
+      - "80:80"
+    depends_on:
+      - rabbit
+    volumes:
+      - ./front:/var/www/html/front/
+      - ./logs/front/:/var/log/dnd/
+    networks:
+      - frontend
+
+  sqldb:
+    image: jtn7/db
+    environment:
+      - MYSQL_ROOT_PASSWORD=pass
+    networks:
+      - backend
+
+  mongodb:
+    image: mongo:4
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=pass
+    networks:
+    - backend
+
+  back:
+    image: jtn7/php-backend
+    restart: always
+    depends_on:
+      - sqldb
+      - mongodb
+    volumes:
+      - ./back:/step2/back
+      - ./logs/back/:/var/log/dnd/
+    working_dir: /step2/back
+    command: ./start.sh
+    networks:
+      - frontend
+      - backend
+
+networks:
+  frontend:
+  backend:
