@@ -9,6 +9,7 @@ import (
 	"net"
 	"net/http"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"regexp"
 	"sort"
@@ -30,13 +31,15 @@ const (
 	defaultPort = "80"
 	pUsage      = "the port for the daemon to listen on."
 
-	lUsage = "the path to place the log in (defaults to stdout)"
+	lUsage    = "the path to place the log in (defaults to stdout)"
+	backUsage = "name of the backend container if one is present"
 )
 
 var packageDir string
 var outputDir string
 var daemonPort string
 var logOutput string
+var backendContainer string
 
 // init sets up cli flags and log settings.
 func init() {
@@ -51,6 +54,8 @@ func init() {
 	flag.StringVar(&logOutput, "l", "", lUsage+" (shorthand)")
 	// Daemon port
 	flag.StringVar(&daemonPort, "port", defaultPort, pUsage)
+	// Backend container name
+	flag.StringVar(&backendContainer, "backend", "", backUsage)
 
 	flag.Parse()
 
@@ -96,7 +101,14 @@ func checkArguments(f *flag.Flag) {
 	if f.Value.String() == "" {
 		log.Fatal("Passed paths must not be empty")
 	}
-	checkPath(string(f.Value.String()))
+	switch f.Name {
+	case "backend":
+		return
+	case "port":
+		return
+	default:
+		checkPath(string(f.Value.String()))
+	}
 }
 
 // checkPath validates if a given path exists.
@@ -281,26 +293,19 @@ func uploadPackage(response http.ResponseWriter, request *http.Request) {
 		return
 	}
 
+	if backendContainer != "" {
+		err = exec.Command("docker", "stop", backendContainer).Run()
+		if err != nil {
+			log.Error("Could not stop backend container", err)
+		}
+		err = exec.Command("docker", "start", backendContainer).Run()
+		if err != nil {
+			log.Error("Could not start backend container", err)
+		}
+	}
+
 	response.Write([]byte("Package upload and deployment were successful"))
-	savePackageVersion(packageMetaData.Filename)
-	log.Info("Request was Successful")
-}
-
-// savePackageVersion saves successful package names to a file
-func savePackageVersion(packageName string) {
-	file, err := os.OpenFile("package.history", os.O_WRONLY|os.O_CREATE|os.O_APPEND, os.ModePerm)
-	if err != nil {
-		log.Error("Could not open package.history")
-		return
-	}
-	defer file.Close()
-
-	info, _ := file.Stat()
-	if info.Size() == 0 {
-		file.WriteString(packageName)
-	} else {
-		file.WriteString("\n" + packageName)
-	}
+	log.Info("Upload request by ", requestor, " was successful")
 }
 
 // rollBack is the handler for requests to /rollback
@@ -311,7 +316,7 @@ func rollBack(response http.ResponseWriter, request *http.Request) {
 	files, err := ioutil.ReadDir(packageDir)
 	if err != nil {
 		newDeployError("Package directory not found", internalError, err).
-		handleError(response)
+			handleError(response)
 		return
 	}
 	sort.Slice(files, func(i, j int) bool {
@@ -329,8 +334,8 @@ func rollBack(response http.ResponseWriter, request *http.Request) {
 		return
 	}
 
-	currentPackage := files[numberOfPackages - 1].Name()
-	rollbackPackage := files[numberOfPackages - 2].Name()
+	currentPackage := files[numberOfPackages-1].Name()
+	rollbackPackage := files[numberOfPackages-2].Name()
 
 	err = os.Remove(filepath.Join(packageDir, currentPackage))
 	if err != nil {
