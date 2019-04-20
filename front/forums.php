@@ -35,22 +35,6 @@ $response = $forums_rpc->call($getForums);
 				</div>
 				<div class="card-body">
 					<div class="content">
-
-					<!-- Testing the content from php function -->
-					<table>
-					<tr>
-					<td>
-					<a href="threads.php?forumID=' . $forumArr['ForumID'] . '&forumName=' . $forumArr['Name'] . '">' . $forumArr['Name'] . '</a>
-					</td>
-					</tr>
-					<tr>
-					<td>
-						<p>' . $forumArr['Description'] . '</p>
-					</td>
-					</tr>
-					</table>
-					<!-- End of testing -->
-					
 					<?php
 					// echo "<h2>";
 					// print_r($response);
