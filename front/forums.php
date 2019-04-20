@@ -43,7 +43,9 @@ $response = $forums_rpc->call($getForums);
 
 					foreach ($unserArr as $forumArr) {
 					echo
-					'<table>
+					'
+					<div class="card-body">
+					<table>
 					<tr>
 					<td>
 					<a href="threads.php?forumID=' . $forumArr['ForumID'] . '&forumName=' . $forumArr['Name'] . '">' . $forumArr['Name'] . '</a>
@@ -54,7 +56,8 @@ $response = $forums_rpc->call($getForums);
 						<p>' . $forumArr['Description'] . '</p>
 					</td>
 					</tr>
-					</table>';
+					</table>
+					</div>';
 					}
 					?>
 					</div>
