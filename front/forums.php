@@ -14,45 +14,53 @@ $response = $forums_rpc->call($getForums);
 
 <?php include 'header.php' ?>
 
-<!-- Content Row -->
-<div class="row">
+<!-- Begin Page Content -->
+<div class="container-fluid">
 
-	<!-- Content Column -->
-	<div class="col-12">
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+<h1 class="h3 mb-0 text-gray-800">Forums</h1>
+</div>
 
-		<!-- Project Card Example -->
-		<div class="card shadow mb-4">
-			<div class="card-header py-3">
-				<h6 class="m-0 font-weight-bold text-primary">Forums</h6>
-			</div>
-			<div class="card-body">
-				<div class="content">
-				<?php
-				// echo "<h2>";
-				// print_r($response);
-				// echo "<h2>";
-				$unserArr = unserialize($response);
+	<!-- Content Row -->
+	<div class="row">
 
-				foreach ($unserArr as $forumArr) {
-				echo
-				'<table>
-				<tr>
-				<td>
-				<a href="threads.php?forumID=' . $forumArr['ForumID'] . '&forumName=' . $forumArr['Name'] . '">' . $forumArr['Name'] . '</a>
-				</td>
-				</tr>
-				<tr>
-				<td>
-					<p>' . $forumArr['Description'] . '</p>
-				</td>
-				</tr>
-				</table>';
-				}
-				?>
+		<!-- Content Column -->
+		<div class="col-12">
+
+			<!-- Project Card Example -->
+			<div class="card shadow mb-4">
+				<div class="card-header py-3">
+					<h6 class="m-0 font-weight-bold text-primary">Forums</h6>
+				</div>
+				<div class="card-body">
+					<div class="content">
+					<?php
+					// echo "<h2>";
+					// print_r($response);
+					// echo "<h2>";
+					$unserArr = unserialize($response);
+
+					foreach ($unserArr as $forumArr) {
+					echo
+					'<table>
+					<tr>
+					<td>
+					<a href="threads.php?forumID=' . $forumArr['ForumID'] . '&forumName=' . $forumArr['Name'] . '">' . $forumArr['Name'] . '</a>
+					</td>
+					</tr>
+					<tr>
+					<td>
+						<p>' . $forumArr['Description'] . '</p>
+					</td>
+					</tr>
+					</table>';
+					}
+					?>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-
 <?php include 'footer.php' ?>
