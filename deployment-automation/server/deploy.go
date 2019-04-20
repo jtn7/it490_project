@@ -104,7 +104,8 @@ func checkArguments(f *flag.Flag) {
 func checkPath(path string) {
 	fi, err := os.Stat(path)
 	if err != nil {
-		log.Warn("Path: ", path, " does not exist. Attempting to create path...")
+		log.Warn("Path: ", path, " does not exist.")
+		log.Info("Attempting to create path...")
 		// Path does not exist so try to make directory
 		err := os.MkdirAll(path, os.ModePerm)
 		if err != nil {
@@ -303,6 +304,7 @@ func savePackageVersion(packageName string) {
 }
 
 // rollBack is the handler for requests to /rollback
+// Deletes the currently deployed package and deploys the next most recent package
 func rollBack(response http.ResponseWriter, request *http.Request) {
 	log.Info("/rollback accessed")
 
@@ -406,6 +408,8 @@ func unzip(src string, dest string) *deployError {
 	return nil
 }
 
+// setupRoutes initializes the web server and binds the handler functions for
+// the routes /upload and /rollback
 func setupRoutes() {
 	http.HandleFunc("/upload", uploadPackage)
 	http.HandleFunc("/rollback", rollBack)
