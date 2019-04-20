@@ -42,7 +42,7 @@
 <script src="js/template.min.js"></script>
 
 <!-- Footer -->
-<footer class="navbar-inverse justify-content-between navbar-fixed-bottom" style="overflow: hidden; position: absolute; right: 0; left: 0; bottom: 0; width: 100%;">
+<div class="container col-12" style="background-color:black;">
 
     <!-- Footer Links -->
     <div class="container text-center text-md-left">
@@ -156,7 +156,7 @@
     </div>
     <!-- Copyright -->
 
-</footer>
+</div>
   
 </body>
 </html>

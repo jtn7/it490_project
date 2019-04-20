@@ -1,5 +1,5 @@
 <!-- Footer -->
-<div class="container col-12" style="background-color:black; overflow: hidden; position: absolute; right: 0; left: 0; bottom: 0; width: 100%;">
+<div class="container col-12" style="background-color:black;">
 
     <!-- Footer Links -->
     <div class="container text-center text-md-left">
