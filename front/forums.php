@@ -47,7 +47,7 @@ $response = $forums_rpc->call($getForums);
 					<div class="col-12">
 						<div class="card border-left-warning shadow h-100 py-2">
 							<div class="card-body">
-								<div class="col-auto">
+								<div class="row align-items-left">
 									<i class="fas fa-comments fa-2x text-gray-300"></i>
 								</div>
 								<div class="row no-gutters align-items-center">
