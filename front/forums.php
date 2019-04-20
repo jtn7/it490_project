@@ -49,7 +49,7 @@ $response = $forums_rpc->call($getForums);
 							<div class="card-body">
 								<div class="row no-gutters align-items-center">
 									<div class="col mr-2">
-									<div class="text-xs font-weight-bold text-warning text-uppercase mb-1"><a href="threads.php?forumID=' . $forumArr['ForumID'] . '&forumName=' . $forumArr['Name'] . '">' . $forumArr['Name'] . '</a></div>
+									<div class="text-s font-weight-bold text-warning text-uppercase mb-1">Posted By <a href="threads.php?forumID=' . $forumArr['ForumID'] . '&forumName=' . $forumArr['Name'] . '">' . $forumArr['Name'] . '</a></div>
 									<div class="h5 mb-0 font-weight-bold text-gray-800"><p>' . $forumArr['Description'] . '</p></div>
 								</div>
 								<div class="col-auto">
