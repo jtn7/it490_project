@@ -44,7 +44,7 @@ $response = $forums_rpc->call($getForums);
 					echo
 					'				
 					<div class="col-12">
-						<div class="card border-left-danger shadow h-100 py-2">
+						<div class="card border-left shadow h-100 py-2">
 							<div class="card-body">
 								<div class="row no-gutters align-items-center">
 									<div class="col mr-2">
