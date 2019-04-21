@@ -32,7 +32,7 @@ $response = $forums_rpc->call($getForums);
 				<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
 					<h6 class="m-0 font-weight-bold text-primary">Forums</h6>
 					<div class="dropdown no-arrow">
-						<a class="dropdown-toggle" href="createForum.php" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<a href="createForum.php" role="button" aria-haspopup="true" aria-expanded="false">
 							<i class="fas fa-plus fa-sm fa-fw text-gray-400"></i>
 						</a>
 					</div>
