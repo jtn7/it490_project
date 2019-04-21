@@ -33,7 +33,7 @@ $response = $threads_rpc->call($getThreads);
 				<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
 					<!-- Forum Name -->
 					<?php
-						$ForumName = $_POST['forumName'];
+						$ForumName = $_GET['forumName'];
 						echo '<h6 class="m-0 font-weight-bold text-primary">' . $ForumName . '</h6';
 					?>
 					<div class="dropdown no-arrow">
