@@ -52,7 +52,7 @@ if(isset($_GET['success']) && $_GET === 'F'){
 			<!-- Project Card -->
 			<div class="card shadow mb-4">
 				<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-					<h6 class="m-0 font-weight-bold text-primary">Replies !</h6>
+					<h6 class="m-0 font-weight-bold text-primary">Reply</h6>
 				</div>
 				<div class="card-body">
 					<div class="content">
@@ -83,9 +83,17 @@ if(isset($_GET['success']) && $_GET === 'F'){
 						}
 						?>
 						<form action="" id="addReply" method="POST">
-							Add Reply:<br> <textarea name="ReplyContent" form="addReply" required></textarea>
-							<br><br>
-							<input type="submit" name="createReplySubmit" value="Submit">
+
+							<div class="form-row">
+								<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Add Reply:</label>
+							</div>
+							<div class="form-row">
+								<textarea name="ReplyContent" form="addReply" required="required" class="form-control" rows="5"></textarea>
+							</div>
+							<br>
+							<div> 
+								<input class="btn btn-primary pull-right btn-lg" type="submit" name="createReplySubmit" value="Add Reply">
+							</div>
 						</form>
 						<button type="button" id="showAddReply">Add Reply</button>
 						<script>
