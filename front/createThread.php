@@ -47,12 +47,23 @@ if(isset($_GET['success'])){
 				<div class="card-body">
 					<div class="content">
 						<form action="" id="createThread" method="POST">
-							Title:
-							<input type="text" name="Name" required>
-							<br><br>
-							Content:<br> <textarea name="Content" form="createThread" required></textarea>
-							<br><br>
-							<input class="btn btn-primary" type="submit" name="createThreadSubmit" value="Create Thread">
+							<div class="form-row">
+								<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Title</label>
+								<div class="col-sm-10">
+									<input type="text" name="Name" required="required" class="form-control form-control-sm" placeholder="Write the title . . .">
+								</div>
+							</div>
+							<div class="form-row">
+								<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Contents:</label>
+							</div>
+							<div class="form-row">
+								<textarea name="Content" form="createThread" required="required" class="form-control"></textarea>
+							</div>
+							<div class="form-row">
+								<div class="text-right">
+									<input class="btn btn-primary" type="submit" name="createThreadSubmit" value="Create Thread">
+								</div>
+							</div>
 						</form>
 					</div>
 				</div>
