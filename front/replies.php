@@ -96,14 +96,6 @@ if(isset($_GET['success']) && $_GET === 'F'){
 							</div>
 						</form>
 						<button type="button" id="showAddReply">Add Reply</button>
-						<script>
-							$(document).ready(function(){
-								$("#showAddReply").click(function(){
-									$("#addReply").show();
-									$(this).hide();
-								});
-							});
-						</script>
 					</div>
 				</div>
 			</div>
