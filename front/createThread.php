@@ -48,8 +48,8 @@ if(isset($_GET['success'])){
 					<div class="content">
 						<form action="" id="createThread" method="POST">
 							<div class="form-row">
-								<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Title</label>
-								<div class="col-sm-10">
+								<label for="colFormLabelSm" class="col-sm-1 col-form-label col-form-label-sm">Title</label>
+								<div class="col-sm-11">
 									<input type="text" name="Name" required="required" class="form-control form-control-sm" placeholder="Write the title . . .">
 								</div>
 							</div>
