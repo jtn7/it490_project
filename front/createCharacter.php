@@ -51,12 +51,7 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 			<!-- Project Card -->
 			<div class="card shadow mb-4">
 				<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-					<h6 class="m-0 font-weight-bold text-primary">Forums</h6>
-					<div class="dropdown no-arrow">
-						<a href="createForum.php" role="button" aria-haspopup="true" aria-expanded="false">
-							<i class="fas fa-plus fa-sm fa-fw text-gray-400"></i>
-						</a>
-					</div>
+					<h6 class="m-0 font-weight-bold text-primary">Create your character</h6>
 				</div>
 				<div class="card-body">
 					<div class="content">
