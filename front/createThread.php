@@ -24,24 +24,41 @@ if(isset($_GET['success'])){
 
 ?>
 
-<?php include 'header.php';?>
+<?php include 'header.php' ?>
 
 <!-- Begin Page Content -->
 <div class="container-fluid">
+
 <!-- Page Heading -->
-<h1 class="h3 mb-4 text-gray-800">Create a thread !</h1>
-	<div class="content">
-		<h1>Create a Forum Thread</h1>
-		<form action="" id="createThread" method="POST">
-			Title:
-			<input type="text" name="Name" required>
-			<br><br>
-			Content:<br> <textarea name="Content" form="createThread" required></textarea>
-			<br><br>
-			<input type="submit" name="createThreadSubmit" value="Create Thread">
-		</form>
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+</div>
+
+	<!-- Content Row -->
+	<div class="row">
+
+		<!-- Content Column -->
+		<div class="col-12">
+
+			<!-- Project Card -->
+			<div class="card shadow mb-4">
+				<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+					<h6 class="m-0 font-weight-bold text-primary">Create a Thread !</h6>
+				</div>
+				<div class="card-body">
+					<div class="content">
+						<form action="" id="createThread" method="POST">
+							Title:
+							<input type="text" name="Name" required>
+							<br><br>
+							Content:<br> <textarea name="Content" form="createThread" required></textarea>
+							<br><br>
+							<input type="submit" name="createThreadSubmit" value="Create Thread">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
-<!-- /.container-fluid -->
 
-<?php include 'footer.php';?>
+<?php include 'footer.php' ?>
