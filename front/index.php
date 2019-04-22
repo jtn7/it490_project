@@ -38,7 +38,7 @@ if (!isset($_GET['load'])) {
 <!-- Begin Page Content -->
 <div class="container-fluid">
 <!-- Page Heading -->
-<h1 class="h3 mb-4 text-gray-800">Character Dashboard</h1>
+<h1 class="h3 mb-4 text-gray-800">Main Dashboard</h1>
 	<div class="content">
 		<?php
 		if (isset($_GET['load'])) {

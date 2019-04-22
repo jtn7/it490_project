@@ -91,7 +91,7 @@ session_start();
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Utilities:</h6>
             <a class="collapse-item" href="https://s3.amazonaws.com/online.anyflip.com/swxi/xvkz/mobile/index.html">Dungeon Masters Guide</a>
-            <a class="collapse-item" href="createCharacter.php">Make New Character</a>
+            <a class="collapse-item" href="Characters.php">Characters</a>
             <a class="collapse-item" href="#">Music</a>
             <a class="collapse-item" href="#">Dice</a>
           </div>
