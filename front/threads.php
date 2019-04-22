@@ -34,7 +34,7 @@ $response = $threads_rpc->call($getThreads);
 					<!-- Forum Name -->
 					<?php
 						$ForumName = $_GET['forumName'];
-						echo '<h6 class="m-0 font-weight-bold text-primary">' . $ForumName . '</h6';
+						echo '<h6 class="m-0 font-weight-bold text-primary">' . $ForumName . '</h6>';
 					?>
 					<div class="dropdown no-arrow">
 					<a href="createThread.php" role="button" aria-haspopup="true" aria-expanded="false">
