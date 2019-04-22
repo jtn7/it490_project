@@ -42,7 +42,7 @@ $responseForums = $forums_rpc->call($getForums);
 						$forumsArr = unserialize($responseForums);
 						foreach ($forumsArr as $forumResponse){
 							if($_SESSION['ForumID'] == $forumResponse['ForumID']){
-								echo '<h6 class="m-0 font-weight-bold text-primary">' . $forumResponse['ForumID'] . '</h6>';
+								echo '<h6 class="m-0 font-weight-bold text-primary">' . $forumResponse['Name'] . '</h6>';
 							}
 						}
 					?>
