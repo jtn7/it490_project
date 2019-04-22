@@ -48,10 +48,10 @@ if(isset($_GET['success'])){
 					<div class="content align-items-center justify-content-between">
 						<form action="" id="createThread" method="POST">
 							<div class="form-row">
-								<label for="colFormLabelSm" class="col-sm-1 col-form-label col-form-label-sm">Title</label>
-								<div class="col-sm-11">
-									<input type="text" name="Name" required="required" class="form-control form-control-sm" placeholder="Write the title . . .">
-								</div>
+								<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Title:</label>
+							</div>
+							<div class="form-row">
+								<input type="text" name="Name" required="required" class="form-control form-control-sm" placeholder="Write the title . . .">
 							</div>
 							<br>
 							<div class="form-row">
@@ -63,7 +63,7 @@ if(isset($_GET['success'])){
 							<br>
 							<div class="form-row">
 								<div class="col-auto"> 
-									<input class="btn btn-primary pull-right" type="submit" name="createThreadSubmit" value="Create Thread">
+									<button class="btn btn-primary pull-right" type="submit" name="createThreadSubmit" value="Create Thread">
 								</div>
 							</div>
 						</form>
