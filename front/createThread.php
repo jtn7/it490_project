@@ -45,7 +45,7 @@ if(isset($_GET['success'])){
 					<h6 class="m-0 font-weight-bold text-primary">Create a Thread !</h6>
 				</div>
 				<div class="card-body">
-					<div class="content">
+					<div class="content align-items-center justify-content-between">
 						<form action="" id="createThread" method="POST">
 							<div class="form-row">
 								<label for="colFormLabelSm" class="col-sm-1 col-form-label col-form-label-sm">Title</label>
