@@ -53,14 +53,18 @@ if(isset($_GET['success'])){
 									<input type="text" name="Name" required="required" class="form-control form-control-sm" placeholder="Write the title . . .">
 								</div>
 							</div>
+							<br>
 							<div class="form-row">
 								<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Contents:</label>
 							</div>
 							<div class="form-row">
 								<textarea name="Content" form="createThread" required="required" class="form-control"></textarea>
 							</div>
+							<br>
 							<div class="form-row">
-								<input class="btn pull-right btn-primary" type="submit" name="createThreadSubmit" value="Create Thread">
+								<div class="btn-container-right">
+									<input class="btn btn-primary" type="submit" name="createThreadSubmit" value="Create Thread">
+								</div>
 							</div>
 						</form>
 					</div>
