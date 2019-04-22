@@ -70,7 +70,7 @@ if(isset($_GET['success']) && $_GET === 'F'){
 							echo
 							'
 							<div class="col-12">
-							<div class="card border-left-primary shadow h-50 py-1">
+							<div class="card border-left-primary shadow h-50 py-2">
 							<div class="card-body">
 								<div class="row no-gutters align-items-center">
 									<div class="col mr-2">
@@ -84,6 +84,8 @@ if(isset($_GET['success']) && $_GET === 'F'){
 							';
 						}
 						?>
+						<br>
+						<br>
 						<form action="" id="addReply" method="POST">
 							<div class="form-row">
 								<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Write your reply:</label>
