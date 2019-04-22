@@ -70,7 +70,7 @@ if(isset($_GET['success']) && $_GET === 'F'){
 							echo
 							'
 							<div class="col-12">
-								<div class="card border-left-primary shadow h-50 py-0 mr-0">
+								<div class="card border-left-primary shadow h-50 py-0">
 									<div class="card-body">
 										<div class="row no-gutters align-items-center">
 											<div class="col mr-0">
