@@ -69,10 +69,12 @@ if(isset($_GET['success']) && $_GET === 'F'){
 						foreach ($unserArr as $repliesArr){
 							echo
 							'
-							<div class="row no-gutters align-items-center">
-								<div class="col mr-2">
-									<div class="h5 mb-0 font-weight-bold text-warning mb-1"><p>'. $repliesArr['Content'] .'</p></div>
-									<div class="text-s font-weight-regular text-gray-800"><p>'. $repliesArr['User'] . ' - ' . $repliesArr['Timestamp'] .'</p></div>
+							<div class="card-body">
+								<div class="row no-gutters align-items-center">
+									<div class="col mr-2">
+										<div class="h5 mb-0 font-weight-bold text-warning mb-1">'. $repliesArr['Content'] .'</div>
+										<div class="text-s font-weight-regular text-gray-800"><p>'. $repliesArr['User'] . ' - ' . $repliesArr['Timestamp'] .'</p></div>
+									</div>
 								</div>
 							</div>
 							';
