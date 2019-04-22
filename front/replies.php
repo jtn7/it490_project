@@ -69,6 +69,8 @@ if(isset($_GET['success']) && $_GET === 'F'){
 						foreach ($unserArr as $repliesArr){
 							echo
 							'
+							<div class="col-12">
+							<div class="card border-left-primary shadow h-100 py-2">
 							<div class="card-body">
 								<div class="row no-gutters align-items-center">
 									<div class="col mr-2">
@@ -76,6 +78,8 @@ if(isset($_GET['success']) && $_GET === 'F'){
 										<div class="text-s font-weight-regular text-gray-800"><p>'. $repliesArr['User'] . ' - ' . $repliesArr['Timestamp'] .'</p></div>
 									</div>
 								</div>
+							</div>
+							</div>
 							</div>
 							';
 						}
