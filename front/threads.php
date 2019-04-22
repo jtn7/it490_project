@@ -7,10 +7,16 @@ if (!isset($_SESSION['username'])) {
 require_once 'RPC.php';
 use rabbit\RPC;
 
-$threads_rpc = new RPC("getPosts");
 $_SESSION['ForumID'] = $_GET['forumID'];
+
+$threads_rpc = new RPC("getPosts");
 $getThreads = serialize(array("getThreads", $_SESSION['ForumID']));
-$response = $threads_rpc->call($getThreads);
+
+$forums_rpc = new RPC("getPosts");
+$getForums = serialize(array("getForums"));
+
+$responseThreads = $threads_rpc->call($getThreads);
+$responseForums = $forums_rpc->call($getForums);
 ?>
 
 <?php include 'header.php' ?>
@@ -33,8 +39,12 @@ $response = $threads_rpc->call($getThreads);
 				<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
 					<!-- Forum Name -->
 					<?php
-						$ForumName = $_GET['forumName'];
-						echo '<h6 class="m-0 font-weight-bold text-primary">' . $ForumName . '</h6>';
+						$forumsArr = unserialize($responseForums);
+						foreach ($forumsArr as $forumResponse){
+							if($_SESSION['ForumID'] == $forumResponse['ForumID']){
+								echo '<h6 class="m-0 font-weight-bold text-primary">' . $forumResponse['ForumID'] . '</h6>';
+							}
+						}
 					?>
 					<div class="dropdown no-arrow">
 					<a href="createThread.php" role="button" aria-haspopup="true" aria-expanded="false">
@@ -45,7 +55,7 @@ $response = $threads_rpc->call($getThreads);
 				<div class="card-body">
 					<div class="content">
 					<?php
-					$unserArr = unserialize($response);
+					$unserArr = unserialize($responseThreads);
 					foreach ($unserArr as $threadArr){
 					echo
 					'			
