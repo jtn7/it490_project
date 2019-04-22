@@ -306,7 +306,7 @@ session_start();
                 <span class="mr-2 d-none d-lg-inline text-gray-700 small">
                     <?php
                           $user = ($_SESSION['username']);
-						  echo "<b>$user</b>";
+						  echo "<b class="small text-gray-500">$user</b>";
 					?>
 				</span>
                 <img class="img-profile rounded-circle" src="assets/dnd_user_icon.png">
