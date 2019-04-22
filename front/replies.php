@@ -61,7 +61,7 @@ if(isset($_GET['success']) && $_GET === 'F'){
 						echo
 							'<h1>' . $Thread['Name'] . '</h1>
 							<p>' . $Thread['Content'] . '</p><br>
-							<p>' . $Thread['User'] . ' - ' . $Thread['Timestamp'] . '</p>';
+							<p>Written by ' . $Thread['User'] . ' - ' . $Thread['Timestamp'] . '</p>';
 
 						?>
 						<?php
@@ -74,7 +74,7 @@ if(isset($_GET['success']) && $_GET === 'F'){
 							<div class="card-body">
 								<div class="row no-gutters align-items-center">
 									<div class="col mr-2">
-										<div class="h5 mb-0 font-weight-bold text-warning mb-1">Written By '. $repliesArr['Content'] .'</div>
+										<div class="h5 mb-0 font-weight-bold text-warning mb-1">'. $repliesArr['Content'] .'</div>
 										<div class="text-s font-weight-regular text-gray-800"><p>'. $repliesArr['User'] . ' - ' . $repliesArr['Timestamp'] .'</p></div>
 									</div>
 								</div>
