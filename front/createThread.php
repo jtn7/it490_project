@@ -60,9 +60,7 @@ if(isset($_GET['success'])){
 								<textarea name="Content" form="createThread" required="required" class="form-control"></textarea>
 							</div>
 							<div class="form-row">
-								<div class="text-right">
-									<input class="btn btn-primary" type="submit" name="createThreadSubmit" value="Create Thread">
-								</div>
+								<input class="btn pull-right btn-primary" type="submit" name="createThreadSubmit" value="Create Thread">
 							</div>
 						</form>
 					</div>
