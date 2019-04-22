@@ -68,31 +68,25 @@ if(isset($_GET['success']) && $_GET === 'F'){
 						$unserArr = unserialize($response);
 						foreach ($unserArr as $repliesArr){
 							echo
-							'<table>
-								<tr>
-									<td>'
-									. $repliesArr['Content'] .
-									'</td>
-								</tr>
-								<tr>
-									<td>'
-									. $repliesArr['User'] . ' - ' . $repliesArr['Timestamp'] .
-									'</td>
-								</tr>
-							</table>';
+							'
+							<div class="row no-gutters align-items-center">
+								<div class="col mr-2">
+								<div class="h5 mb-0 font-weight-bold text-warning mb-1">. $repliesArr['Content'] .</div>
+								<div class="text-s font-weight-regular text-gray-800"><p>. $repliesArr['User'] . ' - ' . $repliesArr['Timestamp'] .</p></div>
+							</div>
+							';
 						}
 						?>
 						<form action="" id="addReply" method="POST">
-
 							<div class="form-row">
-								<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Add Reply:</label>
+								<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Write your reply:</label>
 							</div>
 							<div class="form-row">
 								<textarea name="ReplyContent" form="addReply" required="required" class="form-control" rows="5"></textarea>
 							</div>
 							<br>
 							<div> 
-								<input class="btn btn-primary pull-right btn-lg" type="submit" name="createReplySubmit" value="Add Reply">
+								<input class="btn btn-primary pull-right btn-lg" type="submit" name="createReplySubmit" value="Submit">
 							</div>
 						</form>
 					</div>
