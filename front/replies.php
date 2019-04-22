@@ -95,7 +95,6 @@ if(isset($_GET['success']) && $_GET === 'F'){
 								<input class="btn btn-primary pull-right btn-lg" type="submit" name="createReplySubmit" value="Add Reply">
 							</div>
 						</form>
-						<button type="button" id="showAddReply">Add Reply</button>
 					</div>
 				</div>
 			</div>
