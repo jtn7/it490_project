@@ -41,7 +41,7 @@ if(!empty($_POST)){
 ?>
 
 <body class="bg-gradient-danger">
-<div class="container" style="min-height: 400px; margin-bottom: 100px; clear: both;">
+<div class="container" style="min-height: 400px; margin-bottom: 50px; clear: both;">
 
     <!-- Outer Row -->
     <div class="row justify-content-center">
