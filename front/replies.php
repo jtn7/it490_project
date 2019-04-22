@@ -70,21 +70,20 @@ if(isset($_GET['success']) && $_GET === 'F'){
 							echo
 							'
 							<div class="col-12">
-							<div class="card border-left-primary shadow h-50 py-2">
-							<div class="card-body">
-								<div class="row no-gutters align-items-center">
-									<div class="col mr-2">
-										<div class="h5 mb-0 font-weight-bold text-warning mb-1">'. $repliesArr['Content'] .'</div>
-										<div class="text-s font-weight-regular text-gray-800"><p>'. $repliesArr['User'] . ' - ' . $repliesArr['Timestamp'] .'</p></div>
+								<div class="card border-left-primary shadow h-50 py-0">
+									<div class="card-body">
+										<div class="row no-gutters align-items-center">
+											<div class="col mr-2">
+												<div class="h5 mb-0 font-weight-bold text-warning mb-1">'. $repliesArr['Content'] .'</div>
+												<div class="text-s font-weight-regular text-gray-800"><p>'. $repliesArr['User'] . ' - ' . $repliesArr['Timestamp'] .'</p></div>
+											</div>
+										</div>
 									</div>
 								</div>
-							</div>
-							</div>
 							</div>
 							';
 						}
 						?>
-						<br>
 						<br>
 						<form action="" id="addReply" method="POST">
 							<div class="form-row">
