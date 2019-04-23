@@ -34,8 +34,6 @@ if(!empty($_POST)){
 
 <?php include 'header_plain.php' ?>
 
-<!-- Sweet Alert for the page-->
-
 <body class="bg-gradient-danger">
 <div class="container">
 

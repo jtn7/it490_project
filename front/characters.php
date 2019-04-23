@@ -30,43 +30,34 @@ if (!isset($_GET['load'])) {
 		header('Location: index.php?load=F');
 	}
 }
-
 ?>
 
-
-
-<!-- Merge in !!!! -->
-		<?php
-		if (isset($_GET['load'])) {
-            echo '<script type="text/javascript">swal("Wait a minute!", "Failed to get characters! :(", "error");</script>';
-		}   else {
-			// echo '<h2>';
-			// print_r($characters);
-			// echo '</h2>';
-
-			foreach ($characters as $character) {
-				echo
-				'<table>
-					<tr>
-						<td>
-							Character Name:' . $character['name'] .
-						'</td>
-					</tr>
-					<tr>
-						<td>
-							Race: ' . $character['race'] . ' | Class: ' . $character['class'] .
-						'</td>
-					</tr>
-				</table>';
-			}
-		}
-		?>
-
-<!--End of Merge -->
-
-
-
 <?php include 'header.php' ?>
+
+<?php
+	if (isset($_GET['load'])) {
+		//Sweet Alert for the characters
+		echo '<script type="text/javascript">swal("Wait a minute!", "Failed to get characters! :(", "error");</script>';
+	}   
+	else {
+		// Creating character contents
+		foreach ($characters as $character) {
+			echo
+			'<table>
+				<tr>
+					<td>
+						Character Name:' . $character['name'] .
+					'</td>
+				</tr>
+				<tr>
+					<td>
+						Race: ' . $character['race'] . ' | Class: ' . $character['class'] .
+					'</td>
+				</tr>
+			</table>';
+		}
+	}
+?>
 
 <!-- Begin Page Content -->
 <div class="container-fluid">
@@ -84,7 +75,7 @@ if (!isset($_GET['load'])) {
 			<!-- Project Card -->
 			<div class="card shadow mb-4">
 				<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-					<h6 class="m-0 font-weight-bold text-primary">Character</h6>
+					<h6 class="m-0 font-weight-bold text-primary">Characters</h6>
 					<div class="dropdown no-arrow">
 						<a href="createCharacter.php" role="button" aria-haspopup="true" aria-expanded="false">
 							<i class="fas fa-plus fa-sm fa-fw text-gray-400"></i>
