@@ -69,18 +69,24 @@ if (!isset($_GET['load'])) {
 							// Creating character contents
 							foreach ($characters as $character) {
 								echo
-								'<table>
-									<tr>
-										<td>
-											Character Name:' . $character['name'] .
-										'</td>
-									</tr>
-									<tr>
-										<td>
-											Race: ' . $character['race'] . ' | Class: ' . $character['class'] .
-										'</td>
-									</tr>
-								</table>';
+								'<div class="col-12">
+									<div class="card border-left-primary shadow h-100 py-2">
+										<div class="card-body">
+											<div class="row no-gutters align-items-center">
+												<div class="col mr-2">
+												<div class="h5 mb-0 font-weight-bold text-warning text-uppercase mb-1"> Character Name:' . $character['name'] . '</div>
+												<div class="text-s font-weight-regular text-gray-800"><p>Race: ' . $character['race'] . ' | Class: ' . $character['class'] . '</p></div>
+											</div>
+												<div class="col-auto">
+													<a href="editCharacter.php">
+													<i class="fas fa-bars fa-2x text-gray-300"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								';
 							}
 						}
 						?>

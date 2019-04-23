@@ -53,12 +53,12 @@ $response = $forums_rpc->call($getForums);
 							<div class="card-body">
 								<div class="row no-gutters align-items-center">
 									<div class="col mr-2">
-									<div class="h5 mb-0 font-weight-bold text-warning text-uppercase mb-1"><a href="threads.php?forumID=' . $forumArr['ForumID'] . '&forumName=' . $forumArr['Name'] . '">' . $forumArr['Name'] . '</a></div>
-									<div class="text-s font-weight-regular text-gray-800"><p>' . $forumArr['Description'] . '</p></div>
-								</div>
-								<div class="col-auto">
-									<i class="fas fa-comments fa-2x text-gray-300"></i>
-								</div>
+										<div class="h5 mb-0 font-weight-bold text-warning text-uppercase mb-1"><a href="threads.php?forumID=' . $forumArr['ForumID'] . '&forumName=' . $forumArr['Name'] . '">' . $forumArr['Name'] . '</a></div>
+										<div class="text-s font-weight-regular text-gray-800"><p>' . $forumArr['Description'] . '</p></div>
+									</div>
+									<div class="col-auto">
+										<i class="fas fa-comments fa-2x text-gray-300"></i>
+									</div>
 								</div>
 							</div>
 						</div>
