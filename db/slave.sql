@@ -1,0 +1,1 @@
+CHANGE MASTER TO MASTER_HOST = 'sqldb-master', MASTER_USER = 'slave_user', MASTER_PASSWORD = 'pass', MASTER_LOG_FILE = 'mysql-bin.000001', MASTER_LOG_POS = ?;
