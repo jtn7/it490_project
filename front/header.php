@@ -41,7 +41,7 @@ session_start();
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
-        <div class="sidebar-brand-icon rotate-n-15">
+        <div class="sidebar-brand-icon rotate-n-20">
           <i class="fas fa-dragon"></i>
         </div>
         <div class="sidebar-brand-text mx-3">Dungeons & Dragons</div>
