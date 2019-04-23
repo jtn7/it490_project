@@ -34,31 +34,6 @@ if (!isset($_GET['load'])) {
 
 <?php include 'header.php' ?>
 
-<?php
-	if (isset($_GET['load'])) {
-		//Sweet Alert for the characters
-		echo '<script type="text/javascript">swal("Wait a minute!", "Failed to get characters! :(", "error");</script>';
-	}   
-	else {
-		// Creating character contents
-		foreach ($characters as $character) {
-			echo
-			'<table>
-				<tr>
-					<td>
-						Character Name:' . $character['name'] .
-					'</td>
-				</tr>
-				<tr>
-					<td>
-						Race: ' . $character['race'] . ' | Class: ' . $character['class'] .
-					'</td>
-				</tr>
-			</table>';
-		}
-	}
-?>
-
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
@@ -85,7 +60,30 @@ if (!isset($_GET['load'])) {
 				<div class="card-body">
 					<div class="content">
 					
-
+						<?php
+						if (isset($_GET['load'])) {
+							//Sweet Alert for the characters
+							echo '<script type="text/javascript">swal("Wait a minute!", "Failed to get characters! :(", "error");</script>';
+						}   
+						else {
+							// Creating character contents
+							foreach ($characters as $character) {
+								echo
+								'<table>
+									<tr>
+										<td>
+											Character Name:' . $character['name'] .
+										'</td>
+									</tr>
+									<tr>
+										<td>
+											Race: ' . $character['race'] . ' | Class: ' . $character['class'] .
+										'</td>
+									</tr>
+								</table>';
+							}
+						}
+						?>
                     
 					</div>
 				</div>
