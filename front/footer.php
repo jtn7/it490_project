@@ -101,7 +101,6 @@
             <i class="fab fa-google-plus-g"></i>
           </a>
         </div>
-
         <!-- Grid column -->
 
       </div>
@@ -117,8 +116,8 @@
   </div>
   <!-- End of Footer -->
 
-    </div>
-    <!-- End of Content Wrapper -->
+  </div>
+  <!-- End of Content Wrapper -->
 
   </div>
   <!-- End of Page Wrapper -->
