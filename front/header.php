@@ -73,8 +73,8 @@ session_start();
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-cog"></i>
-          <span>Components</span>
+          <i class="fas fa-fw fa-home"></i>
+          <span>Main</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
@@ -309,10 +309,10 @@ session_start();
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-700 small">
                     <?php
-                          $user = ($_SESSION['username']);
-						  echo "<b class='medium text-gray-500'>$user</b>";
-					?>
-				</span>
+                      $user = ($_SESSION['username']);
+                      echo "<b class='medium text-gray-500'>$user</b>";
+                    ?>
+			        	</span>
                 <img class="img-profile rounded-circle" src="assets/dnd_user_icon.png">
               </a>
               <!-- Dropdown - User Information -->
@@ -337,5 +337,3 @@ session_start();
 
         </nav>
         <!-- End of Topbar -->
-
-        
