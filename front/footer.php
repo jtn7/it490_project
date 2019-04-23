@@ -2,7 +2,7 @@
   <!-- End of Main Content -->
 
   <!-- Footer -->
-  <div class="sticky-footer col-12" style="background-color:black;">
+  <footer class="sticky-footer col-12" style="background-color:black;">
 
     <!-- Footer Links -->
     <div class="container text-center text-md-left">
@@ -113,7 +113,7 @@
     <div class="footer-copyright text-center py-3">© 2019 Copyright:
         <a href="#"> Dungeons & Dragons by POGO</a>
     </div>
-  </div>
+  </footer>
   <!-- End of Footer -->
 
   </div>
