@@ -96,5 +96,6 @@ if (!isset($_GET['load'])) {
 		</div>
 	</div>
 </div>
+<!-- /.container-fluid -->
 
 <?php include 'footer.php' ?>

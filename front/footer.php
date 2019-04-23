@@ -2,7 +2,7 @@
   <!-- End of Main Content -->
 
   <!-- Footer -->
-  <div class="container col-12" style="background-color:black;">
+  <div class="sticky-footer col-12" style="background-color:black;">
 
     <!-- Footer Links -->
     <div class="container text-center text-md-left">
