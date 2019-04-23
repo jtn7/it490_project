@@ -56,6 +56,11 @@ session_start();
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="forums.php">
+          <i class="fas fa-comments"></i>
+          <span>Forums</span></a>
+      </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider">
@@ -75,8 +80,8 @@ session_start();
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Components:</h6>
             <a class="collapse-item" href="#">Dungeon Master</a>
-			<a class="collapse-item" href="#">Message Center</a>
-			<a class="collapse-item" href="forums.php">Forums</a>
+            <a class="collapse-item" href="characters.php">Characters</a>
+            <a class="collapse-item" href="#">Message Center</a>
           </div>
         </div>
       </li>
@@ -88,10 +93,9 @@ session_start();
           <span>Utilities</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
+          <div class="bg-white py-3 collapse-inner rounded">
             <h6 class="collapse-header">Utilities:</h6>
-            <a class="collapse-item" href="https://s3.amazonaws.com/online.anyflip.com/swxi/xvkz/mobile/index.html">Dungeon Masters Guide</a>
-            <a class="collapse-item" href="characters.php">Characters</a>
+            <a class="collapse-item" href="https://s3.amazonaws.com/online.anyflip.com/swxi/xvkz/mobile/index.html">D&D Guide</a>
             <a class="collapse-item" href="#">Music</a>
             <a class="collapse-item" href="#">Dice</a>
           </div>
