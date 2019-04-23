@@ -35,11 +35,11 @@ if (!isset($_GET['load'])) {
 
 
 
-
+<!-- Merge in !!!! -->
 		<?php
 		if (isset($_GET['load'])) {
-			echo "<script type='text/javascript'>alert('Failed to get characters!');</script>";
-		} else {
+            echo '<script type="text/javascript">swal("Wait a minute!", "Failed to get characters! :(", "error");</script>';
+		}   else {
 			// echo '<h2>';
 			// print_r($characters);
 			// echo '</h2>';
@@ -62,7 +62,7 @@ if (!isset($_GET['load'])) {
 		}
 		?>
 
-
+<!--End of Merge -->
 
 
 
@@ -93,33 +93,9 @@ if (!isset($_GET['load'])) {
 				</div>
 				<div class="card-body">
 					<div class="content">
-					<?php
-					// echo "<h2>";
-					// print_r($response);
-					// echo "<h2>";
-					$unserArr = unserialize($response);
+					
 
-					foreach ($unserArr as $forumArr) {
-					echo
-					'				
-					<div class="col-12">
-						<div class="card border-left-primary shadow h-100 py-2">
-							<div class="card-body">
-								<div class="row no-gutters align-items-center">
-									<div class="col mr-2">
-									<div class="h5 mb-0 font-weight-bold text-warning text-uppercase mb-1"><a href="threads.php?forumID=' . $forumArr['ForumID'] . '&forumName=' . $forumArr['Name'] . '">' . $forumArr['Name'] . '</a></div>
-									<div class="text-s font-weight-regular text-gray-800"><p>' . $forumArr['Description'] . '</p></div>
-								</div>
-								<div class="col-auto">
-									<i class="fas fa-comments fa-2x text-gray-300"></i>
-								</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					';
-					}
-					?>
+                    
 					</div>
 				</div>
 			</div>
