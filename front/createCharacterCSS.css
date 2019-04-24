@@ -54,7 +54,7 @@ body {
     box-sizing: border-box;
     font-family: montserrat;
     color: #2C3E50;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 #msform input:focus, #msform textarea:focus {
@@ -129,9 +129,9 @@ body {
 
 #progressbar li {
     list-style-type: none;
-    color: white;
+    color: black;
     text-transform: uppercase;
-    font-size: 3px;
+    font-size: 2px;
     width: 5.8%;
     float: left;
     position: relative;
