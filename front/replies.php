@@ -94,7 +94,7 @@ if(isset($_GET['success']) && $_GET === 'F'){
 							</div>
 							<br>
 							<div> 
-								<input class="btn btn-primary pull-right btn-lg" type="submit" name="createReplySubmit" value="Submit">
+								<input class="btn btn-primary btn-lg" type="submit" name="createReplySubmit" value="Submit">
 							</div>
 						</form>
 					</div>
