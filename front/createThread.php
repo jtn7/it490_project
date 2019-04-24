@@ -51,7 +51,7 @@ if(isset($_GET['success'])){
 								<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Title:</label>
 							</div>
 							<div class="form-row">
-								<div class="form-group col-11">
+								<div class="form-group">
 									<input type="text" name="Name" required="required" class="form-control" placeholder="Write the title . . .">
 								</div>
 							</div>
@@ -61,15 +61,13 @@ if(isset($_GET['success'])){
 							</div>
 							<br>
 							<div class="form-row">
-								<div class="form-group col-12">
+								<div class="form-group">
 									<textarea name="Content" form="createThread" required="required" class="form-control" rows="18"></textarea>
 								</div>
 							</div>
 							<br>
-							<div class="form-row">
-								<div class="text-right"> 
-									<input class="btn btn-primary btn-md" type="submit" name="createThreadSubmit" value="Create Thread">
-								</div>
+							<div class="text-right"> 
+								<input class="btn btn-primary btn-md" type="submit" name="createThreadSubmit" value="Create Thread">
 							</div>
 						</form>
 					</div>
