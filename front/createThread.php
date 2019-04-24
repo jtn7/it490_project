@@ -51,7 +51,7 @@ if(isset($_GET['success'])){
 								<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Title:</label>
 							</div>
 							<div class="form-row">
-								<div class="form-group col-12">
+								<div class="form-group col-11">
 									<input type="text" name="Name" required="required" class="form-control" placeholder="Write the title . . .">
 								</div>
 							</div>
