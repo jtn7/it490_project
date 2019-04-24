@@ -60,8 +60,10 @@ if(isset($_GET['success'])){
 								<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Contents:</label>
 							</div>
 							<br>
-							<div class="form-group col-12 text-right">
-								<textarea name="Content" form="createThread" required="required" class="form-control" rows="20"></textarea>
+							<div class="form-row">
+								<div class="form-group col-12 text-right">
+									<textarea name="Content" form="createThread" required="required" class="form-control" rows="20"></textarea>
+								</div>
 							</div>
 							<br>
 							<div class="form-row">
