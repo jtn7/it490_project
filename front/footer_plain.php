@@ -115,15 +115,5 @@
 
 </footer>
   
-<!-- Bootstrap core JavaScript-->
-<script src="jquery/jquery.min.js"></script>
-<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<!-- Core plugin JavaScript-->
-<script src="jquery-easing/jquery.easing.min.js"></script>
-
-<!-- Custom scripts for all pages-->
-<script src="js/template.min.js"></script>
-
 </body>
 </html>
