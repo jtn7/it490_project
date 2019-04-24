@@ -85,7 +85,7 @@ if(isset($_GET['success']) && $_GET === 'F'){
 						}
 						?>
 						<br>
-						<form action="" method="POST">
+						<form action="" id="addReply" method="POST">
 							<div class="row">
 								<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Write your reply:</label>
 							</div>
@@ -94,7 +94,7 @@ if(isset($_GET['success']) && $_GET === 'F'){
 							</div>
 							<br>
 							<div class="text-right"> 
-								<input class="btn btn-primary btn-lg" type="submit" name="createReplySubmit" value="Submit">
+								<input class="btn btn-primary btn-lg" id="addReply" type="submit" name="createReplySubmit" value="Submit">
 							</div>
 						</form>
 					</div>
