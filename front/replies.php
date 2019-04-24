@@ -64,8 +64,28 @@ if(isset($_GET['success']) && $_GET === 'F'){
 							<p>Written by ' . $Thread['User'] . ' - ' . $Thread['Timestamp'] . '</p>';
 
 						?>
+						<?php
+						$unserArr = unserialize($response);
+						foreach ($unserArr as $repliesArr){
+							echo
+							'
+							<div class="col-12">
+								<div class="card border-left-primary shadow h-50 py-0">
+									<div class="card-body">
+										<div class="row no-gutters align-items-center">
+											<div class="col mr-0">
+												<div class="h5 mb-0 font-weight-bold text-gray-800 mb-1">'. $repliesArr['Content'] .'</div>
+												<div class="text-s font-weight-regular text-gray-800"><p>'. $repliesArr['User'] . ' - ' . $repliesArr['Timestamp'] .'</p></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							';
+						}
+						?>
 						<br>
-						<form action="" id="addReply" method="POST">
+						<form action="" method="POST">
 							<div class="row">
 								<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Write your reply:</label>
 							</div>
