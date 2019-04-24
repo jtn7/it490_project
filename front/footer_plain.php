@@ -1,8 +1,8 @@
 <!-- Footer -->
-<div class="container col-12" style="background-color:black;">
+<footer class="sticky-footer" style="background-color:black;">
 
     <!-- Footer Links -->
-    <div class="container text-center text-md-left">
+    <div class="my-auto">
 
       <!-- Grid row -->
       <div class="row">
@@ -113,7 +113,7 @@
     </div>
     <!-- Copyright -->
 
-</div>
+</footer>
   
 </body>
 </html>
