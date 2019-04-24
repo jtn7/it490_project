@@ -47,21 +47,21 @@ if(isset($_GET['success'])){
 				<div class="card-body">
 					<div class="content align-items-center justify-content-between">
 						<form action="" id="createThread" method="POST">
-							<div class="form-row">
+							<div class="row">
 								<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Title:</label>
 							</div>
-							<div class="form-row">
-								<div class="form-group">
+							<div class="row">
+								<div class="form-group col-12">
 									<input type="text" name="Name" required="required" class="form-control" placeholder="Write the title . . .">
 								</div>
 							</div>
 							<br>
-							<div class="form-row">
+							<div class="row">
 								<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Contents:</label>
 							</div>
 							<br>
-							<div class="form-row">
-								<div class="form-group">
+							<div class="row">
+								<div class="form-group col-12">
 									<textarea name="Content" form="createThread" required="required" class="form-control" rows="18"></textarea>
 								</div>
 							</div>
