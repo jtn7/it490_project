@@ -58,12 +58,12 @@ if(isset($_GET['success'])){
 								<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Contents:</label>
 							</div>
 							<br>
-							<div class="form-group col-12">
+							<div class="form-group col-12 text-right">
 								<textarea name="Content" form="createThread" required="required" class="form-control" rows="20"></textarea>
 							</div>
 							<br>
-							<div class="text-left"> 
-								<input class="btn btn-primary pull-right btn-md" type="submit" name="createThreadSubmit" value="Create Thread">
+							<div class="text-right"> 
+								<input class="btn btn-primary btn-md" type="submit" name="createThreadSubmit" value="Create Thread">
 							</div>
 						</form>
 					</div>
