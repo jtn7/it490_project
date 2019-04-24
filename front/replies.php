@@ -64,6 +64,7 @@ if(isset($_GET['success']) && $_GET === 'F'){
 							<p>Written by ' . $Thread['User'] . ' - ' . $Thread['Timestamp'] . '</p>';
 
 						?>
+					</div>
 						<?php
 						$unserArr = unserialize($response);
 						foreach ($unserArr as $repliesArr){
