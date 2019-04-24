@@ -59,13 +59,11 @@ if(isset($_GET['success'])){
 							</div>
 							<br>
 							<div class="row">
-								<textarea name="Content" form="createThread" required="required" class="form-control col-md-12" rows="18"></textarea>
+								<textarea name="Content" form="createThread" required="required" class="form-control col-md-12" rows="20"></textarea>
 							</div>
 							<br>
-							<div class="row">
-								<div class="text-right"> 
-									<input class="btn btn-primary btn-md" type="submit" name="createThreadSubmit" value="Create Thread">
-								</div>
+							<div class="text-right"> 
+								<input class="btn btn-primary btn-md" type="submit" name="createThreadSubmit" value="Create Thread">
 							</div>
 						</form>
 					</div>
