@@ -85,7 +85,7 @@ if(isset($_GET['success']) && $_GET === 'F'){
 						}
 						?>
 						<br>
-						<div class="content align-items-center justify-content-between">
+						<div class="content">
 						<form action="" id="addReply" method="POST">
 							<div class="row">
 								<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Write your reply:</label>
