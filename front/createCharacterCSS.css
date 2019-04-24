@@ -1,6 +1,18 @@
 /*custom font*/
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
+/*basic reset*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    background: #6441A5; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #6441A5, #2a0845); /* Chrome 10-25, Safari 5.1-6 */
+}
+
 body {
     font-family: montserrat, arial, verdana;
     background: transparent;
@@ -42,7 +54,7 @@ body {
     box-sizing: border-box;
     font-family: montserrat;
     color: #2C3E50;
-    font-size: 12px;
+    font-size: 13px;
 }
 
 #msform input:focus, #msform textarea:focus {
@@ -117,9 +129,9 @@ body {
 
 #progressbar li {
     list-style-type: none;
-    color: black;
+    color: white;
     text-transform: uppercase;
-    font-size: 2px;
+    font-size: 3px;
     width: 5.8%;
     float: left;
     position: relative;
