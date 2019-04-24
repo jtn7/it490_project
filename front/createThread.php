@@ -57,6 +57,7 @@ if(isset($_GET['success'])){
 							<div class="form-row">
 								<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Contents:</label>
 							</div>
+							<br>
 							<div class="form-row col-12">
 								<textarea name="Content" form="createThread" required="required" class="form-control" rows="20"></textarea>
 							</div>
