@@ -59,7 +59,7 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 							<!-- MultiStep Form -->
 							<div class="row">
 								<div class="col-md-8 col-md-offset-2">
-									<form action="" id="createCharacter" method="POST">
+									<form action="" id="msform" method="POST">
 										<!-- progressbar -->
 										<ul id="progressbar">
 											<li class="active">Background</li>
