@@ -2,7 +2,7 @@
 <footer class="sticky-footer" style="background-color:black;">
 
     <!-- Footer Links -->
-    <div class="my-auto">
+    <div class="container text-center text-md-left">
 
       <!-- Grid row -->
       <div class="row">
