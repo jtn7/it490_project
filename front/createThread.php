@@ -66,8 +66,10 @@ if(isset($_GET['success'])){
 								</div>
 							</div>
 							<br>
-							<div class="text-right"> 
-								<input class="btn btn-primary btn-md" type="submit" name="createThreadSubmit" value="Create Thread">
+							<div class="row">
+								<div class="text-right"> 
+									<input class="btn btn-primary btn-md" type="submit" name="createThreadSubmit" value="Create Thread">
+								</div>
 							</div>
 						</form>
 					</div>
