@@ -94,11 +94,11 @@
           <h5 class="font-weight-bold text-uppercase mb-4">Follow Us</h5>
 
           <!-- Facebook -->
-          <a type="button" class="btn-floating btn-fb btn-md">
+          <a type="button" class="btn-floating btn-fb btn-lg">
             <i class="fab fa-facebook-f"></i>
           </a>
-          <!-- Twitter -->
-          <a type="button" class="btn-floating btn-gplus btn-md">
+          <!-- Google -->
+          <a type="button" class="btn-floating btn-gplus btn-lg">
             <i class="fab fa-google-plus-g"></i>
           </a>
         </div>

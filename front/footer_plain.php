@@ -93,7 +93,7 @@
           <a type="button" class="btn-floating btn-fb btn-lg">
             <i class="fab fa-facebook-f"></i>
           </a>
-          <!-- Twitter -->
+          <!-- Google -->
           <a type="button" class="btn-floating btn-gplus btn-lg">
             <i class="fab fa-google-plus-g"></i>
           </a>
