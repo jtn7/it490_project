@@ -55,7 +55,8 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 					<div class="content">
 							<!-- Adding the CSS specialized for this page -->
 							<link rel="stylesheet" href="createCharacterCSS.css">
-
+							<div class="row">
+   							<div class="col-md-8 col-md-offset-2">
 							<!-- MultiStep Form -->
 							<form action="" id="msform" method="POST">
 								<!-- progressbar -->
@@ -262,6 +263,8 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 									<input type="submit" name="createCharacterSubmit" class="submit action-button" value="Save Character"/>
 								</fieldset>
 							</form>
+							</div>
+							</div>
 							<!-- /.MultiStep Form -->
 
 							<!-- Script to access D&D 3rd party API -->
