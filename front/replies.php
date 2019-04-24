@@ -85,16 +85,16 @@ if(isset($_GET['success']) && $_GET === 'F'){
 						}
 						?>
 						<br>
-						<form action="" id="addReply" method="POST">
+						<form action="" method="POST">
 							<div class="row">
 								<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Write your reply:</label>
 							</div>
 							<div class="row">
-								<textarea name="ReplyContent" form="addReply" required="required" class="form-control col-md-12" rows="5"></textarea>
+								<textarea name="ReplyContent" required="required" class="form-control col-md-12" rows="5"></textarea>
 							</div>
 							<br>
 							<div class="text-right"> 
-								<input class="btn btn-primary btn-lg" id="addReply" type="submit" name="createReplySubmit" value="Submit">
+								<input class="btn btn-primary btn-lg" type="submit" name="createReplySubmit" value="Submit">
 							</div>
 						</form>
 					</div>
