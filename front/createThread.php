@@ -50,15 +50,15 @@ if(isset($_GET['success'])){
 							<div class="form-row">
 								<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Title:</label>
 							</div>
-							<div class="form-row col-11">
-								<input type="text" name="Name" required="required" class="form-control form-control-sm" placeholder="Write the title . . .">
+							<div class="form-group col-12">
+								<input type="text" name="Name" required="required" class="form-control" placeholder="Write the title . . .">
 							</div>
 							<br>
 							<div class="form-row">
 								<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Contents:</label>
 							</div>
 							<br>
-							<div class="form-row col-12">
+							<div class="form-group col-12">
 								<textarea name="Content" form="createThread" required="required" class="form-control" rows="20"></textarea>
 							</div>
 							<br>
