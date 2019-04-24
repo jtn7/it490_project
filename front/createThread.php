@@ -61,8 +61,8 @@ if(isset($_GET['success'])){
 							</div>
 							<br>
 							<div class="form-row">
-								<div class="form-group col-12 text-right">
-									<textarea name="Content" form="createThread" required="required" class="form-control" rows="20"></textarea>
+								<div class="form-group col-12">
+									<textarea name="Content" form="createThread" required="required" class="form-control" rows="18"></textarea>
 								</div>
 							</div>
 							<br>
