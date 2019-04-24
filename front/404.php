@@ -15,7 +15,7 @@ $logger->info('404 page accessed');
 <div class="container-fluid">
 
     <!-- 404 Error Text -->
-    <div class="text-center" style="margin-top: 236px; margin-bottom: 236px;">
+    <div class="text-center" style="margin-top: 237px; margin-bottom: 237px;">
         <div class="error mx-auto" data-text="404">404</div>
         <p class="lead text-gray-800 mb-5">Page Not Found</p>
         <p class="text-gray-500 mb-0">It looks like you found a glitch in our website...</p>
