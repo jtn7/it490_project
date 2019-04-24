@@ -55,7 +55,7 @@ if(isset($_GET['success']) && $_GET === 'F'){
 					<h6 class="m-0 font-weight-bold text-primary">Reply</h6>
 				</div>
 				<div class="card-body">
-					<div class="content">
+					<div class="content align-items-center justify-content-between">
 						<?php
 						$Thread = unserialize($response1);
 						echo
