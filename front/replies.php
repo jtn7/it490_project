@@ -85,20 +85,18 @@ if(isset($_GET['success']) && $_GET === 'F'){
 						}
 						?>
 						<br>
-						<div class="content align-items-center justify-content-between">
-							<form action="" id="addReply" method="POST">
-								<div class="form-row">
-									<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Write your reply:</label>
-								</div>
-								<div class="form-row">
-									<textarea name="ReplyContent" form="addReply" required="required" class="form-control" rows="5"></textarea>
-								</div>
-								<br>
-								<div> 
-									<input class="btn btn-primary btn-lg" type="submit" name="createReplySubmit" value="Submit">
-								</div>
-							</form>
-						</div>
+						<form action="" id="addReply" method="POST">
+							<div class="form-row">
+								<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Write your reply:</label>
+							</div>
+							<div class="form-row">
+								<textarea name="ReplyContent" form="addReply" required="required" class="form-control" rows="5"></textarea>
+							</div>
+							<br>
+							<div> 
+								<input class="btn btn-primary btn-lg" type="submit" name="createReplySubmit" value="Submit">
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>
