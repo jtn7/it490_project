@@ -50,14 +50,14 @@ if(isset($_GET['success'])){
 							<div class="form-row">
 								<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Title:</label>
 							</div>
-							<div class="form-row col-11">
+							<div class="form-row col-12">
 								<input type="text" name="Name" required="required" class="form-control form-control-sm" placeholder="Write the title . . .">
 							</div>
 							<br>
 							<div class="form-row">
 								<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Contents:</label>
 							</div>
-							<div class="form-row text-left">
+							<div class="form-row col-12">
 								<textarea name="Content" form="createThread" required="required" class="form-control" rows="20"></textarea>
 							</div>
 							<br>
