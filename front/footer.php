@@ -107,13 +107,13 @@
       </div>
       <!-- Grid row -->
 
-    </div>
-    <!-- Footer Links -->
+      </div>
+      <!-- Footer Links -->
 
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2019 Copyright:
-        <a href="#"> Dungeons & Dragons by POGO</a>
-    </div>
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">© 2019 Copyright:
+          <a href="#"> Dungeons & Dragons by POGO</a>
+      </div>
     </div>
   </footer>
   <!-- End of Footer -->
