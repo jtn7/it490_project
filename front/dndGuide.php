@@ -35,7 +35,7 @@ if (!isset($_SESSION['username'])) {
 					<h6 class="m-0 font-weight-bold text-primary">Title</h6>
 				</div>
 				<div class="card-body">
-					<div class="content" style="height:700px">
+					<div class="content" style="height:1000px">
                     
                     <embed src="https://s3.amazonaws.com/online.anyflip.com/swxi/xvkz/mobile/index.html" style="position:relative; width:100%; height:100%;">
                         
