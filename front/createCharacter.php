@@ -49,10 +49,6 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 				<!-- Adding the CSS specialized for this page -->
 				<link rel="stylesheet" href="createCharacterCSS.css">
 
-				<!-- Script for multi-step form -->
-				<script src="multistep_scripts.js"></script>
-				<!-- /.Script -->
-
 				<!-- MultiStep Form -->
 				<div class="row">
 				<div class="col-md-12">
@@ -265,5 +261,9 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 		</div>
 	</div>
 
+	
+<!-- Script for multi-step form -->
+<script src="multistep_scripts.js"></script>
+<!-- /.Script -->
 
 <?php include 'footer.php' ?>
