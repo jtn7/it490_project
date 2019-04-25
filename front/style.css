@@ -80,7 +80,7 @@ body {
 /*Style for createCharacter.php form*/
 #createCharacterform {
     text-align: center;
-    position: relative;
+    position: absolute;
     margin-top: 20px;
 }
 
@@ -105,7 +105,6 @@ body {
     margin-bottom: 10px;
     width: 100%;
     box-sizing: border-box;
-    font-family: montserrat;
     color: #2C3E50;
     font-size: 13px;
 }
