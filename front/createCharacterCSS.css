@@ -1,6 +1,23 @@
 /*custom font*/
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
+/*basic reset*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    background: #6441A5; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #6441A5, #2a0845); /* Chrome 10-25, Safari 5.1-6 */
+}
+
+body {
+    font-family: montserrat, arial, verdana;
+    background: transparent;
+}
+
 /*form styles*/
 #msform {
     text-align: center;
@@ -138,7 +155,7 @@
 #progressbar li:after {
     content: '';
     width: 100%;
-    height: 2px;
+    height: 5px;
     background: gray;
     position: absolute;
     left: -50%;
