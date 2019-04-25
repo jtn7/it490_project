@@ -37,7 +37,7 @@ if (!isset($_SESSION['username'])) {
 				<div class="card-body">
 					<div class="content">
                     
-                    <embed src="https://s3.amazonaws.com/online.anyflip.com/swxi/xvkz/mobile/index.html" style="position:absolute; width:100%; height:100%;">
+                    <embed src="https://s3.amazonaws.com/online.anyflip.com/swxi/xvkz/mobile/index.html" style="position:relative; width:100%; height:100%;">
                         
 					</div>
 				</div>
