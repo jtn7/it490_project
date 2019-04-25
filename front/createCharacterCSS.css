@@ -147,7 +147,7 @@ body {
     display: block;
     font-size: 12px;
     color: #333;
-    background: rgb(12, 99, 214);
+    background: rgb(214, 12, 12);
     border-radius: 25px;
     margin: 0 auto 10px auto;
 }
@@ -157,7 +157,7 @@ body {
     content: '';
     width: 100%;
     height: 2px;
-    background: rgb(12, 99, 214);
+    background: rgb(214, 12, 12);
     position: absolute;
     left: -50%;
     top: 9px;
