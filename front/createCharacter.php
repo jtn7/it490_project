@@ -50,7 +50,7 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 				<div class="col-md-12">
 				<form action="" id="msform" method="POST">
 					<!-- fieldsets -->
-					<fieldset>
+					<fieldset class="fieldset">
 						<h2 class="fs-title">Character Background</h2>
 						<input type="text" name="characterName" placeholder="Character Name"/>
 						<input type="number" name="age" placeholder="Character Age"/>
