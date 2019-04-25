@@ -47,7 +47,7 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 		<div class="card-body">
 			<div class="content">
 				<!-- Adding the CSS specialized for this page -->
-				<!-- <link rel="stylesheet" href="createCharacterCSS.css"> -->
+				<link rel="stylesheet" href="createCharacterCSS.css">
 
 				<!-- MultiStep Form -->
 				<div class="row">
