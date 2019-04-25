@@ -94,13 +94,7 @@ body {
     width: 80%;
     margin: 0 10%;
 
-    /*stacking fieldsets above each other*/
-    position: relative;
-}
-
-/*Hide all except first fieldset*/
-#createCharacterform fieldset:not(:first-of-type) {
-    display: none;
+    position: absolute;
 }
 
 /*inputs*/
