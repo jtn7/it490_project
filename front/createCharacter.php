@@ -105,8 +105,6 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 					<fieldset>
 						<h2 class="fs-title">Armor Class</h2>
 						<input type="number" name="armorClass" placeholder="Armor Class">
-						<input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
-						<input type="button" name="next" class="next action-button" value="Next"/>
 					</fieldset>
 					<br>
 
@@ -193,7 +191,7 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 						<textarea name="hitDice" form="createCharacter"></textarea>
 					</fieldset>
 					<br>
-					
+
 					<div class="text-right">
 						<input type="submit" name="createCharacterSubmit" class="next action-button" value="Save"/>
 					</div>
