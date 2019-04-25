@@ -129,7 +129,7 @@ body {
 
 #progressbar li {
     list-style-type: none;
-    color: rgb(12, 99, 214);
+    color: rgb(0, 0, 0);
     text-transform: uppercase;
     font-size: 3px;
     width: 5.8%;
