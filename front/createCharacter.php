@@ -261,7 +261,7 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 								<h3 class="fs-subtitle">Hit Dice Set-Up</h3>
 								<textarea name="hitDice" form="createCharacter"></textarea>
 								<input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
-								<input type="submit" name="createCharacterSubmit" class="submit" value="Save Character"/>
+								<input type="submit" name="createCharacterSubmit" class="submit btn-primary" value="Save Character"/>
 							</fieldset>
 						</form>
 						</div>
