@@ -76,3 +76,42 @@ body {
 .Character input[type=number] {
 	width: 50px;
 }
+
+/*Style for createCharacter.php form*/
+#createCharacterform {
+    text-align: center;
+    position: relative;
+    margin-top: 20px;
+}
+
+#createCharacterform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 0px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+
+    /*stacking fieldsets above each other*/
+    position: relative;
+}
+
+/*Hide all except first fieldset*/
+#createCharacterform fieldset:not(:first-of-type) {
+    display: none;
+}
+
+/*inputs*/
+#createCharacterform input, #createCharacterform textarea, #createCharacterform select {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    font-size: 13px;
+}

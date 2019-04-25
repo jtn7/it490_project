@@ -48,7 +48,7 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 			<div class="content">
 				<div class="row">
 				<div class="col-md-12">
-				<form action="" id="msform" method="POST">
+				<form action="" id="createCharacterform" method="POST">
 					<!-- fieldsets -->
 					<fieldset>
 						<h2 class="fs-title">Character Background</h2>
