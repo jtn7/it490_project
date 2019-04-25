@@ -46,10 +46,6 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 		</div>
 		<div class="card-body">
 			<div class="content">
-				<!-- Adding the CSS specialized for this page -->
-				<link rel="stylesheet" href="createCharacterCSS.css">
-
-				<!-- MultiStep Form -->
 				<div class="row">
 				<div class="col-md-12">
 				<form action="" id="msform" method="POST">
@@ -252,7 +248,6 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 				</form>
 				</div>
 				</div>
-				<!-- /.MultiStep Form -->
 
 				<!-- Script to access D&D 3rd party API -->
 				<script src="scripts.js"></script>
@@ -261,10 +256,5 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 		</div>
 	</div>
 </div>	
-
-	
-<!-- Script for multi-step form -->
-<script src="multistep_scripts.js"></script>
-<!-- /.Script -->
 
 <?php include 'footer.php' ?>
