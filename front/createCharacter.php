@@ -193,9 +193,7 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 					</fieldset>
 					<br>
 
-					<div class="text-right">
-						<input type="submit" name="createCharacterSubmit" class="next action-button" value="Save"/>
-					</div>
+					<input type="submit" name="createCharacterSubmit" class="next action-button" value="Save"/>
 				</form>
 				</div>
 				</div>
