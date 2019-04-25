@@ -87,6 +87,7 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 								<input type="text" name="characterName" placeholder="Character Name"/>
 								<input type="number" name="age" placeholder="Character Age"/>
 								<select name="sex" placeholder="Character Sex">
+									<option value="">Character Sex</option>
 									<option value="Other">Other</option>
 									<option value="M">Male</option>
 									<option value="F">Female</option>
