@@ -60,7 +60,7 @@ body {
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    border: 1px solid red;
+    border: 1px solid #334fce;
     outline-width: 0;
     transition: All 0.5s ease-in;
     -webkit-transition: All 0.5s ease-in;
