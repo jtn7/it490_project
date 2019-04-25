@@ -13,7 +13,7 @@
 /*buttons*/
 #createCharacterform .action-button {
     width: 100px;
-    background: #2b09ee;
+    background: #0946ee;
     font-weight: bold;
     color: white;
     border: 0 none;
@@ -24,5 +24,5 @@
 }
 
 #createCharacterform .action-button:hover, #msform .action-button:focus {
-    box-shadow: 0 0 0 2px white, 0 0 0 3px #2b09ee;
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #0946ee;
 }
