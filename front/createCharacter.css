@@ -9,3 +9,20 @@
     color: #2C3E50;
     font-size: 13px;
 }
+
+/*buttons*/
+#createCharacterform .action-button {
+    width: 100px;
+    background: #2b09ee;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+
+#createCharacterform .action-button:hover, #msform .action-button:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #2b09ee;
+}
