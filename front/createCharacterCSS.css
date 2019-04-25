@@ -133,6 +133,7 @@ body {
     font-size: 3px;
     width: 5.8%;
     float: left;
+    position: relative;
     letter-spacing: 1px;
 }
 
