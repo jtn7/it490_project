@@ -98,7 +98,7 @@ session_start();
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-3 collapse-inner rounded">
             <h6 class="collapse-header">Utilities:</h6>
-            <a class="collapse-item" href="https://s3.amazonaws.com/online.anyflip.com/swxi/xvkz/mobile/index.html">D&D Guide</a>
+            <a class="collapse-item" href="dndGuide.php">D&D Guide</a>
             <a class="collapse-item" href="#">Music</a>
             <a class="collapse-item" href="#">Dice</a>
           </div>
