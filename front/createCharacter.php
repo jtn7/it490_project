@@ -247,21 +247,13 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 								<input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
 								<input type="button" name="next" class="next action-button" value="Next"/>
 							</fieldset>	
-						
-							<fieldset>
-								<h2 class="fs-title">Flaws</h2>
-								<h3 class="fs-subtitle">Note a few flaws. . .</h3>
-								<textarea name="flaws" form="createCharacter"></textarea>
-								<input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
-								<input type="button" name="next" class="next action-button" value="Next"/>
-							</fieldset>	
 
 							<fieldset>
 								<h2 class="fs-title">Hit Dice</h2>
 								<h3 class="fs-subtitle">Hit Dice Set-Up</h3>
 								<textarea name="hitDice" form="createCharacter"></textarea>
 								<input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
-								<input type="submit" name="next" class="next action button" value="Save Character"/>
+								<input type="submit" name="createCharacterSubmit" class="button next action button" value="Save Character"/>
 							</fieldset>
 						</form>
 						</div>
