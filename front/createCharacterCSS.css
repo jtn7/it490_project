@@ -45,7 +45,7 @@ body {
 }
 
 /*inputs*/
-#msform input, #msform textarea, #msform select{
+#msform input, #msform textarea {
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 0px;
@@ -61,7 +61,7 @@ body {
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    border: 1px solid #ee0909;
+    border: 1px solid #ee0979;
     outline-width: 0;
     transition: All 0.5s ease-in;
     -webkit-transition: All 0.5s ease-in;
@@ -72,7 +72,7 @@ body {
 /*buttons*/
 #msform .action-button {
     width: 100px;
-    background: #ee0909;
+    background: #ee0979;
     font-weight: bold;
     color: white;
     border: 0 none;
@@ -83,7 +83,7 @@ body {
 }
 
 #msform .action-button:hover, #msform .action-button:focus {
-    box-shadow: 0 0 0 2px white, 0 0 0 3px #ee0909;
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #ee0979;
 }
 
 #msform .action-button-previous {
@@ -99,7 +99,7 @@ body {
 }
 
 #msform .action-button-previous:hover, #msform .action-button-previous:focus {
-    box-shadow: 0 0 0 2px white, 0 0 0 3px rgb(64, 64, 179);
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #C5C5F1;
 }
 
 /*headings*/
@@ -121,8 +121,7 @@ body {
 
 /*progressbar*/
 #progressbar {
-    margin-bottom: 20px;
-    color: rgb(214, 12, 12);
+    margin-bottom: 30px;
     overflow: hidden;
     /*CSS counters to number the steps*/
     counter-reset: step;
@@ -130,7 +129,7 @@ body {
 
 #progressbar li {
     list-style-type: none;
-    color: rgb(0, 0, 0);
+    color: white;
     text-transform: uppercase;
     font-size: 3px;
     width: 5.8%;
@@ -147,8 +146,8 @@ body {
     line-height: 26px;
     display: block;
     font-size: 12px;
-    color: rgb(255, 255, 255);
-    background: rgb(214, 12, 12);
+    color: #333;
+    background: white;
     border-radius: 25px;
     margin: 0 auto 10px auto;
 }
@@ -158,7 +157,7 @@ body {
     content: '';
     width: 100%;
     height: 2px;
-    background: #d61919a8;
+    background: white;
     position: absolute;
     left: -50%;
     top: 9px;
@@ -173,6 +172,6 @@ body {
 /*marking active/completed steps green*/
 /*The number of the step and the connector before it = green*/
 #progressbar li.active:before, #progressbar li.active:after {
-    background: rgba(214, 12, 12, 0.87);
-    color: rgb(255, 255, 255);
+    background: #ee0909;
+    color: white;
 }
