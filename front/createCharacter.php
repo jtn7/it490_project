@@ -34,14 +34,7 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 
 <?php include 'header.php' ?>
 
-<!-- Begin Page Content -->
-<div class="container">
 
-<!-- Page Heading -->
-<div class="d-sm-flex align-items-center justify-content-between mb-4"></div>
-
-	<!-- Content Row -->
-	<div class="row">
 
 		<!-- Content Column -->
 		<div class="col-12">
@@ -298,7 +291,7 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 							});
 									next_fs.css({'left': left, 'opacity': opacity});
 								}, 
-								duration: 800, 
+								duration: 500, 
 								complete: function(){
 									current_fs.hide();
 									animating = false;
@@ -333,7 +326,7 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 									current_fs.css({'left': left});
 									previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
 								}, 
-								duration: 800, 
+								duration: 500, 
 								complete: function(){
 									current_fs.hide();
 									animating = false;
@@ -352,8 +345,6 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-</div>
+
 
 <?php include 'footer.php' ?>
