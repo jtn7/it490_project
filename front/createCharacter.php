@@ -57,7 +57,8 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 						<link rel="stylesheet" href="createCharacterCSS.css">
 
 						<!-- MultiStep Form -->
-						<div class="row col-md-12">
+						<div class="row">
+						<div class="col-md-12">
 						<form action="" id="msform" method="POST">
 							<!-- progressbar -->
 							<ul id="progressbar">
@@ -256,6 +257,7 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 								<input type="submit" name="createCharacterSubmit" class="next action-button" value="Save"/>
 							</fieldset>
 						</form>
+						</div>
 						</div>
 						<!-- /.MultiStep Form -->
 
