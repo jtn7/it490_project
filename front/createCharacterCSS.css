@@ -1,24 +1,6 @@
 /*custom font*/
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
-html {
-    height: 100%;
-    background: #6441A5; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #6441A5, #2a0845); /* Chrome 10-25, Safari 5.1-6 */
-}
-
-body {
-    font-family: montserrat, arial, verdana;
-    background: transparent;
-}
-
-/*form styles*/
-#msform {
-    text-align: center;
-    position: relative;
-    margin-top: 20px;
-}
-
 #msform fieldset {
     background: white;
     border: 0 none;
