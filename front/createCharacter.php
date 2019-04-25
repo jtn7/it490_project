@@ -260,6 +260,7 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 			</div>
 		</div>
 	</div>
+</div>	
 
 	
 <!-- Script for multi-step form -->
