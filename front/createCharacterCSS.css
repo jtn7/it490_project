@@ -157,7 +157,7 @@ body {
     content: '';
     width: 100%;
     height: 2px;
-    background: rgb(214, 12, 12);
+    background: #d61919cc;
     position: absolute;
     left: -50%;
     top: 9px;
@@ -172,6 +172,6 @@ body {
 /*marking active/completed steps green*/
 /*The number of the step and the connector before it = green*/
 #progressbar li.active:before, #progressbar li.active:after {
-    background: #bd2424a2;
+    background: rgba(214, 12, 12, 0.87);
     color: rgb(255, 255, 255);
 }
