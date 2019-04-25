@@ -50,7 +50,7 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 				<div class="col-md-12">
 				<form action="" id="msform" method="POST">
 					<!-- fieldsets -->
-					<fieldset class="fieldset">
+					<fieldset>
 						<h2 class="fs-title">Character Background</h2>
 						<input type="text" name="characterName" placeholder="Character Name"/>
 						<input type="number" name="age" placeholder="Character Age"/>
@@ -63,6 +63,7 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 						<input type="number" name="height" placeholder="Character Height in ft">
 						<input type="number" name="weight" placeholder="Character Weight in lb">
 					</fieldset>
+					<br>
 
 					<fieldset>
 						<h2 class="fs-title">Race</h2>
@@ -71,6 +72,7 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 						<select name="class" id="Class" placeholder ="Class"></select>
 						<select name="subclass" id="Subclass" placeholder="Sub-Class"></select>
 					</fieldset>
+					<br>
 
 					<fieldset>
 						<h2 class="fs-title">Stats</h2>
@@ -81,11 +83,13 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 						<input type="number" name="statsWIS" placeholder="WIS">
 						<input type="number" name="statsCHA" placeholder="CHA">
 					</fieldset>
+					<br>
 
 					<fieldset>
 						<h2 class="fs-title">Passive Perception</h2>
 						<input type="number" name="passivePerception" placeholder = "Passive Perception">
 					</fieldset>
+					<br>
 
 					<fieldset>
 						<h2 class="fs-title">Saving Throws</h2>
@@ -96,6 +100,7 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 						<input type="number" name="sthrowWIS" placeholder="WIS">
 						<input type="number" name="sthrowCHA" placeholder="CHA">
 					</fieldset>
+					<br>
 
 					<fieldset>
 						<h2 class="fs-title">Armor Class</h2>
@@ -103,16 +108,19 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 						<input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
 						<input type="button" name="next" class="next action-button" value="Next"/>
 					</fieldset>
+					<br>
 
 					<fieldset>
 						<h2 class="fs-title">Speed</h2>
 						<input type="number" name="speed" placeholder="Speed">
 					</fieldset>
+					<br>
 
 					<fieldset>
 						<h2 class="fs-title">Max Hit Point</h2>
 						<input type="number" name="maxHitPoint" placeholder="Max Hit Point">
-					</fieldset>										
+					</fieldset>
+					<br>								
 
 					<fieldset>
 						<h2 class="fs-title">Skills</h2>
@@ -134,48 +142,58 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 						<input type="number" name="stealth" placeholder="Stealth">
 						<input type="number" name="survival" placeholder="Survival">
 						<input type="number" name="hkit" placeholder="Hernalism Kit">
-					</fieldset>		
+					</fieldset>
+					<br>
 
 					<fieldset>
 						<h2 class="fs-title">Equipment</h2>
 						<select name="equipment" id="Equipment"></select>
-					</fieldset>	
+					</fieldset>
+					<br>
 
 					<fieldset>
 						<h2 class="fs-title">Spells</h2>
 						<select name="spell" id="Spell"></select>
-					</fieldset>	
+					</fieldset>
+					<br>
 
 					<fieldset>
 						<h2 class="fs-title">Features and Traits</h2>
 						<select name="features" id="Features"></select>
 						<select name="traits" id="Traits"></select>
-					</fieldset>	
+					</fieldset>
+					<br>
 
 					<fieldset>
 						<h2 class="fs-title">Personality Traits</h2>
 						<textarea name="personalityTraits" form="createCharacter"></textarea>
-					</fieldset>	
+					</fieldset>
+					<br>
 
 					<fieldset>
 						<h2 class="fs-title">Ideals</h2>
 						<textarea name="ideals" form="createCharacter"></textarea>
-					</fieldset>	
+					</fieldset>
+					<br>
 
 					<fieldset>
 						<h2 class="fs-title">Bonds</h2>
 						<textarea name="bonds" form="createCharacter"></textarea>
 					</fieldset>
+					<br>
 
 					<fieldset>
 						<h2 class="fs-title">Flaws</h2>
 						<textarea name="flaws" form="createCharacter"></textarea>
-					</fieldset>	
+					</fieldset>
+					<br>
 
 					<fieldset>
 						<h2 class="fs-title">Hit Dice</h2>
 						<textarea name="hitDice" form="createCharacter"></textarea>
 					</fieldset>
+					<br>
+					
 					<div class="text-right">
 						<input type="submit" name="createCharacterSubmit" class="next action-button" value="Save"/>
 					</div>
