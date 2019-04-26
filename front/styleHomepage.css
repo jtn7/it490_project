@@ -52,7 +52,10 @@ body{
 
 .header-content{
     z-index:2;
+<<<<<<< HEAD
     margin:auto;
+=======
+>>>>>>> 5f3edc2... editing css
     text-align:center;
 }
 
