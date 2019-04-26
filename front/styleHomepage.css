@@ -39,7 +39,7 @@
 
 .header-content{
     z-index:2;
-    text-align:center;
+    margin:auto;
 }
 
 .header-content h1{
