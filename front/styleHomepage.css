@@ -52,6 +52,8 @@ body{
 
 .header-content{
     z-index:2;
+    margin:auto;
+    text-align:center;
 }
 
 .header-content h1{
