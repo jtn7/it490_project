@@ -88,13 +88,13 @@ body{
 .section-b{
     background: #333;
     color:#fff;
-    margin:4rem;
+    margin:0 4rem;
 }
 
 .section-c{
     background: #fff;
     color:#333;
-    margin:4rem;
+    margin:0 4rem;
 }
 
 @media(max-width:960px){
