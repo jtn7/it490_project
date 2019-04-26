@@ -29,7 +29,14 @@ session_start();
 	<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
 	<!-- Custom styles-->
-	<link href="css/template.min.css" rel="stylesheet">	
+  <link href="css/template.min.css" rel="stylesheet">	
+  
+  <!-- Custom script for delay in order to load video-->
+  <script>
+  setTimeout(function() {
+    afterglow.getPlayer('dnd_main_background').play();
+  }, 5000);
+  </script>
 </head>
 
 <body>
@@ -46,7 +53,7 @@ session_start();
 <!-- Add contents here-->
     <header class="v-header container-of-homepage">
         <div class="fullscreen-video-wrap">
-            <video src="assets/dnd_main_background.mov" autoplay="true" loop="true"></video>
+            <video id="dnd_main_background" src="assets/dnd_main_background.mov" autoplay="true" loop="true"></video>
         </div>
         <div class="header-overlay"></div>
         <div class="header-content">
