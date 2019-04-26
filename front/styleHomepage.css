@@ -80,18 +80,21 @@ body{
 }
 
 .section-a{
-    background: #333;
-    color:#fff;
+    background: #fff;
+    color:#333;
+    margin-bottom:4rem;
 }
 
 .section-b{
-    background: #fff;
-    color:#333;
+    background: #333;
+    color:#fff;
+    margin:4rem 4rem;
 }
 
 .section-c{
-    background: #333;
-    color:#fff;
+    background: #fff;
+    color:#333;
+    margin:4rem 4rem;
 }
 
 @media(max-width:960px){
