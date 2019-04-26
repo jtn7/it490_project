@@ -32,11 +32,6 @@ session_start();
   <link href="css/template.min.css" rel="stylesheet">	
   
   <!-- Custom script for delay in order to load video-->
-  <script>
-  setTimeout(function() {
-    afterglow.getPlayer('dnd_main_background').play();
-  }, 5000);
-  </script>
 </head>
 
 <body>
@@ -53,7 +48,7 @@ session_start();
 <!-- Add contents here-->
     <header class="v-header container-of-homepage">
         <div class="fullscreen-video-wrap">
-            <video id="dnd_main_background" src="assets/dnd_main_background.mov" loop="true"></video>
+            <video id="dnd_main_background" src="assets/dnd_main_background.mov"  autoplay="true" preload="true" loop="true"></video>
         </div>
         <div class="header-overlay"></div>
         <div class="header-content">
