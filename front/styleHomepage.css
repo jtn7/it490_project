@@ -80,16 +80,11 @@ body{
 }
 
 .section-a{
-    background: #333;
-    color:#fff;
-}
-
-.section-b{
     background: #fff;
     color:#333;
 }
 
-.section-c{
+.section-b{
     background: #333;
     color:#fff;
 }
