@@ -19,7 +19,11 @@ body{
     background-color: gray;
 }
 
-#navbar > li > a:active a:visited{
+#navbar > li > a:active{
+    background-color: rgb(70, 68, 68);
+}
+
+#navbar > li > a:visited{
     background-color: rgb(70, 68, 68);
 }
 
