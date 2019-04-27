@@ -59,7 +59,7 @@ $logger->info('homepage.php accessed');
     if (isset($_SESSION['username'])) {
       echo
       '
-      <nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation"> 
+      <nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation" id="page-top"> 
         <ul class="nav narbar-nav narbar-left" id="navbar" style="display: flex; align-items: center";>
             <li>
               <a class ="navbar-brand" href ="homepage.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:80px;"></a>
@@ -105,7 +105,7 @@ $logger->info('homepage.php accessed');
     {
         echo
         '
-        <nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation">
+        <nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation" id="page-top">
             <ul class="nav narbar-nav narbar-left" id="navbar" style="display: flex; align-items: center";>
                 <li>
                     <a class ="navbar-brand" href ="homepage.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:80px;"></a>
@@ -184,7 +184,7 @@ $(document).ready(function(){
 ?>
 
 <!-- Add contents here-->
-    <header class="v-header container-of-homepage" id="page-top">
+    <header class="v-header container-of-homepage">
         <div class="fullscreen-video-wrap">
             <video id="dnd_main_background" src="assets/dnd_main_background.mov"  autoplay="true" preload="true" loop="true" muted="true"></video>
         </div>
