@@ -99,7 +99,7 @@ body{
 .section-a{
     background: #fff;
     color:#333;
-    margin-bottom:4.5rem;
+    margin-bottom:20px;
 }
 
 .section-a h1{
@@ -116,7 +116,7 @@ body{
 .section-b{
     background: #333;
     color:#fff;
-    margin:5rem 0;
+    margin:20px 0;
 }
 
 .section-b h1{
@@ -127,13 +127,13 @@ body{
 .section-b p{
     font-size:1.5rem;
     display:block;
-    padding-bottom:2rem;
+    padding-bottom:10px;
 }
 
 .section-c{
     background: #fff;
     color:#333;
-    margin:4rem 0;
+    margin:20px 0;
 }
 
 .section-c h1{
@@ -144,7 +144,7 @@ body{
 .section-c p{
     font-size:1.5rem;
     display:block;
-    padding-bottom:2rem;
+    padding-bottom:10px;
 }
 
 .section-d{
