@@ -39,19 +39,19 @@
         '
         <nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation">
         <ul class="nav navbar-nav narbar-left">
-                <li class="nav-item">
+                <li>
                     <a class ="navbar-brand" href ="index.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:120px;"></a>
                 </li>
-                <li class="nav-item">
+                <li>
                     <a href="#">About</a>
                 </li>
-                <li class="nav-item">
+                <li>
                     <a href="#">Updates</a>
                 </li>
-                <li class="nav-item">
+                <li>
                     <a href="#">Team</a>
                 </li>
-                <li class="nav-item">
+                <li>
                     <a href="#">Contact</a>
                 </li>
             </ul>
@@ -75,16 +75,16 @@
         <nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation"> 
             <ul class="nav navbar-nav narbar-left">
                 <a class ="navbar-brand" href ="index.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:120px;"></a>
-                <li class="nav-item">
+                <li>
                     <a href="#">About</a>
                 </li>
-                <li class="nav-item">
+                <li>
                     <a href="#">Updates</a>
                 </li>
-                <li class="nav-item">
+                <li>
                     <a href="#">Team</a>
                 </li>
-                <li class="nav-item">
+                <li>
                     <a href="#">Contact</a>
                 </li>
             </ul>
