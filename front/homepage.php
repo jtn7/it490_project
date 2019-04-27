@@ -263,7 +263,7 @@ $(document).ready(function(){
                       <h4 class="subheading">Project in Mind</h4>
                     </div>
                     <div class="timeline-body">
-                      <p class="text-muted">POGO quickly focused its attention to create a product that can be beneficial to others</p>
+                      <p class="text-muted">POGO quickly focused its attention to creating a product that can give customized experience to others</p>
                     </div>
                   </div>
                 </li>
@@ -291,7 +291,7 @@ $(document).ready(function(){
                       <h4 class="subheading">Calendar Integration</h4>
                     </div>
                     <div class="timeline-body">
-                      <p class="text-muted">POGO is expected to ship out a fully integration calendar system inside of the web service application so that it can alert the users</p>
+                      <p class="text-muted">POGO is expected to ship out a fully integration calendar system inside of the web service application. We'll make sure to let you know before the party runs out of patience!</p>
                     </div>
                   </div>
                 </li>
@@ -305,7 +305,7 @@ $(document).ready(function(){
                       <h4 class="subheading">Google Hangouts</h4>
                     </div>
                     <div class="timeline-body">
-                      <p class="text-muted">POGO announced that it is focusing to integrate Google Hangouts to the web service application so that the end users can enjoy voice chats</p>
+                      <p class="text-muted">POGO announced that it is focusing to integrate Google Hangouts to the web service application so that the end users can enjoy voice chats over the Hangouts platform</p>
                     </div>
                   </div>
                 </li>
@@ -319,7 +319,7 @@ $(document).ready(function(){
                       <h4 class="subheading">Dice Utilities</h4>
                     </div>
                     <div class="timeline-body">
-                      <p class="text-muted">POGO confirmed that it is planning on creating dice utility tool for its web service application</p>
+                      <p class="text-muted">POGO confirmed that it is planning on creating dice & background music utility tool for its web service application</p>
                     </div>
                   </div>
                 </li>
