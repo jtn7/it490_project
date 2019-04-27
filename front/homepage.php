@@ -98,14 +98,6 @@
     }
             ';
 ?>
-<nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation">
-  <div class="container-fluid">
-    <!--Navi Bar Middle Contents-->
-    <div class="navbar-header">
-      <a class ="navbar-brand" href ="homepage.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:120px;"></a>
-    </div>
-  </div>
-</nav>
   
 <!-- Sweet Alert for the login-->
 <?php
