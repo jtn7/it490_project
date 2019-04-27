@@ -192,7 +192,7 @@ $(document).ready(function(){
         <div class="header-content">
             <h1>Welcome to D&D by POGO</h1>
             <p>We are creating an immersive experience for dungeons and dragons</p>
-            <a href="#about" class="js-scroll-trigger btn btn-lg">Read More</a>
+            <a href="#about" class="nav-link js-scroll-trigger btn btn-lg">Read More</a>
         </div>
     </header>
 
