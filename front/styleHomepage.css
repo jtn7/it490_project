@@ -84,6 +84,7 @@ body{
     color:#333;
     margin-bottom:4.5rem;
 }
+
 .section-a h1{
     font-size:40px;
     margin-bottom:0;
@@ -101,10 +102,32 @@ body{
     margin:4rem 0;
 }
 
+.section-b h1{
+    font-size:40px;
+    margin-bottom:0;
+}
+
+.section-b p{
+    font-size:1.5rem;
+    display:block;
+    padding-bottom:2rem;
+}
+
 .section-c{
     background: #fff;
     color:#333;
     margin:4rem 0;
+}
+
+.section-c h1{
+    font-size:40px;
+    margin-bottom:0;
+}
+
+.section-c p{
+    font-size:1.5rem;
+    display:block;
+    padding-bottom:2rem;
 }
 
 @media(max-width:960px){
