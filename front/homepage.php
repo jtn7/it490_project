@@ -350,7 +350,7 @@ $logger->info('homepage.php accessed');
 
     <!-- Section with Contact -->
     <section class="section section-d" id="contact">
-      <div class="container-of-homepage">
+      <div class="container-of-homepage" style="margin-top:20px">
         <h1>Contact Us</h1>
         <p>Let us know how we are doing & where we should improve!</p>
 
@@ -379,7 +379,7 @@ $logger->info('homepage.php accessed');
                   </div>
                 </div>
                 <div class="clearfix"></div>
-                <div class="col-lg-12 text-center" style="margin-bottom:30px;">
+                <div class="col-lg-12 text-center" style="margin-bottom:50px;">
                   <div id="success"></div>
                   <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Send Message</button>
                 </div>
