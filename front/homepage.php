@@ -350,8 +350,8 @@ $logger->info('homepage.php accessed');
 
     <!-- Section with Contact -->
     <section class="section section-d" id="contact">
-      <div class="container-of-homepage" style="margin-top:50px">
-        <h1>Contact Us</h1>
+      <div class="container-of-homepage">
+        <h1 style="margin-top:50px">Contact Us</h1>
         <p>Let us know how we are doing & where we should improve!</p>
 
         <div class="row">
