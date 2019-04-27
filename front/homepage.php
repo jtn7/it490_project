@@ -90,7 +90,7 @@
     }
 
     //Navigation bar when the user is not logged on
-    else (isset($_SESSION['username'])) {
+    else {
         echo
         '
         <nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation">
