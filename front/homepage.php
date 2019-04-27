@@ -41,7 +41,7 @@ $logger->info('homepage.php accessed');
   <!-- Custom script for delay in order to load video-->
 </head>
 
-<body>
+<body style="scroll-behavior: smooth;">
 
  <!-- Page Wrapper -->
  <div id="wrapper">
