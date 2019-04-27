@@ -132,6 +132,8 @@ body{
 
 .list-inline-item {
     font-size:1.5rem;
+    margin-top: 0;
+    margin-bottom: 30px;
 }
 
 @media(max-width:960px){
