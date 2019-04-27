@@ -31,6 +31,18 @@
 </head>
 
 <body>
+
+<!-- Sweet Alert for the login-->
+<?php
+	$fullUrl 	= "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+	if (strpos($fullUrl, "contact=error") == true){
+		echo '<script type="text/javascript">swal("Wait a minute!", "Something went wrong while sending message", "error");</script>';
+  }
+  elseif (strpos($fullUrl, "contact=success") == true){
+		echo '<script type="text/javascript">swal("Great job!", "Message sent to the developer :)", "success");</script>';
+	}
+?>
+
 	<!--Navigation Bars for homepage-->
 	<nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation">
 		<div class="container-fluid">
