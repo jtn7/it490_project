@@ -123,7 +123,7 @@ $logger->info('homepage.php accessed');
                     <a href="#">Contact</a>
                 </li>
             </ul>
-            <ul class="navbar-nav ml-auto class="list-inline">
+            <ul class="navbar-nav ml-auto list-inline">
               <li>
                 <form action="login.php" method="POST">
                   <div class="input-group">
