@@ -82,7 +82,7 @@ $logger->info('homepage.php accessed');
                     <img class="img-profile rounded-circle" src="assets/dnd_user_icon.png" style="width:30px;">
                     </a>
                     <!-- Dropdown - User Information -->
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" tabindex="-1" aria-labelledby="userDropdown">
                     <a class="dropdown-item" href="#">
                         <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                         Profile
