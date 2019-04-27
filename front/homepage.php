@@ -118,7 +118,7 @@
                         <input type="text" placeholder="Username" name="loginUN" required="required" style="padding:5px;">
                         <input type="password" placeholder="Password" name="loginPW" required="required" style="padding:5px;">
                         <div class="input-group-append">
-                            <button class="btn btn-primary" type="button">Login</button>
+                            <button class="btn btn-primary" type="submit">Login</button>
                         </div>
                     </div>
                 </form>
