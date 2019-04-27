@@ -50,12 +50,6 @@ $logger->info('homepage.php accessed');
     if (isset($_SESSION['username'])) {
         echo
         '
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
-
-        <!-- Main Content -->
-        <div id="content">
-
         <nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation"> 
             <ul class="nav narbar-nav narbar-left" id="navbar" style="display: flex; align-items: center";>
                 <li>
@@ -107,9 +101,6 @@ $logger->info('homepage.php accessed');
                 </li>
             </ul>
         </nav>
-
-        </div>
-        </div>
         ';
     }
 
