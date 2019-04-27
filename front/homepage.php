@@ -59,7 +59,7 @@
                 <form action="login.php" method="POST">
                     <input type="text" placeholder="Username" name="loginUN" required="required">
                     <input type="password" placeholder="Password" name="loginPW" required="required">
-                    <button type="submit">Login</button>
+                    <button class="btn btn-primary" type="submit">Login</button>
                 </form>
             </ul>
         </nav>
