@@ -11,7 +11,7 @@ body{
     overflow-x:hidden;
 }
 
-#navbar > li{
+#navbar > li > a{
     color:#fff;
 }
 
