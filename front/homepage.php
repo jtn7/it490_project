@@ -123,8 +123,9 @@ $logger->info('homepage.php accessed');
                     <a href="#">Contact</a>
                 </li>
             </ul>
-            <ul class="navbar-nav ml-auto">
-                <form action="login.php" class="list-inline" method="POST">
+            <ul class="navbar-nav ml-auto class="list-inline">
+              <li>
+                <form action="login.php" method="POST">
                   <div class="input-group">
                     <input type="text" placeholder="Username" name="loginUN" required="required" style="padding:5px;">
                     <input type="password" placeholder="Password" name="loginPW" required="required" style="padding:5px;">
@@ -132,8 +133,11 @@ $logger->info('homepage.php accessed');
                       <button class="btn btn-primary" type="submit">Login</button>
                     </div>
                   </div>
-                  <a class="btn btn-primary" href="signup.php" role="button" style="margin-left:5px">Register</a>
                 </form>
+              </li>
+              <li>
+                <a class="btn btn-primary" href="signup.php" role="button" style="margin-left:5px">Register</a>
+              </li>
             </ul>
         </nav>
         ';
