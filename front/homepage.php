@@ -38,7 +38,7 @@
         echo
         '
         <nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation">
-        <ul class="nav navbar-nav narbar-left">
+            <ul class="nav narbar-nav narbar-left">
                 <li>
                     <a class ="navbar-brand" href ="index.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:120px;"></a>
                 </li>
@@ -56,13 +56,11 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav narbar-right">
-                <div class="login-container">
-                    <form action="login.php" method="POST">
-                        <input type="text" placeholder="Username" name="loginUN" required="required">
-                        <input type="password" placeholder="Password" name="loginPW" required="required">
-                        <button type="submit">Login</button>
-                    </form>
-                </div>
+                <form action="login.php" method="POST">
+                    <input type="text" placeholder="Username" name="loginUN" required="required">
+                    <input type="password" placeholder="Password" name="loginPW" required="required">
+                    <button type="submit">Login</button>
+                </form>
             </ul>
         </nav>
         ';
