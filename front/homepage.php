@@ -123,7 +123,8 @@ $logger->info('homepage.php accessed');
                     <a href="#">Contact</a>
                 </li>
             </ul>
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav navbar-right ml-auto">
+              <li>
                 <form action="login.php" class="list-inline" method="POST">
                   <div class="input-group">
                     <input type="text" placeholder="Username" name="loginUN" required="required" style="padding:5px;">
@@ -131,9 +132,12 @@ $logger->info('homepage.php accessed');
                     <div class="input-group-append">
                       <button class="btn btn-primary" type="submit">Login</button>
                     </div>
-                    <a class="btn btn-primary" href="signup.php" role="button" style="margin-left:5px">Register</a>
                   </div>                
                 </form>
+              </li>
+              <li>
+                <a class="btn btn-primary" href="signup.php" role="button" style="margin-left:5px">Register</a>
+              </li>
             </ul>
         </nav>
         ';
