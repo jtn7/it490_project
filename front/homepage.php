@@ -79,7 +79,7 @@ $logger->info('homepage.php accessed');
         echo
         '       
                     </span>
-                    <img class="img-profile rounded-circle" src="assets/dnd_user_icon.png">
+                    <img class="img-profile rounded-circle" src="assets/dnd_user_icon.png" style="width:50px;">
                     </a>
                     <!-- Dropdown - User Information -->
                     <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
