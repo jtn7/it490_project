@@ -38,36 +38,32 @@
         echo
         '
         <nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation">
-            <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class ="navbar-brand" href ="index.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:120px;"></a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#">Updates</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#">Team</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-                <ul class="navbar-nav ml-auto">
-                    <div class="login-container">
-                        <form action="login.php" method="POST">
-                            <input type="text" placeholder="Username" name="loginUN" required="required">
-                            <input type="password" placeholder="Password" name="loginPW" required="required">
-                            <button type="submit">Login</button>
-                        </form>
-                    </div>
-                </ul>
-            </div>
+        <ul class="nav navbar-nav narbar-left">
+                <li class="nav-item">
+                    <a class ="navbar-brand" href ="index.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:120px;"></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Updates</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Team</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav narbar-right">
+                <div class="login-container">
+                    <form action="login.php" method="POST">
+                        <input type="text" placeholder="Username" name="loginUN" required="required">
+                        <input type="password" placeholder="Password" name="loginPW" required="required">
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+            </ul>
         </nav>
         ';
     }
@@ -77,7 +73,7 @@
         echo
         '
         <nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation"> 
-            <ul class="navbar-nav mr-auto">
+            <ul class="nav navbar-nav narbar-left">
                 <a class ="navbar-brand" href ="index.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:120px;"></a>
                 <li class="nav-item">
                     <a href="#">About</a>
@@ -92,7 +88,7 @@
                     <a href="#">Contact</a>
                 </li>
             </ul>
-            <ul class="navbar-nav ml-auto">
+            <ul class="nav navbar-nav narbar-right">
                 <li class="nav-item dropdown no-arrow">
                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="mr-2 d-none d-lg-inline text-gray-700 medium">';
