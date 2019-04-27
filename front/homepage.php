@@ -67,17 +67,17 @@ $logger->info('homepage.php accessed');
             <li>
               <a href="index.php">My Dashboard</a>
             </li>
-            <li>
-              <a href="#">About</a>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">About</a>
             </li>
-            <li>
-              <a href="#">Updates</a>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#update">Updates</a>
             </li>
-            <li>
-              <a href="#">Team</a>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#team">Team</a>
             </li>
-            <li>
-              <a href="#">Contact</a>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -110,17 +110,17 @@ $logger->info('homepage.php accessed');
                 <li>
                     <a class ="navbar-brand" href ="homepage.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:80px;"></a>
                 </li>
-                <li>
-                    <a href="#">About</a>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#about">About</a>
                 </li>
-                <li>
-                    <a href="#">Updates</a>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#update">Updates</a>
                 </li>
-                <li>
-                    <a href="#">Team</a>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#team">Team</a>
                 </li>
-                <li>
-                    <a href="#">Contact</a>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
                 </li>
             </ul>
             <ul class="navbar-nav navbar-right ml-auto">
@@ -167,7 +167,7 @@ $logger->info('homepage.php accessed');
     </header>
 
     <!-- Section with About -->
-    <section class="section section-a">
+    <section class="section section-a" id="about">
       <div class="container-of-homepage">
         <h1>About</h1>
         <p>Take us with your journey</p>
@@ -201,7 +201,7 @@ $logger->info('homepage.php accessed');
     </section>
     
     <!-- Section with Updates -->
-    <section class="section section-b">
+    <section class="section section-b" id="update">
       <div class="container-of-homepage">
           <h1>Updates</h1>
           <p>Here are some of the features that we are working on</p>
@@ -209,7 +209,7 @@ $logger->info('homepage.php accessed');
     </section>
 
     <!-- Section with Member's Information -->
-    <section class="section section-c">
+    <section class="section section-c" id="team">
         <div class="container-of-homepage">
             <h1>OUR AMAZING TEAM</h1>
             <p>Here are the members who are working on this project</p>
