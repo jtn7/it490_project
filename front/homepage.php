@@ -52,7 +52,7 @@ $logger->info('homepage.php accessed');
         <nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation"> 
             <ul class="nav narbar-nav narbar-left" id="navbar" style="display: flex; align-items: center";>
                 <li>
-                    <a class ="navbar-brand" href ="homepage.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:90px;"></a>
+                    <a class ="navbar-brand" href ="homepage.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:80px;"></a>
                 </li>
                 <li>
                     <a href="#">About</a>
@@ -111,7 +111,7 @@ $logger->info('homepage.php accessed');
         <nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation">
             <ul class="nav narbar-nav narbar-left" id="navbar" style="display: flex; align-items: center";>
                 <li>
-                    <a class ="navbar-brand" href ="homepage.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:90px;"></a>
+                    <a class ="navbar-brand" href ="homepage.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:80px;"></a>
                 </li>
                 <li>
                     <a href="#">About</a>
