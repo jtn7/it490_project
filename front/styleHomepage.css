@@ -131,7 +131,7 @@ body{
 }
 
 .section-d{
-    margin-top:10rem;
+    margin-top:5rem;
     color:#fff;
 }
 
@@ -172,7 +172,7 @@ section#contact {
   }
   
   section#contact .form-group {
-    margin-bottom: 25px;
+    margin-bottom: 10px;
   }
   
   section#contact .form-group input,
