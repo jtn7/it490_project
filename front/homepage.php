@@ -184,7 +184,7 @@ $(document).ready(function(){
 ?>
 
 <!-- Add contents here-->
-    <header class="v-header container-of-homepage">
+    <header class="v-header container-of-homepage" id="page-top">
         <div class="fullscreen-video-wrap">
             <video id="dnd_main_background" src="assets/dnd_main_background.mov"  autoplay="true" preload="true" loop="true" muted="true"></video>
         </div>
