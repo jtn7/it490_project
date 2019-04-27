@@ -15,8 +15,7 @@ body{
     color:#fff;
 }
 
-#navbar > li:hover{
-    color: #fff;
+#navbar > li > a:hover{
     background-color: gray;
 }
 
