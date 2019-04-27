@@ -42,6 +42,15 @@ $logger->info('homepage.php accessed');
 
 <body>
 
+ <!-- Page Wrapper -->
+ <div id="wrapper">
+
+<!-- Content Wrapper -->
+<div id="content-wrapper" class="d-flex flex-column">
+
+<!-- Main Content -->
+<div id="content">
+
 <!--Navigation bar for homepage-->
 <?php
     //Navigation bar when the user is logged on
@@ -392,6 +401,9 @@ $logger->info('homepage.php accessed');
     </section>
 <!-- End Contents here-->
 
+</div>
+<!-- End of Main Content -->
+
 <!-- Footer -->
 <footer class="sticky-footer" style="background-color:black;">
 
@@ -513,6 +525,12 @@ $logger->info('homepage.php accessed');
 <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
 </a>
+
+</div>
+<!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
 
 <!-- Logout Modal-->
 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
