@@ -31,43 +31,11 @@
 </head>
 
 <body>
-<!--Navigation Bars for homepage-->
-<?php
-    //Navigation bar when the user is not logged on
-    if (!isset($_SESSION['username'])) {
-        echo
-        '
-        <nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation">
-            <ul class="nav narbar-nav narbar-left" style="display: flex; align-items: center";>
-                <li>
-                    <a class ="navbar-brand" href ="index.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:100px;"></a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Updates</a>
-                </li>
-                <li>
-                    <a href="#">Team</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav narbar-right" style="display: flex; align-items: center";>
-                <form action="login.php" method="POST">
-                    <input type="text" placeholder="Username" name="loginUN" required="required">
-                    <input type="password" placeholder="Password" name="loginPW" required="required">
-                    <button class="btn btn-primary" type="submit">Login</button>
-                </form>
-            </ul>
-        </nav>
-        ';
-    }
 
+<!--Navigation bar for homepage-->
+<?php
     //Navigation bar when the user is logged on
-    elseif (isset($_SESSION['username'])) {
+    if (isset($_SESSION['username'])) {
         echo
         '
         <nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation"> 
@@ -116,6 +84,39 @@
                     </a>
                     </div>
                 </li>
+            </ul>
+        </nav>
+        ';
+    }
+
+    //Navigation bar when the user is not logged on
+    else (isset($_SESSION['username'])) {
+        echo
+        '
+        <nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation">
+            <ul class="nav narbar-nav narbar-left" style="display: flex; align-items: center";>
+                <li>
+                    <a class ="navbar-brand" href ="index.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:100px;"></a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Updates</a>
+                </li>
+                <li>
+                    <a href="#">Team</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav narbar-right" style="display: flex; align-items: center";>
+                <form action="login.php" method="POST">
+                    <input type="text" placeholder="Username" name="loginUN" required="required" style="padding:5px;">
+                    <input type="password" placeholder="Password" name="loginPW" required="required" style="padding:5px;">
+                    <button class="btn btn-primary" type="submit">Login</button>
+                </form>
             </ul>
         </nav>
         ';
