@@ -4,6 +4,7 @@ if(empty($_POST['name']) || empty($_POST['email']) || empty($_POST['phone']) || 
 {
     echo "No arguments Provided!";
     return false;
+    header("Location: homepage.html?contact=error");
 }
    
 $name = strip_tags(htmlspecialchars($_POST['name']));
@@ -18,5 +19,6 @@ $email_body = "You have received a new message from your website contact form.\n
 $headers = "From: noreply@yourdomain.com\n"; // This is the email address the generated message will be from
 $headers .= "Reply-To: $email_address";   
 mail($to,$email_subject,$email_body,$headers);
-return true;         
+return true;
+header("Location: homepage.html?contact=success");
 ?>
