@@ -38,7 +38,7 @@
         echo
         '
         <nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation">
-            <ul class="nav narbar-nav narbar-left">
+            <ul class="nav narbar-nav narbar-left" style="display: flex; align-items: center";>
                 <li>
                     <a class ="navbar-brand" href ="index.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:120px;"></a>
                 </li>
@@ -55,7 +55,7 @@
                     <a href="#">Contact</a>
                 </li>
             </ul>
-            <ul class="nav navbar-nav narbar-right">
+            <ul class="nav navbar-nav narbar-right" style="display: flex; align-items: center";>
                 <form action="login.php" method="POST">
                     <input type="text" placeholder="Username" name="loginUN" required="required">
                     <input type="password" placeholder="Password" name="loginPW" required="required">
@@ -71,7 +71,7 @@
         echo
         '
         <nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation"> 
-            <ul class="nav navbar-nav narbar-left">
+            <ul class="nav navbar-nav narbar-left" style="display: flex; align-items: center";>
                 <a class ="navbar-brand" href ="index.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:120px;"></a>
                 <li>
                     <a href="#">About</a>
@@ -86,7 +86,7 @@
                     <a href="#">Contact</a>
                 </li>
             </ul>
-            <ul class="nav navbar-nav narbar-right">
+            <ul class="nav navbar-nav narbar-right" style="display: flex; align-items: center";>
                 <li class="nav-item dropdown no-arrow">
                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="mr-2 d-none d-lg-inline text-gray-700 medium">';
