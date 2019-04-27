@@ -90,7 +90,8 @@
     }
 
     //Navigation bar when the user is not logged on
-    else {
+    else 
+    {
         echo
         '
         <nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation">
@@ -115,7 +116,9 @@
                 <form action="login.php" method="POST">
                     <input type="text" placeholder="Username" name="loginUN" required="required" style="padding:5px;">
                     <input type="password" placeholder="Password" name="loginPW" required="required" style="padding:5px;">
-                    <button class="btn btn-primary" type="submit">Login</button>
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button">Login</button>
+                    </div>
                 </form>
             </ul>
         </nav>
