@@ -85,13 +85,13 @@ $logger->info('homepage.php accessed');
       ';
               //Getting the username to display
               $user = ($_SESSION['username']);
-              echo "<i style='font-size:1rem;'>$user</i>";
+              echo "<a href='#'><i style='font-size:1.2rem;'>$user</i></a>";
 
       echo
       '       
-              <img class="img-profile rounded-circle" src="assets/dnd_user_icon.png" style="width:33px;">
+              <img class="img-profile rounded-circle" src="assets/dnd_user_icon.png" style="width:32px;">
               <a href="logout.php">
-              <i class="fas fa-sign-out-alt" style="font-size:1rem;">Logout</i>
+              <i class="fas fa-sign-out-alt" style="font-size:1.2rem;">Logout</i>
               </a>
             </li>
         </ul>
