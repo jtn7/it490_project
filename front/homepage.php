@@ -32,11 +32,77 @@
 
 <body>
 <!--Navigation Bars for homepage-->
+<?php
+    //Navigation bar when the user is not logged on
+    if (!isset($_SESSION['username'])) {
+        echo
+        '
+        <nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation"> 
+            <a class ="navbar-brand" href ="index.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:120px;"></a>
+            <a href="#about">About</a>
+            <a href="#about">Updates</a>
+            <a href="#about">Team</a>
+            <a href="#contact">Contact</a>
+            <div class="login-container">
+                <form action="/action_page.php">
+                <input type="text" placeholder="Username" name="loginUN" required="required">
+                <input type="password" placeholder="Password" name="loginPW" required="required">
+                <button type="submit">Login</button>
+                </form>
+            </div>
+        </nav>
+        ';
+    }
+
+    //Navigation bar when the user is logged on
+    elseif (isset($_SESSION['username'])) {
+        echo
+        '
+        <nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation"> 
+            <ul class="navbar-nav ml-auto">
+            <a class ="navbar-brand" href ="index.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:120px;"></a>
+            <a href="#about">About</a>
+            <a href="#about">Updates</a>
+            <a href="#about">Team</a>
+            <a href="#contact">Contact</a>
+
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-gray-700 medium">
+                    <?php
+                      $user = ($_SESSION['username']);
+                      echo "<b class='medium text-gray-500'>$user</b>";
+                    ?>
+			        	</span>
+                <img class="img-profile rounded-circle" src="assets/dnd_user_icon.png">
+              </a>
+              <!-- Dropdown - User Information -->
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Profile
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Activity Log
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
+                </a>
+              </div>
+            </li>
+            </ul>
+        </nav>
+    }
+            ';
+?>
 <nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation">
   <div class="container-fluid">
     <!--Navi Bar Middle Contents-->
     <div class="navbar-header">
-      <a class ="navbar-brand" href ="index.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:120px;"></a>
+      <a class ="navbar-brand" href ="homepage.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:120px;"></a>
     </div>
   </div>
 </nav>
