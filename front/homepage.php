@@ -132,7 +132,7 @@ $logger->info('homepage.php accessed');
                       <button class="btn btn-primary" type="submit">Login</button>
                     </div>
                     <div class="input-group-append">
-                      <button class="btn btn-primary" href="signup.php" role="button" style="margin-left:4px; margin-right:10px;">Register</button>
+                      <button class="btn btn-primary" href="signup.php" role="button" style="margin-left:4px; margin-right:15px;">Register</button>
                     </div>
                   </div>                
                 </form>
@@ -161,8 +161,8 @@ $logger->info('homepage.php accessed');
         <div class="header-overlay"></div>
         <div class="header-content">
             <h1>Welcome to D&D by POGO</h1>
-            <p>We are creating an immersive dungeons and dragons experience</p>
-            <a href="#" class="btn btn-lg">Read More</a>
+            <p>We are creating an immersive experience for dungeons and dragons</p>
+            <a href="#about" class="js-scroll-trigger btn btn-lg">Read More</a>
         </div>
     </header>
 
