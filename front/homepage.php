@@ -68,7 +68,7 @@ $logger->info('homepage.php accessed');
                     <a href="#">Contact</a>
                 </li>
             </ul>
-            <ul class="navbar-nav ml-auto" style="display: flex; align-items: center";>
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown no-arrow">
                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="mr-2 d-none d-lg-inline text-gray-700 medium">
