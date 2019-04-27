@@ -37,8 +37,8 @@
     if (!isset($_SESSION['username'])) {
         echo
         '
-        <nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation">
-        <ul class="nav navbar-nav narbar-left">
+        <nav class="navbar navbar-default navbar-inverse" role="navigation">
+            <ul class="nav navbar-nav narbar-left">
                 <li>
                     <a class ="navbar-brand" href ="index.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:120px;"></a>
                 </li>
@@ -72,7 +72,7 @@
     elseif (isset($_SESSION['username'])) {
         echo
         '
-        <nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation"> 
+        <nav class="navbar navbar-default navbar-inverse" role="navigation">
             <ul class="nav navbar-nav narbar-left">
                 <a class ="navbar-brand" href ="index.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:120px;"></a>
                 <li>
