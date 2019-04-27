@@ -125,16 +125,16 @@ $logger->info('homepage.php accessed');
             </ul>
             <ul class="navbar-nav ml-auto">
                 <form action="login.php" method="POST">
-                    <div class="input-group">
-                        <input type="text" placeholder="Username" name="loginUN" required="required" style="padding:5px;">
-                        <input type="password" placeholder="Password" name="loginPW" required="required" style="padding:5px;">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="submit">Login</button>
-                        </div>
+                  <div class="input-group">
+                    <input type="text" placeholder="Username" name="loginUN" required="required" style="padding:5px;">
+                    <input type="password" placeholder="Password" name="loginPW" required="required" style="padding:5px;">
+                    <div class="input-group-append">
+                      <button class="btn btn-primary" type="submit">Login</button>
                     </div>
+                  </div>
                 </form>
                 <div class=input-group">
-                  <button class="btn btn-primary" type="button"><a href="signup.php">Register</a></button>
+                  <button class="btn btn-primary" type="submit"><a href="signup.php">Register</a></button>
                 </div>
             </ul>
         </nav>
