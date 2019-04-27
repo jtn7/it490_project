@@ -62,35 +62,35 @@ $logger->info('homepage.php accessed');
       <nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation"> 
         <ul class="nav narbar-nav narbar-left" id="navbar" style="display: flex; align-items: center";>
             <li>
-                <a class ="navbar-brand" href ="homepage.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:80px;"></a>
+              <a class ="navbar-brand" href ="homepage.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:80px;"></a>
             </li>
             <li>
-                <a href="#">About</a>
+              <a href="index.php">My Dashboard</a>
             </li>
             <li>
-                <a href="#">Updates</a>
+              <a href="#">About</a>
             </li>
             <li>
-                <a href="#">Team</a>
+              <a href="#">Updates</a>
             </li>
             <li>
-                <a href="#">Contact</a>
+              <a href="#">Team</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown no-arrow">
-                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="mr-2 d-none d-lg-inline text-gray-700 medium">
+            <li>
       ';
-                    //Getting the username to display
-                    $user = ($_SESSION['username']);
-                    echo "<b class='medium text-gray-500'>$user</b>";
+              //Getting the username to display
+              $user = ($_SESSION['username']);
+              echo "<b class='medium text-gray-500'>$user</b>";
 
       echo
       '       
-                  </span>
-                  <img class="img-profile rounded-circle" src="assets/dnd_user_icon.png" style="width:30px;">
-                </a>
+              <img class="img-profile rounded-circle" src="assets/dnd_user_icon.png" style="width:30px;">
+            </li>
             <li>
               <a href="logout.php">
               <i class="fas fa-sign-out-alt" fa-sm fa-fw mr-2 text-gray-400"></i>
