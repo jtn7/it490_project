@@ -26,8 +26,10 @@ $logger->info('homepage.php accessed');
 
 	<!--Link / Script -->
 	<link rel="stylesheet" href="styleHomepage.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 	<!-- Custom font-->
 	<link href="fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -47,7 +49,7 @@ $logger->info('homepage.php accessed');
     if (isset($_SESSION['username'])) {
         echo
         '
-        <nav class="navbar navbar-inverse justify-content-between shadow navbar-fixed-top" role="navigation"> 
+        <nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation"> 
             <ul class="nav narbar-nav narbar-left" id="navbar" style="display: flex; align-items: center";>
                 <li>
                     <a class ="navbar-brand" href ="homepage.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:80px;"></a>
@@ -106,7 +108,7 @@ $logger->info('homepage.php accessed');
     {
         echo
         '
-        <nav class="navbar navbar-inverse justify-content-between shadow navbar-fixed-top" role="navigation">
+        <nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation">
             <ul class="nav narbar-nav narbar-left" id="navbar" style="display: flex; align-items: center";>
                 <li>
                     <a class ="navbar-brand" href ="homepage.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:80px;"></a>
@@ -540,6 +542,7 @@ $logger->info('homepage.php accessed');
 
 <!-- Custom scripts for all pages-->
 <script src="js/template.min.js"></script>
+
 
 </body>
 </html>
