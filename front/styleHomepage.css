@@ -57,12 +57,12 @@ body{
 }
 
 .header-content h1{
-    font-size:50px;
+    font-size:100px;
     margin-bottom:0;
 }
 
 .header-content p{
-    font-size:1.5rem;
+    font-size:3rem;
     display:block;
     padding-bottom:2rem;
 }
