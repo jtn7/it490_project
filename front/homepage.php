@@ -114,10 +114,12 @@
             </ul>
             <ul class="nav navbar-nav narbar-right" style="display: flex; align-items: center";>
                 <form action="login.php" method="POST">
-                    <input type="text" placeholder="Username" name="loginUN" required="required" style="padding:5px;">
-                    <input type="password" placeholder="Password" name="loginPW" required="required" style="padding:5px;">
-                    <div class="input-group-append">
-                        <button class="btn btn-primary" type="button">Login</button>
+                    <div class="input-group">
+                        <input type="text" placeholder="Username" name="loginUN" required="required" style="padding:5px;">
+                        <input type="password" placeholder="Password" name="loginPW" required="required" style="padding:5px;">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="button">Login</button>
+                        </div>
                     </div>
                 </form>
             </ul>
