@@ -19,6 +19,10 @@ body{
     background-color: gray;
 }
 
+#navbar > li > a:active{
+    background-color: rgb(70, 68, 68);
+}
+
 .v-header{
     height:100vh;
     display:flex;
