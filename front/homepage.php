@@ -131,8 +131,8 @@ $logger->info('homepage.php accessed');
                     <div class="input-group-append">
                       <button class="btn btn-primary" type="submit">Login</button>
                     </div>
+                    <a class="btn btn-primary" href="signup.php" role="button" style="margin-left:5px">Register</a>
                   </div>
-                  <a class="btn btn-primary" href="signup.php" role="button" style="margin-left:5px">Register</a>
                 </form>
             </ul>
         </nav>
