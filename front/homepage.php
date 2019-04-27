@@ -80,7 +80,7 @@ $logger->info('homepage.php accessed');
               <a href="#">Contact</a>
             </li>
         </ul>
-        <ul class="nav narbar-nav narbar-right" id="navbar" style="display: flex; align-items: center";>
+        <ul class="navbar-nav ml-auto">
             <li>
       ';
               //Getting the username to display
