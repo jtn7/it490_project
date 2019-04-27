@@ -249,7 +249,7 @@ $(document).ready(function(){
                       <h4 class="subheading">Humble Beginnings of POGO</h4>
                     </div>
                     <div class="timeline-body">
-                      <p class="text-muted">POGO Team was created as part of the team project in NJIT</p>
+                      <p class="text-muted">POGO Team was created as part of IT490 team project in NJIT</p>
                     </div>
                   </div>
                 </li>
