@@ -124,7 +124,7 @@ $logger->info('homepage.php accessed');
                 </li>
             </ul>
             <ul class="navbar-nav navbar-right ml-auto">
-                <form action="login.php" class="list-inline" method="POST">
+                <form action="login.php" method="POST">
                   <div class="input-group">
                     <input type="text" placeholder="Username" name="loginUN" required="required" style="padding:5px;">
                     <input type="password" placeholder="Password" name="loginPW" required="required" style="padding:5px;">
