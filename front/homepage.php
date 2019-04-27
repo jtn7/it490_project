@@ -90,8 +90,6 @@ $logger->info('homepage.php accessed');
       echo
       '       
               <img class="img-profile rounded-circle" src="assets/dnd_user_icon.png" style="width:30px;">
-            </li>
-            <li>
               <a href="logout.php">
               <i class="fas fa-sign-out-alt" fa-sm fa-fw mr-2 text-gray-400"></i>
               Logout
