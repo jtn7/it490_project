@@ -103,7 +103,7 @@ body{
 }
 
 .section-b h1{
-    font-size:40px;
+    font-size:6rem;
     margin-bottom:0;
 }
 
@@ -120,7 +120,7 @@ body{
 }
 
 .section-c h1{
-    font-size:40px;
+    font-size:6rem;
     margin-bottom:0;
 }
 
@@ -131,13 +131,13 @@ body{
 }
 
 .section-d{
-    background: #fff;
-    color:#333;
+    background: #333;
+    color:#fff;
     margin:4rem 0;
 }
 
 .section-d h1{
-    font-size:40px;
+    font-size:6rem;
     margin-bottom:0;
 }
 
