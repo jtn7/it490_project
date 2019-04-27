@@ -13,7 +13,7 @@ body{
 
 #navbar > li > a{
     color:#fff;
-    font:2rem;
+    font-size:2rem;
 }
 
 #navbar > li > a:hover{
