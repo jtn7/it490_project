@@ -29,7 +29,7 @@
           <ul class="list-unstyled">
             <li>
               <p>
-                <a href="homepage.html">HOME</a>
+                <a href="homepage.php">HOME</a>
               </p>
             </li>
             <li>

@@ -39,7 +39,7 @@ session_start();
     <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="homepage.php">
         <div class="sidebar-brand-icon rotate-n-20">
           <i class="fas fa-dragon"></i>
         </div>
