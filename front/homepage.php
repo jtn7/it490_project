@@ -38,7 +38,7 @@
         echo
         '
         <nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation">
-            <div class="navbar-nav mr-auto">
+            <ul class="navbar-nav mr-auto">
                 <a class ="navbar-brand" href ="index.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:120px;"></a>
                 <li class="nav-item">
                     <a href="#about">About</a>
@@ -52,16 +52,16 @@
                 <li class="nav-item">
                     <a href="#contact">Contact</a>
                 </li>
-            </div>
-            <div class="navbar-nav ml-auto">
-            <div class="login-container">
-                <form action="/action_page.php">
-                <input type="text" placeholder="Username" name="loginUN" required="required">
-                <input type="password" placeholder="Password" name="loginPW" required="required">
-                <button type="submit">Login</button>
-                </form>
-            </div>
-            </div>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <div class="login-container">
+                    <form action="login.php" method="POST">
+                        <input type="text" placeholder="Username" name="loginUN" required="required">
+                        <input type="password" placeholder="Password" name="loginPW" required="required">
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+            </ul>
         </nav>
         ';
     }
@@ -71,7 +71,7 @@
         echo
         '
         <nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation"> 
-            <div class="navbar-nav mr-auto">
+            <ul class="navbar-nav mr-auto">
                 <a class ="navbar-brand" href ="index.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:120px;"></a>
                 <li class="nav-item">
                     <a href="#about">About</a>
@@ -85,7 +85,7 @@
                 <li class="nav-item">
                     <a href="#contact">Contact</a>
                 </li>
-            </div>
+            </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown no-arrow">
                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
