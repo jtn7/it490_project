@@ -241,57 +241,85 @@ $(document).ready(function(){
               <ul class="timeline">
                 <li>
                   <div class="timeline-image">
-                    <img class="rounded-circle img-fluid" src="img/about/1.jpg" alt="">
+                    <img class="rounded-circle img-fluid" src="assets/about/njit.png" alt="njit logo">
                   </div>
                   <div class="timeline-panel">
                     <div class="timeline-heading">
-                      <h4>2019</h4>
+                      <h4>January 2019</h4>
                       <h4 class="subheading">Humble Beginnings of POGO</h4>
                     </div>
                     <div class="timeline-body">
-                      <p class="text-muted">POGO Team was created with the sole purpose to serve the customers with the best experience possible</p>
+                      <p class="text-muted">POGO Team was created as part of the team project in NJIT</p>
                     </div>
                   </div>
                 </li>
                 <li class="timeline-inverted">
                   <div class="timeline-image">
-                    <img class="rounded-circle img-fluid" src="img/about/2.jpg" alt="">
+                    <img class="rounded-circle img-fluid" src="assets/about/project.png" alt="project">
                   </div>
                   <div class="timeline-panel">
                     <div class="timeline-heading">
-                      <h4>March 2011</h4>
-                      <h4 class="subheading">An Agency is Born</h4>
+                      <h4>February 2019</h4>
+                      <h4 class="subheading">Project in Mind</h4>
                     </div>
                     <div class="timeline-body">
-                      <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                      <p class="text-muted">POGO quickly focused its attention to create a product that can be beneficial to others</p>
                     </div>
                   </div>
                 </li>
                 <li>
                   <div class="timeline-image">
-                    <img class="rounded-circle img-fluid" src="img/about/3.jpg" alt="">
+                    <img class="rounded-circle img-fluid" src="assets/about/project_work.png" alt="project_work">
                   </div>
                   <div class="timeline-panel">
                     <div class="timeline-heading">
-                      <h4>December 2012</h4>
-                      <h4 class="subheading">Transition to Full Service</h4>
+                      <h4>March 2019</h4>
+                      <h4 class="subheading">Web Service Application</h4>
                     </div>
                     <div class="timeline-body">
-                      <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                      <p class="text-muted">POGO started to research and develop in dungeons and dragons in order to create a web service application for our fellow gamers</p>
                     </div>
                   </div>
                 </li>
                 <li class="timeline-inverted">
                   <div class="timeline-image">
-                    <img class="rounded-circle img-fluid" src="img/about/4.jpg" alt="">
+                    <img class="rounded-circle img-fluid" src="assets/about/calendar.jpg" alt="calendar">
+                  </div>
+                  <div class="timeline-panel">
+                    <div class="timeline-heading">
+                      <h4>April 2019</h4>
+                      <h4 class="subheading">Calendar Integration</h4>
+                    </div>
+                    <div class="timeline-body">
+                      <p class="text-muted">POGO is expected to ship out a fully integration calendar system inside of the web service application so that it can alert the users</p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="timeline-image">
+                    <img class="rounded-circle img-fluid" src="assets/about/hangout.png" alt="hangout">
+                  </div>
+                  <div class="timeline-panel">
+                    <div class="timeline-heading">
+                      <h4>May 2019</h4>
+                      <h4 class="subheading">Google Hangouts</h4>
+                    </div>
+                    <div class="timeline-body">
+                      <p class="text-muted">POGO announced that it is focusing to integrate Google Hangouts to the web service application so that the end users can enjoy voice chats</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="timeline-inverted">
+                  <div class="timeline-image">
+                    <img class="rounded-circle img-fluid" src="assets/about/dice.jpg" alt="dice">
                   </div>
                   <div class="timeline-panel">
                     <div class="timeline-heading">
                       <h4>July 2014</h4>
-                      <h4 class="subheading">Phase Two Expansion</h4>
+                      <h4 class="subheading">Dice Utilities</h4>
                     </div>
                     <div class="timeline-body">
-                      <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                      <p class="text-muted">POGO confirmed that it is planning on creating dice utility tool for its web service application</p>
                     </div>
                   </div>
                 </li>
