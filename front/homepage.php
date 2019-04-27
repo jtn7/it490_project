@@ -133,7 +133,7 @@ $logger->info('homepage.php accessed');
                     </div>
                   </div>
                 </form>
-                <div class=input-group">
+                <div>
                   <button class="btn btn-primary" type="submit"><a href="signup.php">Register</a></button>
                 </div>
             </ul>
