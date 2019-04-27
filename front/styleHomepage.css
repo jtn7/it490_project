@@ -130,21 +130,6 @@ body{
     padding-bottom:2rem;
 }
 
-.section-d{
-    margin-top:6rem;
-}
-
-.section-d h1{
-    font-size:6rem;
-    margin-bottom:0;
-}
-
-.section-d p{
-    font-size:1.5rem;
-    display:block;
-    padding-bottom:2rem;
-}
-
 .list-inline-item {
     font-size:1.5rem;
     margin-top: 0;
@@ -159,6 +144,7 @@ body{
 }
 
 section#contact {
+    background-color: #212529;
     background-image: url("../img/map-image.png");
     background-repeat: no-repeat;
     background-position: center;
