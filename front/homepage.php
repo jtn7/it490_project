@@ -85,7 +85,7 @@ $logger->info('homepage.php accessed');
       ';
               //Getting the username to display
               $user = ($_SESSION['username']);
-              echo "$user";
+              echo "<i style='font-size:1rem;'>$user</i>";
 
       echo
       '       
