@@ -38,32 +38,36 @@
         echo
         '
         <nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class ="navbar-brand" href ="index.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:120px;"></a>
-                </li>
-                <li class="nav-item">
-                    <a href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#">Updates</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#">Team</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#">Contact</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-                <div class="login-container">
-                    <form action="login.php" method="POST">
-                        <input type="text" placeholder="Username" name="loginUN" required="required">
-                        <input type="password" placeholder="Password" name="loginPW" required="required">
-                        <button type="submit">Login</button>
-                    </form>
-                </div>
-            </ul>
+            <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class ="navbar-brand" href ="index.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:120px;"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">Updates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+                <ul class="navbar-nav ml-auto">
+                    <div class="login-container">
+                        <form action="login.php" method="POST">
+                            <input type="text" placeholder="Username" name="loginUN" required="required">
+                            <input type="password" placeholder="Password" name="loginPW" required="required">
+                            <button type="submit">Login</button>
+                        </form>
+                    </div>
+                </ul>
+            </div>
         </nav>
         ';
     }
