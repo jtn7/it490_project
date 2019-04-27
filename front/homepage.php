@@ -68,12 +68,14 @@
 
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-700 medium">
-                    <?php
+                <span class="mr-2 d-none d-lg-inline text-gray-700 medium">';
+                    //Getting the username to display
                       $user = ($_SESSION['username']);
                       echo "<b class='medium text-gray-500'>$user</b>";
-                    ?>
-			        	</span>
+
+        echo
+        '       
+                </span>
                 <img class="img-profile rounded-circle" src="assets/dnd_user_icon.png">
               </a>
               <!-- Dropdown - User Information -->
@@ -95,8 +97,8 @@
             </li>
             </ul>
         </nav>
+        ';
     }
-            ';
 ?>
   
 <!-- Sweet Alert for the login-->
