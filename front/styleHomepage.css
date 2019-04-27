@@ -11,11 +11,12 @@ body{
     overflow-x:hidden;
 }
 
-#navbar .li{
+#navbar > li{
     color:#fff;
 }
 
-#navbar .li.hover{
+#navbar > li:hover{
+    color: #fff;
     background-color: gray;
 }
 
