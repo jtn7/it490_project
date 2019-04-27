@@ -90,6 +90,7 @@ $logger->info('homepage.php accessed');
       echo
       '       
               <img class="img-profile rounded-circle" src="assets/dnd_user_icon.png" style="width:32px;">
+              
               <a href="logout.php">
               <i class="fas fa-sign-out-alt" style="font-size:1.2rem;">Logout</i>
               </a>
@@ -129,6 +130,9 @@ $logger->info('homepage.php accessed');
                         <input type="password" placeholder="Password" name="loginPW" required="required" style="padding:5px;">
                         <div class="input-group-append">
                             <button class="btn btn-primary" type="submit">Login</button>
+                        </div>
+                        <div class=input-group">
+                          <button class="btn btn-primary" type="button"><a href="signup.php">Register</a></button>
                         </div>
                     </div>
                 </form>
