@@ -91,10 +91,11 @@ $logger->info('homepage.php accessed');
                   </span>
                   <img class="img-profile rounded-circle" src="assets/dnd_user_icon.png" style="width:30px;">
                 </a>
-                  <a href="logout.php">
-                  <i class="fas fa-logout fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
-                </a>
+            <li>
+              <a href="logout.php">
+              <i class="fas fa-sign-out-alt" fa-sm fa-fw mr-2 text-gray-400"></i>
+              Logout
+              </a>
             </li>
         </ul>
       </nav>
