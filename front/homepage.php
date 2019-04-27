@@ -39,18 +39,20 @@
         '
         <nav class="navbar navbar-inverse justify-content-between shadow navbar-static-top" role="navigation">
             <ul class="navbar-nav mr-auto">
-                <a class ="navbar-brand" href ="index.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:120px;"></a>
                 <li class="nav-item">
-                    <a href="#about">About</a>
+                    <a class ="navbar-brand" href ="index.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:120px;"></a>
                 </li>
                 <li class="nav-item">
-                    <a href="#about">Updates</a>
+                    <a href="#">About</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#about">Team</a>
+                    <a href="#">Updates</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#contact">Contact</a>
+                    <a href="#">Team</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Contact</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
@@ -74,16 +76,16 @@
             <ul class="navbar-nav mr-auto">
                 <a class ="navbar-brand" href ="index.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:120px;"></a>
                 <li class="nav-item">
-                    <a href="#about">About</a>
+                    <a href="#">About</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#about">Updates</a>
+                    <a href="#">Updates</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#about">Team</a>
+                    <a href="#">Team</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#contact">Contact</a>
+                    <a href="#">Contact</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
