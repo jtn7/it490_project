@@ -132,6 +132,7 @@ body{
 
 .section-d{
     margin-top:10rem;
+    color:#fff;
 }
 
 .section-d h1{
@@ -195,24 +196,28 @@ section#contact {
   section#contact ::-webkit-input-placeholder {
     font-weight: 700;
     color: #ced4da;
+    font-size:2rem;
     font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   }
   
   section#contact :-moz-placeholder {
     font-weight: 700;
     color: #ced4da;
+    font-size:2rem;
     font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   }
   
   section#contact ::-moz-placeholder {
     font-weight: 700;
     color: #ced4da;
+    font-size:2rem;
     font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   }
   
   section#contact :-ms-input-placeholder {
     font-weight: 700;
     color: #ced4da;
+    font-size:2rem;
     font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   }
   
