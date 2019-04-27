@@ -127,7 +127,7 @@ $logger->info('homepage.php accessed');
                     <a href="#">Contact</a>
                 </li>
             </ul>
-            <ul class="navbar-nav ml-auto" style="display: flex; align-items: center";>
+            <ul class="navbar-nav ml-auto">
                 <form action="login.php" method="POST">
                     <div class="input-group">
                         <input type="text" placeholder="Username" name="loginUN" required="required" style="padding:5px;">
