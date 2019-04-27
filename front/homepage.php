@@ -133,11 +133,7 @@ $logger->info('homepage.php accessed');
                     </div>
                   </div>
                 </form>
-                <li>
-                  <div>
-                    <a class="btn btn-primary" href="signup.php" role="button">Register</a>
-                  </div>
-                </li>
+                <a class="btn btn-primary" href="signup.php" role="button">Register</a>
             </ul>
         </nav>
         ';
