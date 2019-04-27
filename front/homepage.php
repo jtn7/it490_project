@@ -134,8 +134,6 @@ $logger->info('homepage.php accessed');
                     </div>
                   </div>
                 </form>
-              </li>
-              <li>
                 <a class="btn btn-primary" href="signup.php" role="button" style="margin-left:5px">Register</a>
               </li>
             </ul>
