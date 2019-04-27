@@ -38,7 +38,7 @@ session_start();
 		<div class="container-fluid">
 			<!--Navi Bar Middle Contents-->
 			<div class="navbar-header">
-				<a class ="navbar-brand" href ="index.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:120px;"></a>
+				<a class ="navbar-brand" href ="homepage.php"><img src="assets/dnd_logo.png" alt="Dungeons & Dragons" style="width:120px;"></a>
 			</div>
 		</div>
 	</nav>
