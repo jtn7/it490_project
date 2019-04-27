@@ -11,6 +11,14 @@ body{
     overflow-x:hidden;
 }
 
+#navbar{
+    color:#fff;
+}
+
+#navbar.hover{
+    background-color: gray;
+}
+
 .v-header{
     height:100vh;
     display:flex;
