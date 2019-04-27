@@ -99,7 +99,7 @@ body{
 .section-a{
     background: #fff;
     color:#333;
-    margin-bottom:20px;
+    margin-bottom:4.5rem;
 }
 
 .section-a h1{
@@ -116,7 +116,7 @@ body{
 .section-b{
     background: #333;
     color:#fff;
-    margin:20px 0;
+    margin:4rem 0;
 }
 
 .section-b h1{
@@ -127,13 +127,13 @@ body{
 .section-b p{
     font-size:1.5rem;
     display:block;
-    padding-bottom:10px;
+    padding-bottom:2rem;
 }
 
 .section-c{
     background: #fff;
     color:#333;
-    margin:20px 0;
+    margin:4rem 0;
 }
 
 .section-c h1{
@@ -144,7 +144,7 @@ body{
 .section-c p{
     font-size:1.5rem;
     display:block;
-    padding-bottom:10px;
+    padding-bottom:2rem;
 }
 
 .section-d{
@@ -272,7 +272,7 @@ section#contact {
     clear: both;
   }
   
-  .timeline > li .timeline-panel {
+.timeline > li .timeline-panel {
     position: relative;
     float: right;
     width: 100%;
@@ -280,21 +280,21 @@ section#contact {
     text-align: left;
   }
   
-  .timeline > li .timeline-panel:before {
+.timeline > li .timeline-panel:before {
     right: auto;
     left: -15px;
     border-right-width: 15px;
     border-left-width: 0;
   }
   
-  .timeline > li .timeline-panel:after {
+.timeline > li .timeline-panel:after {
     right: auto;
     left: -14px;
     border-right-width: 14px;
     border-left-width: 0;
   }
   
-  .timeline > li .timeline-image {
+.timeline > li .timeline-image {
     position: absolute;
     z-index: 100;
     left: 0;
@@ -308,47 +308,47 @@ section#contact {
     background-color: #fed136;
   }
   
-  .timeline > li .timeline-image h4 {
+.timeline > li .timeline-image h4 {
     font-size: 10px;
     line-height: 14px;
     margin-top: 12px;
   }
   
-  .timeline > li.timeline-inverted > .timeline-panel {
+.timeline > li.timeline-inverted > .timeline-panel {
     float: right;
     padding: 0 20px 0 100px;
     text-align: left;
   }
   
-  .timeline > li.timeline-inverted > .timeline-panel:before {
+.timeline > li.timeline-inverted > .timeline-panel:before {
     right: auto;
     left: -15px;
     border-right-width: 15px;
     border-left-width: 0;
   }
   
-  .timeline > li.timeline-inverted > .timeline-panel:after {
+.timeline > li.timeline-inverted > .timeline-panel:after {
     right: auto;
     left: -14px;
     border-right-width: 14px;
     border-left-width: 0;
   }
   
-  .timeline > li:last-child {
+.timeline > li:last-child {
     margin-bottom: 0;
   }
   
-  .timeline .timeline-heading h4 {
+.timeline .timeline-heading h4 {
     margin-top: 0;
     color: inherit;
   }
   
-  .timeline .timeline-heading h4.subheading {
+.timeline .timeline-heading h4.subheading {
     text-transform: none;
   }
   
-  .timeline .timeline-body > ul,
-  .timeline .timeline-body > p {
+.timeline .timeline-body > ul,
+.timeline .timeline-body > p {
     margin-bottom: 0;
   }
   
