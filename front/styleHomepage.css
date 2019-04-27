@@ -172,17 +172,13 @@ section#contact {
   }
   
   section#contact .form-group {
-    margin-bottom: 5.0px;
+    margin-bottom: 25px;
   }
   
-  section#contact .form-group input {
-    padding: 20px;
-    font-size:2rem;
-  }
-
+  section#contact .form-group input,
   section#contact .form-group textarea {
-    padding: 35px;
-    font-size:2rem;
+    padding: 20px;
+    font-size:1.8rem;
   }
 
   section#contact .form-group input.form-control {
