@@ -122,11 +122,11 @@ function Subclass() {
 }
 
 function Equipment() { 
-  let dropdown = document.getElementById('Weapon');
+  let dropdown = document.getElementById('Equipment');
   dropdown.length = 0;
 
   let defaultOption = document.createElement('option');
-  defaultOption.text = 'Choose Weapon';
+  defaultOption.text = 'Choose Equipment';
 
   dropdown.add(defaultOption);
   dropdown.selectedIndex = 0;
