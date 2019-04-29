@@ -293,8 +293,16 @@ func uploadPackage(response http.ResponseWriter, request *http.Request) {
 		return
 	}
 
+	restartBackend()
+
+	response.Write([]byte("Package upload and deployment were successful"))
+	log.Info("Upload request by ", requestor, " was successful")
+}
+
+// restartBackend restarts the backend container to apply changes
+func restartBackend() {
 	if backendContainer != "" {
-		err = exec.Command("docker", "stop", backendContainer).Run()
+		err := exec.Command("docker", "stop", backendContainer).Run()
 		if err != nil {
 			log.Error("Could not stop backend container", err)
 		}
@@ -303,9 +311,6 @@ func uploadPackage(response http.ResponseWriter, request *http.Request) {
 			log.Error("Could not start backend container", err)
 		}
 	}
-
-	response.Write([]byte("Package upload and deployment were successful"))
-	log.Info("Upload request by ", requestor, " was successful")
 }
 
 // rollBack is the handler for requests to /rollback
@@ -352,8 +357,9 @@ func rollBack(response http.ResponseWriter, request *http.Request) {
 		derr.handleError(response)
 		return
 	}
+
+	restartBackend()
 	log.Info("Rollback successful")
-	return
 }
 
 // unzip decompresses a zip archive, moving all files and folders

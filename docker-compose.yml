@@ -1,8 +1,20 @@
 version: '3.7'
 services:
+  # reverse-proxy:
+  #   image: traefik # The official Traefik docker image
+  #   command: --api --docker # Enables the web UI and tells Traefik to listen to docker
+  #   ports:
+  #     - "80:80"     # The HTTP port
+  #     - "8080:8080" # The Web UI (enabled by --api)
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock # So that Traefik can listen to the Docker events
+  #   networks:
+  #       - frontend
+  #       - backend
 
   rabbit:
     image: jtn7/rabbit
+    container_name: rabbit
     ports:
       - "15672:15672"
     networks:
@@ -10,8 +22,9 @@ services:
 
   front:
     image: jtn7/php-apache
+    container_name: front
     ports:
-      - "80:80"
+      - "8090:80"
     depends_on:
       - rabbit
     volumes:
@@ -20,8 +33,17 @@ services:
     networks:
       - frontend
 
-  sqldb:
-    image: jtn7/db
+  sqldb-master:
+    image: jtn7/db:master
+    container_name: sqldb-master
+    environment:
+      - MYSQL_ROOT_PASSWORD=pass
+    networks:
+      - backend
+
+  sqldb-slave:
+    image: jtn7/db:slave
+    container_name: sqldb-slave
     environment:
       - MYSQL_ROOT_PASSWORD=pass
     networks:
@@ -29,6 +51,7 @@ services:
 
   mongodb:
     image: mongo:4
+    container_name: mongodb
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=pass
@@ -37,15 +60,16 @@ services:
 
   back:
     image: jtn7/php-backend
-    restart: always
-    depends_on:
-      - sqldb
-      - mongodb
+    container_name: back
+    working_dir: /step2/back
+    command: ./start.sh
     volumes:
       - ./back:/step2/back
       - ./logs/back/:/var/log/dnd/
-    working_dir: /step2/back
-    command: ./start.sh
+    restart: always
+    depends_on:
+      - sqldb-master
+      - mongodb
     networks:
       - frontend
       - backend
