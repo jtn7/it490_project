@@ -124,12 +124,12 @@ $logger->info('homepage.php accessed');
                 </li>
             </ul>
             <ul class="navbar-nav navbar-right ml-auto">
-                <form name="login" action="login.php" method="POST" onsubmit="required()>
+                <form name="login" action="login.php" method="POST">
                   <div class="input-group">
-                    <input type="text" placeholder="Username" name="loginUN" style="padding:5px;">
-                    <input type="password" placeholder="Password" name="loginPW" style="padding:5px;">
+                    <input type="text" placeholder="Username" name="loginUN" required="required" style="padding:5px;">
+                    <input type="password" placeholder="Password" name="loginPW" required="required" style="padding:5px;">
                     <div class="input-group-append">
-                      <button class="btn btn-primary" type="submit">Login</button>
+                      <button class="btn btn-primary" type="submit" onsubmit="required()">Login</button>
                     </div>
                     <div class="input-group-append">
                       <button class="btn btn-primary" href="signup.php" role="button" style="margin-left:4px; margin-right:15px;">Register</button>
