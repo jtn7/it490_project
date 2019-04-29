@@ -3,8 +3,7 @@ window.onload = function() {
   Subrace();
   Class();
   Subclass();
-  Weapon();
-  Armor();
+  Equipment();
   Spell();
   Features();
   Traits();
@@ -122,7 +121,7 @@ function Subclass() {
   xhttp.send();
 }
 
-function Weapon() { 
+function Equipment() { 
   let dropdown = document.getElementById('Weapon');
   dropdown.length = 0;
 
@@ -146,11 +145,7 @@ function Weapon() {
       }
     }
   }
-  xhttp.open("GET", "http://www.dnd5eapi.co/api/equipment", true);
-  xhttp.send();
-}
 
-function Armor() { 
   let dropdown = document.getElementById('Armor');
   dropdown.length = 0;
 
@@ -174,6 +169,7 @@ function Armor() {
       }
     }
   }
+
   xhttp.open("GET", "http://www.dnd5eapi.co/api/equipment", true);
   xhttp.send();
 }
