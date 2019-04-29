@@ -132,7 +132,7 @@ $logger->info('homepage.php accessed');
                       <button class="btn btn-primary" type="submit">Login</button>
                     </div>
                     <div class="input-group-append">
-                      <button class="btn btn-primary" type="button" onclick="location.href = "signup.php" style="margin-left:4px; margin-right:15px;">Register</button>
+                      <button id="signupButton" class="btn btn-primary" type="button" style="margin-left:4px; margin-right:15px;">Register</button>
                     </div>
                   </div>                
                 </form>
@@ -141,6 +141,13 @@ $logger->info('homepage.php accessed');
         ';
     }
 ?>
+<!-- Adding the button to go to signup.php -->
+<script type="text/javascript">
+    document.getElementById("signupButton").onclick = function () {
+        location.href = "signup.php";
+    };
+</script>
+
 
 <!-- Adding script for smooth scrolling navbar -->
 <script>
