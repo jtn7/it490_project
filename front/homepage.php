@@ -132,7 +132,7 @@ $logger->info('homepage.php accessed');
                       <button class="btn btn-primary" type="submit" onsubmit="required()">Login</button>
                     </div>
                     <div class="input-group-append">
-                      <button class="btn btn-primary" href="signup.php" type="button" style="margin-left:4px; margin-right:15px;">Register</button>
+                      <button class="btn btn-primary" onclick="window.location.href = "signup.php" type="button" style="margin-left:4px; margin-right:15px;">Register</button>
                     </div>
                   </div>                
                 </form>
