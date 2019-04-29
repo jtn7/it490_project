@@ -35,7 +35,8 @@ if(!empty($_POST)) {
 	$fullUrl 	= "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 	if (strpos($fullUrl, "success=F") == true){
 		echo '<script type="text/javascript">swal("Wait a minute!", "Something went wrong while creating a character :(", "error");</script>';
-  }
+	  }
+	
 ?>
 
 <!-- Content Column -->

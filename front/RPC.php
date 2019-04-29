@@ -54,7 +54,7 @@ class RPC
 				$user = 'storage_user';
 				break;
 			case 'storeCharacter':
-				$this->exchange = 'RetrieveExchange';
+				$this->exchange = 'StoreExchange';
 				$vhost = 'storage';
 				$user = 'storage_user';
 				break;
