@@ -5,6 +5,7 @@ window.onload = function() {
   Subclass();
   Weapon();
   Armor();
+  Equipment();
   Spell();
   Features();
   Traits();
@@ -166,7 +167,7 @@ function Armor() {
       var array = this.responseText;
       var parsedArr = JSON.parse(array);
       let option;
-      for(let x=38; x<parsedArr.results.length; x++){
+      for(let x=38; x<50; x++){
         option = document.createElement('option');
         option.text = parsedArr.results[x].name;
         option.value = parsedArr.results[x].name;
@@ -178,6 +179,33 @@ function Armor() {
   xhttp.send();
 }
 
+function Equipment() { 
+  let dropdown = document.getElementById('Equipment');
+  dropdown.length = 0;
+
+  let defaultOption = document.createElement('option');
+  defaultOption.text = 'Choose Equipment';
+
+  dropdown.add(defaultOption);
+  dropdown.selectedIndex = 0;
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if(this.readyState == 4 && this.status == 200) {
+      var array = this.responseText;
+      var parsedArr = JSON.parse(array);
+      let option;
+      for(let x=50; x<parsedArr.results.length; x++){
+        option = document.createElement('option');
+        option.text = parsedArr.results[x].name;
+        option.value = parsedArr.results[x].name;
+        dropdown.add(option);
+      }
+    }
+  }
+  xhttp.open("GET", "http://www.dnd5eapi.co/api/equipment", true);
+  xhttp.send();
+}
 
 function Spell() { 
   let dropdown = document.getElementById('Spell');
