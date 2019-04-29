@@ -129,10 +129,10 @@ $logger->info('homepage.php accessed');
                     <input type="text" placeholder="Username" name="loginUN" required="required" style="padding:5px;">
                     <input type="password" placeholder="Password" name="loginPW" required="required" style="padding:5px;">
                     <div class="input-group-append">
-                      <button class="btn btn-primary" type="submit" onsubmit="required()">Login</button>
+                      <button class="btn btn-primary" type="submit">Login</button>
                     </div>
                     <div class="input-group-append">
-                      <button class="btn btn-primary" onclick="window.location.href = "signup.php" type="button" style="margin-left:4px; margin-right:15px;">Register</button>
+                      <button class="btn btn-primary" type="button" onclick="location.href = "signup.php" style="margin-left:4px; margin-right:15px;">Register</button>
                     </div>
                   </div>                
                 </form>
@@ -141,22 +141,6 @@ $logger->info('homepage.php accessed');
         ';
     }
 ?>
-
-<!-- Adding script to check for empty input field -->
-<script>
-  function required() {
-    var emptyUN = document.forms["login"]["loginUN"].value;
-    var emptyPW = document.forms["login"]["loginPW"].value;
-
-    if (emptyUN == "" && emptyPW == "") {
-      swal("Wait a minute!", "Input field is empty :(", "error");
-      return false;
-    }
-    else {
-      return true; 
-    }
-  }
-</script>
 
 <!-- Adding script for smooth scrolling navbar -->
 <script>
