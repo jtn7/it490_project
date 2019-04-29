@@ -131,11 +131,11 @@ $logger->info('homepage.php accessed');
                     <div class="input-group-append">
                       <button class="btn btn-primary" type="submit">Login</button>
                     </div>
-                    <div class="input-group-append">
-                      <button class="btn btn-primary" href="signup.php" role="button" style="margin-left:4px; margin-right:15px;">Register</button>
-                    </div>
                   </div>                
                 </form>
+                <div class="input-group-append">
+                  <button class="btn btn-primary" href="signup.php" role="button" style="margin-left:4px; margin-right:15px;">Register</button>
+                </div>
             </ul>
         </nav>
         ';
