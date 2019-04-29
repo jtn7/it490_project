@@ -1,3 +1,5 @@
+<?php include 'header_plain.php' ?>
+
 <!-- This is the start of body for 404.php page -->
 <div class="container-fluid">
 
@@ -8,5 +10,8 @@
         <p class="text-gray-500 mb-0">It looks like you found a glitch in our website...</p>
         <a href="homepage.php">&larr; Back to Homepage</a>
     </div>
+    
 </div>
 <!-- This is the end of body for 404.php page -->
+
+<?php include 'footer_plain.php' ?>

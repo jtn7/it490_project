@@ -10,8 +10,4 @@ $logger = new LogWriter('/var/log/dnd/frontend.log');
 $logger->info('404 page accessed');
 ?>
 
-<?php include 'header_plain.php' ?>
-
-<?php include 'html/404body.php' ?>
-
-<?php include 'footer_plain.php' ?>
+<?php include 'html/404-html.php' ?>

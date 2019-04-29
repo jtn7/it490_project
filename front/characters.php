@@ -40,7 +40,7 @@ if (!isset($_GET['load'])) {
 	if (strpos($fullUrl, "success=S") == true){
 		echo '<script type="text/javascript">swal("Great job!", "Character created successfully :D", "success");</script>';
   }
-?>
+?> 
 
 <!-- Begin Page Content -->
 <div class="container-fluid">
@@ -104,6 +104,6 @@ if (!isset($_GET['load'])) {
 		</div>
 	</div>
 </div>
-<!-- /.container-fluid -->
+<!-- This is the end of body for characters.php page -->
 
 <?php include 'footer.php' ?>

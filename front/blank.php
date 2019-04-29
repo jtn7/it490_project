@@ -12,35 +12,35 @@ $logger->info('blank page accessed');
 
 <?php include 'header.php' ?>
 
-<!-- Begin Page Content -->
+<!-- This is the start of body for blank.php page -->
 <div class="container-fluid">
 
-<!-- Page Heading -->
-<div class="d-sm-flex align-items-center justify-content-between mb-4"></div>
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4"></div>
 
-	<!-- Content Row -->
-	<div class="row">
+    <!-- Content Row -->
+    <div class="row">
 
-		<!-- Content Column -->
-		<div class="col-12">
+        <!-- Content Column -->
+        <div class="col-12">
 
-			<!-- Project Card -->
-			<div class="card shadow mb-4">
-				<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-					<h6 class="m-0 font-weight-bold text-primary">Title</h6>
-				</div>
-				<div class="card-body">
-					<div class="content">
+            <!-- Project Card -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Title</h6>
+                </div>
+                <div class="card-body">
+                    <div class="content">
                     
-                        <!-- Enter the content here-->
-                        Content goes here !
-                        
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                    <!-- Enter the content here-->
+                    Content goes here !
+                                             
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<!-- /.container-fluid -->
+<!-- This is the end of body for blank.php page -->
 
 <?php include 'footer.php' ?>
