@@ -53,10 +53,16 @@ class RPC
 				$vhost = 'storage';
 				$user = 'storage_user';
 				break;
+			case 'storeCharacter':
+				$this->exchange = 'StoreExchange';
+				$vhost = 'storage';
+				$user = 'storage_user';
+				break;
+			
 		}
 
 		$this->connection = new AMQPStreamConnection(
-			'172.17.0.4', //host
+			'172.17.0.4', // host
 			5672, // port
 			$user, // username
 			'pass', // password

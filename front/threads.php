@@ -7,41 +7,16 @@ if (!isset($_SESSION['username'])) {
 require_once 'RPC.php';
 use rabbit\RPC;
 
-$threads_rpc = new RPC("getPosts");
 $_SESSION['ForumID'] = $_GET['forumID'];
+
+$threads_rpc = new RPC("getPosts");
 $getThreads = serialize(array("getThreads", $_SESSION['ForumID']));
-$response = $threads_rpc->call($getThreads);
+
+$forums_rpc = new RPC("getPosts");
+$getForums = serialize(array("getForums"));
+
+$responseThreads = $threads_rpc->call($getThreads);
+$responseForums = $forums_rpc->call($getForums);
 ?>
 
-<?php include 'header.php';?>
-
-<div class="body">
-	<div class="content">
-		<?php
-		$ForumName = $_GET['forumName'];
-		echo '<h1>' . $ForumName . '</h1>';
-		?>
-		<a href="createThread.php">Create a Forum Thread</a><br>
-		<?php
-		$unserArr = unserialize($response);
-		foreach ($unserArr as $threadArr){
-			echo
-			'<table>
-				<tr>
-					<td>
-                        <a href="replies.php?threadID=' . $threadArr['ThreadID'] .  '">' . $threadArr['Name'] .
-                        '</a><br>' . $threadArr['Content'] .
-                    '</td>
-				</tr>
-				<tr>
-					<td>'
-						 . $threadArr['User'] . ' - ' . $threadArr['Timestamp'] .
-					'</td>
-				</tr>
-			</table>';
-		}
-		?>
-	</div>
-</div>
-
-<?php include 'footer.php';?>
+<?php include 'html/threads_html.php' ?>

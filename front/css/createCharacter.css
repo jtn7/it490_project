@@ -1,0 +1,28 @@
+/*inputs*/
+#createCharacterform input, #createCharacterform textarea, #createCharacterform select {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #2C3E50;
+    font-size: 13px;
+}
+
+/*buttons*/
+#createCharacterform .action-button {
+    width: 100px;
+    background: #2c59d4f1;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+
+#createCharacterform .action-button:hover, #msform .action-button:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #2c59d4f1;
+}
