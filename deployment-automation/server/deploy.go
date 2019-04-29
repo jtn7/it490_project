@@ -40,6 +40,7 @@ var outputDir string
 var daemonPort string
 var logOutput string
 var backendContainer string
+var rollbackPackagePath string
 
 // init sets up cli flags and log settings.
 func init() {
@@ -94,6 +95,8 @@ func init() {
 		log.Fatal("Cannot listen on port: ", daemonPort, err)
 	}
 	_ = ln.Close()
+
+	rollbackPackagePath = filepath.Join(packageDir, "rollback.pkg")
 }
 
 // checkArguments validates all set arguments.
@@ -287,6 +290,15 @@ func uploadPackage(response http.ResponseWriter, request *http.Request) {
 		return
 	}
 
+	// Create rollback snapshot
+	log.Info("Creating rollback")
+	err = createRollbackPackage(packagePath)
+	if err != nil {
+		newDeployError("Could not create rollback package", internalError, err).handleError(response)
+		return
+	}
+	log.Info("Rollback creation complete")
+
 	// Extract code changes for deployment
 	if derr = unzip(packagePath, outputDir); derr != nil {
 		derr.handleError(response)
@@ -339,8 +351,8 @@ func rollBack(response http.ResponseWriter, request *http.Request) {
 		return
 	}
 
-	currentPackage := files[numberOfPackages-1].Name()
-	rollbackPackage := files[numberOfPackages-2].Name()
+	currentPackage := files[numberOfPackages-2].Name()
+	rollbackPackage := "rollback.pkg"
 
 	err = os.Remove(filepath.Join(packageDir, currentPackage))
 	if err != nil {
@@ -359,14 +371,93 @@ func rollBack(response http.ResponseWriter, request *http.Request) {
 	}
 
 	restartBackend()
+	response.Write([]byte("Rolled back successfully"))
 	log.Info("Rollback successful")
+}
+
+func createRollbackPackage(incomingPackage string) error {
+	zipReader, err := zip.OpenReader(incomingPackage)
+	if err != nil {
+		return err
+	}
+	defer zipReader.Close()
+
+	rollbackPackage, err := os.Create(rollbackPackagePath)
+	if err != nil {
+		return err
+	}
+	defer rollbackPackage.Close()
+
+	zipWriter := zip.NewWriter(rollbackPackage)
+	defer zipWriter.Close()
+
+	for _, f := range zipReader.File {
+		rollbackFile := f.Name
+		finalPath := filepath.Join(outputDir, rollbackFile)
+		// If the file in the package is a new file create an empty file for rollback
+		info, err := os.Stat(finalPath)
+		if err != nil {
+			if filepath.Ext(rollbackFile) == "" {
+				err = os.MkdirAll(finalPath, os.ModePerm)
+				if err != nil {
+					return err
+				}
+				continue
+			}
+			emptyFile, err := os.Create(finalPath)
+			if err != nil {
+				return err
+			}
+			emptyFile.Close()
+		}
+		//append file to archive
+		if info.IsDir() {
+			continue
+		}
+		if err = addFileToZip(zipWriter, finalPath, rollbackFile); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func addFileToZip(zipWriter *zip.Writer, file string, pathInZip string) error {
+	fileToZip, err := os.Open(file)
+	if err != nil {
+		return err
+	}
+	defer fileToZip.Close()
+
+	// Get the file information
+	info, err := fileToZip.Stat()
+	if err != nil {
+		return err
+	}
+
+	header, err := zip.FileInfoHeader(info)
+	if err != nil {
+		return err
+	}
+
+	// Using FileInfoHeader() above only uses the basename of the file. If we want
+	// to preserve the folder structure we can overwrite this with the full path.
+	header.Name = pathInZip
+
+	// Change to deflate to gain better compression
+	// see http://golang.org/pkg/archive/zip/#pkg-constants
+	header.Method = zip.Deflate
+
+	writer, err := zipWriter.CreateHeader(header)
+	if err != nil {
+		return err
+	}
+	_, err = io.Copy(writer, fileToZip)
+	return err
 }
 
 // unzip decompresses a zip archive, moving all files and folders
 // within the zip file (src) to an output directory (dest).
 func unzip(src string, dest string) *deployError {
-	var fileNames []string
-
 	zipReader, err := zip.OpenReader(src)
 	if err != nil {
 		return newDeployError("Could not open the package", internalError, err)
@@ -382,8 +473,6 @@ func unzip(src string, dest string) *deployError {
 		if !strings.HasPrefix(fpath, filepath.Clean(dest)+string(os.PathSeparator)) {
 			return newDeployError("Illegal filepath: "+fpath, badRequest, nil)
 		}
-
-		fileNames = append(fileNames, fpath)
 
 		if f.FileInfo().IsDir() {
 			// Make Folder
