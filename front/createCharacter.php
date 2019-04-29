@@ -149,7 +149,7 @@ if(!empty($_POST)) {
 
 					<fieldset>
 						<h2 class="fs-title">Equipment</h2>
-						<select name="equipment" id="Equipment"></select>
+						<select name="equipment" id="Weapon"></select>
 					</fieldset>
 					<br>
 
