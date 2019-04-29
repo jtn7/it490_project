@@ -26,10 +26,6 @@ if(!empty($_POST)) {
 		header('Location: createCharacter.php?success=F');
 	}
 }
-
-if (isset($_GET['success']) && $_GET['success'] === 'F') {
-	echo "<script type='text/javascript'>alert('There was an error in creating a character. Try Again.');</script>";
-}
 ?>
 
 <?php include 'header.php' ?>
