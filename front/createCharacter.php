@@ -20,7 +20,7 @@ if(!empty($_POST)) {
 	$response = $createCharacter_rpc->call($createCharacterMSG);
 
 	if ($response==="S"){
-		header('Location: index.php');
+		header('Location: characters.php?success=S');
 	}
 	else {
 		header('Location: createCharacter.php?success=F');
@@ -34,7 +34,13 @@ if (isset($_GET['success']) && $_GET['success'] === 'F') {
 
 <?php include 'header.php' ?>
 
-
+<!-- Sweet Alert for the character creation-->
+<?php
+	$fullUrl 	= "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+	if (strpos($fullUrl, "success=F") == true){
+		echo '<script type="text/javascript">swal("Wait a minute!", "Something went wrong while creating a character :(", "error");</script>';
+  }
+?>
 
 <!-- Content Column -->
 <div class="container-fluid col-md-12">

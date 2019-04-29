@@ -34,6 +34,14 @@ if (!isset($_GET['load'])) {
 
 <?php include 'header.php' ?>
 
+<!-- Sweet Alert for the character creation-->
+<?php
+	$fullUrl 	= "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+	if (strpos($fullUrl, "success=S") == true){
+		echo '<script type="text/javascript">swal("Great job!", "Character created successfully :D", "success");</script>';
+  }
+?>
+
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
