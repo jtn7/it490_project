@@ -3,7 +3,8 @@ window.onload = function() {
   Subrace();
   Class();
   Subclass();
-  Equipment();
+  Weapon();
+  Armor();
   Spell();
   Features();
   Traits();
@@ -151,7 +152,7 @@ function Weapon() {
 
 function Armor() { 
   let dropdown = document.getElementById('Armor');
-  dropdown.length = 38;
+  dropdown.length = 0;
 
   let defaultOption = document.createElement('option');
   defaultOption.text = 'Choose Armor';
