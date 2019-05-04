@@ -5,7 +5,7 @@ services:
     image: jtn7/rabbit
     container_name: rabbit
     ports:
-      - "15672:15672"
+      - "8080:8080"
     networks:
       - frontend
 
@@ -13,7 +13,7 @@ services:
     image: jtn7/php-apache
     container_name: front
     ports:
-      - "8090:80"
+      - "80:80"
     depends_on:
       - rabbit
     volumes:
@@ -30,13 +30,13 @@ services:
     networks:
       - backend
 
-  sqldb-slave:
-    image: jtn7/db:slave
-    container_name: sqldb-slave
-    environment:
-      - MYSQL_ROOT_PASSWORD=pass
-    networks:
-      - backend
+#  sqldb-slave:
+#    image: jtn7/db:slave
+#    container_name: sqldb-slave
+#    environment:
+#      - MYSQL_ROOT_PASSWORD=pass
+#    networks:
+#      - backend
 
   mongodb:
     image: mongo:4

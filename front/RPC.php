@@ -62,7 +62,7 @@ class RPC
 		}
 
 		$this->connection = new AMQPStreamConnection(
-			'172.17.0.4', // host
+			'rabbit', // host
 			5672, // port
 			$user, // username
 			'pass', // password

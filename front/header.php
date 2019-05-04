@@ -206,7 +206,7 @@ session_start();
                   Alerts Center
                 </h6>
 				
-				<!-- GREAT PHP MECHANISM NEEDED TO MAKE THIS HAPPEN! HERE'S THE FORM STYLE!
+				<!-- GREAT PHP MECHANISM NEEDED TO MAKE THIS HAPPEN! HERE'S THE FORM STYLE! -->
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="mr-3">
                     <div class="icon-circle bg-primary">
@@ -240,7 +240,7 @@ session_start();
                     Spending Alert: We've noticed unusually high spending for your account.
                   </div>
                 </a>
-				END OF THE FORM STYLE!-->
+				<!-- END OF THE FORM STYLE!-->
 				
                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
               </div>

@@ -11,7 +11,7 @@ class RabbitMQConnection {
 
 	public function __construct($user, $exchange, $vhost) {
 		$connection = new AMQPStreamConnection (
-			'172.17.0.4', // host
+			'rabbit', // host
 			5672, // port
 			$user, // user
 			'pass', // pass
