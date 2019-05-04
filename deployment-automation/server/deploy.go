@@ -178,7 +178,7 @@ func newDeployError(msg string, status int, orig error) *deployError {
 // validatePackageName checks if the name of the uploaded package matches
 // the required regular expression
 func validatePackageName(fileName string) *deployError {
-	isMatch, err := regexp.MatchString(`^dndProj-([0-9]+\.){3}pkg$`, fileName)
+	isMatch, err := regexp.MatchString(`^dndProj-((front)|(back))-([0-9]+\.){3}pkg$`, fileName)
 	if err != nil {
 		return newDeployError("Could not perform regex matching", internalError, err)
 	}
