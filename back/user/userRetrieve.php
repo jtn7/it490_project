@@ -9,6 +9,7 @@ use databases\MongoDB;
 use logging\LogWriter;
 $rmq_connection = new RabbitMQConnection('storage_user', 'UserObjectExchange', 'storage');
 $rmq_channel = $rmq_connection->getChannel();
+
 // User Update: Retrieving
 $userRetrieve_callback = function ($request) {
 	$logger = new LogWriter('/var/log/dnd/userRetrieval.log');
@@ -16,17 +17,21 @@ $userRetrieve_callback = function ($request) {
 	$usersCollection = $client->site->users;
 	$username = $request;
 	$error = "E";
+	
 	try{
 	$logger->info("Getting User doc...");
 	$userDocument = $usersCollection->find(['username' => $username]);
+		
 	if($userDocument === NULL){
 	throw new Exception('JSON could not be found.');
 	}
+		
 	$msg = new AMQPMessage (
 	$userDocument,
 	array('correlation_id' => $request->get('correlation_id'))
 	);
 	$logger->info("document found: " . $userDocument);
+		
 	}catch(Exception $e){
 		$msg = new AMQPMessage (
 			$error,
