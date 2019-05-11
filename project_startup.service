@@ -1,0 +1,16 @@
+[Unit]
+Description=Project Startup
+After=docker.service
+
+[Service]
+RemainAfterExit=yes
+WorkingDirectory=/home/bbh4/490Dev/it490_project
+
+# Compose up and run
+ExecStart=/usr/local/bin/docker-compose -f /home/bbh4/490Dev/it490_project/docker-compose.yml up -d
+
+# Compose down
+ExecStop=/usr/local/bin/docker-compose -f /home/bbh4/490Dev/it490_project/docker-compose.yml stop
+
+[Install]
+WantedBy=multi-user.target
