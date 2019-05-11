@@ -38,9 +38,20 @@ services:
     networks:
       - backend
 
-  mongodb:
+  mongodb-master:
     image: mongo:4
     container_name: mongodb
+    command: mongod --replSet rs0
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=pass
+    networks:
+    - backend
+
+  mongodb-slave:
+    image: mongo:4
+    container_name: mongodb
+    command: mongod --replSet rs1
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=pass
