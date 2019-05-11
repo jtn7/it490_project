@@ -3,7 +3,7 @@
 class ForumsDB {
 	private $connection;
 
-	private $host = '172.17.0.2';
+	private $host = 'sqldb-master';
 	private $user = 'forum-client';
 	private $pass = 'pass';
 	private $name = 'messageBoard';
