@@ -26,3 +26,17 @@
 
 ### User to execute procedures
 `authentication-client`
+
+# Running MySQL Live Data Replication
+
+Make sure to have the most up to date db images on jtn7/db (`docker pull`).
+
+### Steps
+1. Create a master container using the image `jtn7/db:master`
+2. Run the `db.sql` script on the master container
+3. Run the `master.sql` script on the master container
+4. Use the MySQL shell to get the master log file name and log position using `show master status;`
+5. Create a slave container using the image `jtn7/db:slave`
+6. Run the `db.sql` script on the slave container
+7. Edit the `slave.sql` inputting the values from **Step 4**
+8. Run the `slave.sql` script on the slave container
