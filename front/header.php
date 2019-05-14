@@ -1,4 +1,57 @@
 <!DOCTYPE html>
+
+<?php 
+session_start();
+
+require_once 'RPC.php';
+require_once 'logging/LogWriter.php';
+use logging\LogWriter;
+use rabbit\RPC;
+
+error_reporting(E_ERROR | E_PARSE);
+
+$logger = new LogWriter('/var/log/dnd/frontend.log');
+
+$user_rpc = new RPC('getUserObject');
+$rpc_request = $_SESSION['username'];
+$responseNotification = $user_rpc->call($rpc_request);
+$logger->info('getting user object');
+
+// Testing Purpose Only
+// $responseNotification = serialize(
+//   array(
+//     "notifications" => array (
+//       array(
+//         "Content" => "Could retrieve notification!",
+//         "Date" => "May 4th, 2019"
+//       )
+//     )
+//   )
+// );
+
+if ($responseNotification !== 'E') {
+  $logger->info('Successfully got User Object');
+  $logger->debug('Notification response: ' . $responseNotification);
+  $user_object = unserialize($responseNotification);
+  $logger->debug($user_object);
+  $icon = "fas fa-file-alt text-white";
+  $colorOfIcon = "icon-circle bg-primary";
+} else {
+  date_default_timezone_set('America/New_York');
+  $time = date('F jS Y h:i A');
+  $user_object['notifications'] = array(
+    array(
+    "Content" => "Could not retrieve notification!",
+    "Date" => "$time"
+    )
+  );
+  $icon = "fas fa-exclamation-triangle text-white";
+  $colorOfIcon = "icon-circle bg-warning";
+}
+
+
+?>
+
 <html lang="en">
 <head>
 	<!--Icon image -->
@@ -97,6 +150,8 @@
             <a class="collapse-item" href="dndGuide.php">D&D Guide</a>
             <a class="collapse-item" href="#">Music</a>
             <a class="collapse-item" href="#">Dice</a>
+            <a class="collapse-item" href="calendar.php">Calendar</a>
+            <a class="collapse-item" href="hangouts.php">Hangouts</a>
           </div>
         </div>
       </li>
@@ -194,110 +249,71 @@
               <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-bell fa-fw"></i>
                 <!-- Counter - Alerts -->
-                <span class="badge badge-danger badge-counter">3+</span>
+                <span class="badge badge-danger badge-counter"><?php echo count($user_object['notifications']); ?></span>
               </a>
               <!-- Dropdown - Alerts -->
               <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                 <h6 class="dropdown-header">
-                  Alerts Center
+                  Notification Center
                 </h6>
 
-				<!-- GREAT PHP MECHANISM NEEDED TO MAKE THIS HAPPEN! HERE'S THE FORM STYLE! -->
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-primary">
-                      <i class="fas fa-file-alt text-white"></i>
-                    </div>
+          <!--Mechanism to create the notifications -->
+					<?php
+            foreach ($user_object['notifications'] as $user_notification){
+            echo
+            "		
+              <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">
+                <div class=\"mr-3\">
+                  <div class=\"$colorOfIcon\">
+                    <i class=\"$icon\"></i>
                   </div>
-                  <div>
-                    <div class="small text-gray-500">December 12, 2019</div>
-                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-success">
-                      <i class="fas fa-donate text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 7, 2019</div>
-                    $290.29 has been deposited into your account!
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-warning">
-                      <i class="fas fa-exclamation-triangle text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 2, 2019</div>
-                    Spending Alert: We've noticed unusually high spending for your account.
-                  </div>
-                </a>
-				<!-- END OF THE FORM STYLE!-->
+                </div>
+                <div>
+                  <div class=\"small text-gray-500\">"  . $user_notification['time'] . "</div>
+                  "  . $user_notification['msg'] . "
+                </div>
+              </a>
+            ";
+            }
+					?>
+
+            <!-- Unused but good to keep variety of notifications
+            <a class="dropdown-item d-flex align-items-center" href="#">
+              <div class="mr-3">
+                <div class="icon-circle bg-warning">
+                  <i class="fas fa-exclamation-triangle text-white"></i>
+                </div>
+              </div>
+              <div>
+                <div class="small text-gray-500">Get Date</div>
+                There was an error in retrieving notification!
+              </div>
+            </a>
+            <a class="dropdown-item d-flex align-items-center" href="#">
+              <div class="mr-3">
+                <div class="icon-circle bg-success">
+                  <i class="fas fa-donate text-white"></i>
+                </div>
+              </div>
+              <div>
+                <div class="small text-gray-500">December 7, 2019</div>
+                $290.29 has been deposited into your account!
+              </div>
+            </a>
+            <a class="dropdown-item d-flex align-items-center" href="#">
+              <div class="mr-3">
+                <div class="icon-circle bg-primary">
+                  <i class="fas fa-file-alt text-white"></i>
+                </div>
+              </div>
+              <div>
+                <div class="small text-gray-500">December 2, 2019</div>
+                Spending Alert: We've noticed unusually high spending for your account.
+              </div>
+            </a>
+            End of variety of notifications -->
 
                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-              </div>
-            </li>
-
-            <!-- Nav Item - Messages -->
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-envelope fa-fw"></i>
-                <!-- Counter - Messages -->
-                <span class="badge badge-danger badge-counter">3</span>
-              </a>
-              <!-- Dropdown - Messages -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
-                <h6 class="dropdown-header">
-                  Message Center
-                </h6>
-				<!-- GREAT PHP MECHANISM NEEDED TO MAKE THIS HAPPEN! HERE'S THE FORM STYLE!
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
-                    <div class="status-indicator bg-success"></div>
-                  </div>
-                  <div class="font-weight-bold">
-                    <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
-                    <div class="small text-gray-500">Emily Fowler · 58m</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
-                    <div class="status-indicator"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">I have the photos that you ordered last month, how would you like them sent to you?</div>
-                    <div class="small text-gray-500">Jae Chun · 1d</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">
-                    <div class="status-indicator bg-warning"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">Last month's report looks great, I am very happy with the progress so far, keep up the good work!</div>
-                    <div class="small text-gray-500">Morgan Alvarez · 2d</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
-                    <div class="status-indicator bg-success"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</div>
-                    <div class="small text-gray-500">Chicken the Dog · 2w</div>
-                  </div>
-                </a>
-				END OF THE FORM STYLE!-->
-
-                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
               </div>
             </li>
 

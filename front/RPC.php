@@ -58,7 +58,11 @@ class RPC
 				$vhost = 'storage';
 				$user = 'storage_user';
 				break;
-			
+			case 'getUserObject':
+				$this->exchange = 'UserObjectExchange';
+				$vhost = 'storage';
+				$user = 'storage_user';
+				break;
 		}
 
 		$this->connection = new AMQPStreamConnection(
