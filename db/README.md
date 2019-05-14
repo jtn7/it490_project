@@ -68,16 +68,8 @@ security:
 1. Add the IP address of the container you are on in the bindIP under net
 2. Uncomment security and add keyFile with its path on the container
 
-## Step 4: Connect to Mongo
-To connect to Mongo, run the command: `docker exec -it container-name mongo `
 
-### Create an administrative user and log in as one
-#### Steps
-1. Connect to the admin DB: `use admin`
-2. Create an administrative user with root priviledges: `db.createUser({user: "user", pwd: "password", roles:[{role: "root", db: "admin"}]})`
-3. Log in as admin: `db.auth('user','password')`
-
-## Step 5: Initiate Replica Set
+## Step 4: Initiate Replica Set
 Once log in as an admin user, run the following command: 
 `rs.initiate({
      "_id" : "rslocal01",
@@ -98,6 +90,17 @@ The above command will initiate the replica set with the following hosts as its 
 You can check the configuration of the replica set by running the command: `rs.config()`
 
 You can also check the status of the replica set by running the command: `rs.status()`
+
+
+## Step 5: Connect to Mongo
+To connect to Mongo, run the command: `docker exec -it container-name mongo `
+
+### Create an administrative user and log in as one
+#### Steps
+1. Connect to the admin DB: `use admin`
+2. Create an administrative user with root priviledges: `db.createUser({user: "user", pwd: "password", roles:[{role: "root", db: "admin"}]})`
+3. Log in as admin: `db.auth('user','password')`
+
 
 ## Step 6: Test Replication
 To test replication, you can create test data on the primary member of your replica set. Make sure that you are logged in as an admin user.
