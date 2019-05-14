@@ -21,7 +21,7 @@
 				<div class="card-body">
 					<div class="content">
 						<?php
-						$Thread = unserialize($response1);
+						$Thread = unserialize($responseGetThread);
 						echo
 							'<h1>' . $Thread['Name'] . '</h1>
 							<p>' . $Thread['Content'] . '</p><br>
@@ -29,7 +29,7 @@
 
 						?>
 						<?php
-						$unserArr = unserialize($response);
+						$unserArr = unserialize($responseGetReplies);
 						foreach ($unserArr as $repliesArr){
 							echo
 							'

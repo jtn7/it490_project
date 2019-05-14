@@ -11,7 +11,7 @@ $rmq_connection = new RabbitMQConnection('storage_user', 'CharacterObjectExchang
 $rmq_channel = $rmq_connection->getChannel();
 // Character Update: Storing
 $characterStore_callback = function ($request) {
-	$logger = new LogWriter('/var/log/dnd/characterStorage.log');
+	$logger = new LogWriter('/var/log/dnd/backend.log');
 	$client = (new MongoDB())->getConnection();
 	$database = $client->site->characters;
 	$reqArray = unserialize($request->body);

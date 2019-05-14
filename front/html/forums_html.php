@@ -1,4 +1,3 @@
-
 <?php include 'header.php' ?>
 
 <!-- This is the start of body for forums.php page -->
@@ -22,12 +21,10 @@
 				<div class="card-body">
 					<div class="content">
 					<?php
-					// echo "<h2>";
-					// print_r($response);
-					// echo "<h2>";
-					$unserArr = unserialize($response);
+					$logger->info('unserializing the response');
+					$forumsResp = unserialize($responseForums);
 
-					foreach ($unserArr as $forumArr) {
+					foreach ($forumsResp as $forum) {
 					echo
 					'				
 					<div class="col-12">
@@ -35,8 +32,8 @@
 							<div class="card-body">
 								<div class="row no-gutters align-items-center">
 									<div class="col mr-2">
-										<div class="h5 mb-0 font-weight-bold text-warning text-uppercase mb-1"><a href="threads.php?forumID=' . $forumArr['ForumID'] . '&forumName=' . $forumArr['Name'] . '">' . $forumArr['Name'] . '</a></div>
-										<div class="text-s font-weight-regular text-gray-800"><p>' . $forumArr['Description'] . '</p></div>
+										<div class="h5 mb-0 font-weight-bold text-warning text-uppercase mb-1"><a href="threads.php?forumID=' . $forum['ForumID'] . '&forumName=' . $forum['Name'] . '">' . $forum['Name'] . '</a></div>
+										<div class="text-s font-weight-regular text-gray-800"><p>' . $forum['Description'] . '</p></div>
 									</div>
 									<div class="col-auto">
 										<i class="fas fa-comments fa-2x text-gray-300"></i>

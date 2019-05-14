@@ -16,7 +16,7 @@ $rmq_channel = $rmq_connection->getChannel();
 $register_callback = function ($request) {
 	$mysql_connection = (new AuthDB())->getConnection();
 	$logger = new LogWriter('/var/log/dnd/backend.log');
-	$logger->info("Registering username...");
+	$logger->info("Registering user...");
 	$requestData = unserialize($request->body);
 	$username = $requestData[0];
 	$pass = $requestData[1];
@@ -48,13 +48,14 @@ $register_callback = function ($request) {
 			array(CORR_ID => $request->get(CORR_ID))
 		);
 
-		$logger->info("Successful");
+		$logger->info("User $username registered successfully");
+
+		$logger->info("Creating User object for $username");
+		MongoConnector::initUserStorage($username);
 
 	} catch (PDOException $e) {
 		$logger->error("Error occurred:" . $e->getMessage());
 	}
-
-	MongoConnector::initUserStorage($username);
 
 	$request->delivery_info['channel']->basic_publish($msg, '', $request->get('reply_to'));
 	$logger->info("Delivered Message");
@@ -64,9 +65,11 @@ $register_callback = function ($request) {
 $rmq_channel->basic_qos(null, 1, null);
 $rmq_channel->basic_consume($rmq_connection->getQueueName(), '', false, true, false, false, $register_callback);
 
+echo "register.php is starting\n";
 while (true) {
 	$rmq_channel->wait();
 }
 
+echo "register.php is closing\n";
 $rmq_connection->close();
 ?>
