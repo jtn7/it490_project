@@ -6,6 +6,6 @@ php authentication/register.php &
 php messageBoard/getForums.php &
 php messageBoard/createStuff.php &
 
-php userFlows/userRetrieve.php &
-php userFlows/userStore.php
+php user/userRetrieve.php &
+php user/userStore.php
 
