@@ -15,7 +15,9 @@ $getThreads = serialize(array("getThreads", $_SESSION['ForumID']));
 $forums_rpc = new RPC("getPosts");
 $getForums = serialize(array("getForums"));
 
+// Getting threads in forum
 $responseThreads = $threads_rpc->call($getThreads);
+// This is to display the title of the forum
 $responseForums = $forums_rpc->call($getForums);
 ?>
 

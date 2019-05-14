@@ -70,10 +70,12 @@ $rmq_channel->basic_qos(null, 1, null);
 
 $rmq_channel->basic_consume($rmq_connection->getQueueName(), '', false, true, false, false, $login_callback);
 
+echo "login.php is starting\n";
 while (true) {
 	$rmq_channel->wait();
 }
 
+echo "login.php is closing";
 $rmq_connection->close();
 
 ?>

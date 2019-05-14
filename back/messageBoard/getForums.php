@@ -29,6 +29,7 @@ $GetForums_callback = function ($request) {
 				$logger->info("getting forums");
 				$stmt->execute();
 				$db_response = $stmt->fetchAll();
+				$logger->debug($db_response);
 				break;
 			case "getThreads":
 				$logger->info("getting threads for user");
@@ -81,9 +82,11 @@ $GetForums_callback = function ($request) {
 $rmq_channel->basic_qos(null, 1, null);
 $rmq_channel->basic_consume($queue_name, '', false, true, false, false, $GetForums_callback);
 
+echo "getForums.php is starting\n";
 while (true) {
 	$rmq_channel->wait();
 }
 
+echo "getForums.php is closing\n";
 $rmq_connection->close();
 ?>

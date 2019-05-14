@@ -1,8 +1,8 @@
 <?php
 namespace rabbit;
 
-require_once '../vendor/autoload.php';
-require_once 'logging/LogWriter.php';
+require_once '../../vendor/autoload.php';
+require_once '../logging/LogWriter.php';
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 use PhpAmqpLib\Message\AMQPMessage;
 use logging\LogWriter;
@@ -16,61 +16,15 @@ class RPC
 	private $corr_id;
 	private $exchange;
 
-	private $logger;
-
-	public function __construct($flow)
+	public function __construct()
 	{
-		$this->logger = new LogWriter('/var/log/dnd/frontend.log');
-
-		switch($flow) {
-			case 'login':
-				$this->exchange = 'LoginExchange';
-				$vhost = 'authentication';
-				$user = 'auth_user';
-				break;
-			case 'register':
-				$this->exchange = 'RegisterExchange';
-				$vhost = 'authentication';
-				$user = 'auth_user';
-				break;
-			case 'getPosts':
-				$this->exchange = 'GetPostsExchange';
-				$vhost = 'messageBoard';
-				$user = 'forums_user';
-				break;
-			case 'createPosts':
-				$this->exchange = 'CreatePostsExchange';
-				$vhost = 'messageBoard';
-				$user = 'forums_user';
-				break;
-			case 'StoreJSON':
-				$this->exchange = 'StoreExchange';
-				$vhost = 'storage';
-				$user = 'storage_user';
-				break;
-			case 'RetrieveJSON':
-				$this->exchange = 'RetrieveExchange';
-				$vhost = 'storage';
-				$user = 'storage_user';
-				break;
-			case 'storeCharacter':
-				$this->exchange = 'StoreExchange';
-				$vhost = 'storage';
-				$user = 'storage_user';
-				break;
-			case 'getUserObject':
-				$this->exchange = 'UserObjectExchange';
-				$vhost = 'storage';
-				$user = 'storage_user';
-				break;
-		}
-
+		$this->exchange = 'RegisterExchange';
 		$this->connection = new AMQPStreamConnection(
 			'rabbit', // host
 			5672, // port
-			$user, // username
+			'auth_user', // username
 			'pass', // password
-			$vhost, //vhost
+			'authentication', //vhost
 		);
 
 		$this->channel = $this->connection->channel();
@@ -125,4 +79,7 @@ class RPC
 		return $this->response;
 	}
 }
+
+$rpc = new RPC();
+echo $rpc->call("hello");
 ?>
