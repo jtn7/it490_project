@@ -43,18 +43,8 @@ class RPC
 				$vhost = 'messageBoard';
 				$user = 'forums_user';
 				break;
-			case 'StoreJSON':
-				$this->exchange = 'StoreExchange';
-				$vhost = 'storage';
-				$user = 'storage_user';
-				break;
-			case 'RetrieveJSON':
-				$this->exchange = 'RetrieveExchange';
-				$vhost = 'storage';
-				$user = 'storage_user';
-				break;
-			case 'storeCharacter':
-				$this->exchange = 'StoreExchange';
+			case 'Characters':
+				$this->exchange = 'CharactersExchange';
 				$vhost = 'storage';
 				$user = 'storage_user';
 				break;

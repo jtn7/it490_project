@@ -22,7 +22,7 @@
 				<div class="row">
 				<div class="col-md-12">
 				<link rel="stylesheet" href="css/createCharacter.css">
-				<form action="" id="createCharacterform" method="POST">
+				<form id="createCharacterform">
 					<!-- fieldsets -->
 					<fieldset>
 						<h2 class="fs-title">Character Background</h2>

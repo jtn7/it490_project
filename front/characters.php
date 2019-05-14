@@ -17,17 +17,17 @@ if (!isset($_SESSION['username'])) {
 $characters = array();
 
 if (!isset($_GET['load'])) {
-	$user_rpc = new RPC('RetrieveJSON');
+	$user_rpc = new RPC('Characters');
 	$rpc_request = serialize(array("getCharacters", $_SESSION['username']));
 	$response = $user_rpc->call($rpc_request);
 	// echo "<h1 style='color: white'>";
-	if ($response !== 'E') {
+	if ($response === 'E') {
+		header('Location: index.php?load=F');
+	} else {
 		$logger->info('Successfully got characters');
 		$logger->debug('Response: ' . $response);
 		$characters = unserialize($response);
 		$logger->debug($characters);
-	} else {
-		header('Location: index.php?load=F');
 	}
 }
 ?>
