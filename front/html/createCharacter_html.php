@@ -6,7 +6,7 @@
 	if (strpos($fullUrl, "success=F") == true){
 		echo '<script type="text/javascript">swal("Wait a minute!", "Something went wrong while creating a character :(", "error");</script>';
 	  }
-	
+
 ?>
 
 <!-- This is the start of body for createCharacter.php page -->
@@ -22,20 +22,20 @@
 				<div class="row">
 				<div class="col-md-12">
 				<link rel="stylesheet" href="css/createCharacter.css">
-				<form id="createCharacterform">
+				<form id="createCharacterForm">
 					<!-- fieldsets -->
 					<fieldset>
 						<h2 class="fs-title">Character Background</h2>
-						<input type="text" name="characterName" placeholder="Character Name"/>
-						<input type="number" name="age" placeholder="Character Age"/>
+						<input type="text" name="characterName" placeholder="Character Name"/><br>
+						Age: <input type="number" min="0" value="0" required name="age" placeholder="Character Age"/><br>
 						<select name="sex" placeholder="Character Sex">
 							<option value="">Character Sex</option>
 							<option value="Other">Other</option>
 							<option value="M">Male</option>
 							<option value="F">Female</option>
-						</select>
-						<input type="number" name="height" placeholder="Character Height in ft">
-						<input type="number" name="weight" placeholder="Character Weight in lb">
+						</select><br>
+						Height: <input type="number" min="0" value="0" required name="height" placeholder="Character Height">ft<br>
+						Weight: <input type="number" min="0" value="0" required name="weight" placeholder="Character Weight">lbs<br>
 					</fieldset>
 					<br>
 
@@ -50,70 +50,79 @@
 
 					<fieldset>
 						<h2 class="fs-title">Stats</h2>
-						<input type="number" name="statsSTR" placeholder="STR">
-						<input type="number" name="statsDEX" placeholder="DEX">
-						<input type="number" name="statsCONST" placeholder="CONST">
-						<input type="number" name="statsINT" placeholder="INT">
-						<input type="number" name="statsWIS" placeholder="WIS">
-						<input type="number" name="statsCHA" placeholder="CHA">
+						<input type="number" min="0" value="0" required name="statsSTR" placeholder="STR">
+						<input type="number" min="0" value="0" required name="statsDEX" placeholder="DEX">
+						<input type="number" min="0" value="0" required name="statsCONST" placeholder="CONST">
+						<input type="number" min="0" value="0" required name="statsINT" placeholder="INT">
+						<input type="number" min="0" value="0" required name="statsWIS" placeholder="WIS">
+						<input type="number" min="0" value="0" required name="statsCHA" placeholder="CHA">
 					</fieldset>
 					<br>
 
 					<fieldset>
 						<h2 class="fs-title">Passive Perception</h2>
-						<input type="number" name="passivePerception" placeholder = "Passive Perception">
+						<input type="number" min="0" value="0" required name="passivePerception" placeholder = "Passive Perception">
 					</fieldset>
 					<br>
 
 					<fieldset>
 						<h2 class="fs-title">Saving Throws</h2>
-						<input type="number" name="sthrowSTR" placeholder="STR">
-						<input type="number" name="sthrowDEX" placeholder="DEX">
-						<input type="number" name="sthrowCONST" placeholder="CONST">
-						<input type="number" name="sthrowINT" placeholder="INT">
-						<input type="number" name="sthrowWIS" placeholder="WIS">
-						<input type="number" name="sthrowCHA" placeholder="CHA">
+						<input type="number" min="0" value="0" required name="sthrowSTR" placeholder="STR">
+						<input type="number" min="0" value="0" required name="sthrowDEX" placeholder="DEX">
+						<input type="number" min="0" value="0" required name="sthrowCONST" placeholder="CONST">
+						<input type="number" min="0" value="0" required name="sthrowINT" placeholder="INT">
+						<input type="number" min="0" value="0" required name="sthrowWIS" placeholder="WIS">
+						<input type="number" min="0" value="0" required name="sthrowCHA" placeholder="CHA">
 					</fieldset>
 					<br>
 
 					<fieldset>
 						<h2 class="fs-title">Armor Class</h2>
-						<input type="number" name="armorClass" placeholder="Armor Class">
+						<input type="number" min="0" value="0" required name="armorClass" placeholder="Armor Class">
 					</fieldset>
 					<br>
 
 					<fieldset>
 						<h2 class="fs-title">Speed</h2>
-						<input type="number" name="speed" placeholder="Speed">
+						<input type="number" min="0" value="0" required name="speed" placeholder="Speed">
 					</fieldset>
 					<br>
 
 					<fieldset>
-						<h2 class="fs-title">Max Hit Point</h2>
-						<input type="number" name="maxHitPoint" placeholder="Max Hit Point">
+						<h2 class="fs-title">Hit Points</h2>
+						<input type="number" min="0" value="0" required name="hitDiceNum" placeholder="Number of Dice">
+						<select name="hitDice" placeholder="Dice Type">
+							<option value="">Choose Dice</option>
+							<option value="d4">d4</option>
+							<option value="d6">d6</option>
+							<option value="d8">d8</option>
+							<option value="d12">d12</option>
+						</select>
+						<br>
+						<input type="number" min="0" value="0" required name="maxHitPoint" placeholder="Max Hit Point">
 					</fieldset>
-					<br>								
+					<br>
 
 					<fieldset>
 						<h2 class="fs-title">Skills</h2>
-						<input type="number" name="acrobatics" placeholder="Acrobatics">
-						<input type="number" name="animaHandling" placeholder="Animal Handling">
-						<input type="number" name="arcana" placeholder="Arcana">
-						<input type="number" name="athletic" placeholder="Athletic">
-						<input type="number" name="deception" placeholder="Deception">
-						<input type="number" name="history" placeholder="History">
-						<input type="number" name="insight" placeholder="Insight">
-						<input type="number" name="investigation" placeholder="Investigation">
-						<input type="number" name="medicine" placeholder="Medicine">
-						<input type="number" name="nature" placeholder="Nature">
-						<input type="number" name="perception" placeholder="Perception">
-						<input type="number" name="performance" placeholder="Performance">
-						<input type="number" name="persuation" placeholder="Persuation">
-						<input type="number" name="religion" placeholder="Religion">
-						<input type="number" name="soHand" placeholder="Sleight of Hand">
-						<input type="number" name="stealth" placeholder="Stealth">
-						<input type="number" name="survival" placeholder="Survival">
-						<input type="number" name="hkit" placeholder="Hernalism Kit">
+						<input type="number" min="0" value="0" required name="acrobatics" placeholder="Acrobatics">
+						<input type="number" min="0" value="0" required name="animaHandling" placeholder="Animal Handling">
+						<input type="number" min="0" value="0" required name="arcana" placeholder="Arcana">
+						<input type="number" min="0" value="0" required name="athletic" placeholder="Athletic">
+						<input type="number" min="0" value="0" required name="deception" placeholder="Deception">
+						<input type="number" min="0" value="0" required name="history" placeholder="History">
+						<input type="number" min="0" value="0" required name="insight" placeholder="Insight">
+						<input type="number" min="0" value="0" required name="investigation" placeholder="Investigation">
+						<input type="number" min="0" value="0" required name="medicine" placeholder="Medicine">
+						<input type="number" min="0" value="0" required name="nature" placeholder="Nature">
+						<input type="number" min="0" value="0" required name="perception" placeholder="Perception">
+						<input type="number" min="0" value="0" required name="performance" placeholder="Performance">
+						<input type="number" min="0" value="0" required name="persuation" placeholder="Persuation">
+						<input type="number" min="0" value="0" required name="religion" placeholder="Religion">
+						<input type="number" min="0" value="0" required name="soHand" placeholder="Sleight of Hand">
+						<input type="number" min="0" value="0" required name="stealth" placeholder="Stealth">
+						<input type="number" min="0" value="0" required name="survival" placeholder="Survival">
+						<input type="number" min="0" value="0" required name="hkit" placeholder="Hernalism Kit">
 					</fieldset>
 					<br>
 
@@ -162,11 +171,6 @@
 					</fieldset>
 					<br>
 
-					<fieldset>
-						<h2 class="fs-title">Hit Dice</h2>
-						<textarea name="hitDice" form="createCharacter"></textarea>
-					</fieldset>
-					<br>
 
 					<input type="submit" name="createCharacterSubmit" class="submit action-button" value="Save"/>
 				</form>
