@@ -1,5 +1,5 @@
 /*inputs*/
-#createCharacterform input, #createCharacterform textarea, #createCharacterform select {
+/* #createCharacterForm input, #createCharacterForm textarea, #createCharacterForm select {
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 0px;
@@ -8,10 +8,48 @@
     box-sizing: border-box;
     color: #2C3E50;
     font-size: 13px;
+} */
+
+#createCharacterForm label{
+    display: inline-block;
+    padding: 10px;
+    background-color: rgb(250, 86, 86);
+    border-radius: 0px;
+    margin-bottom: 3px;
+    width: 15%;
+    height: 2.5rem;
+    box-sizing: border-box;
+    color: #2C3E50;
+    font-family:Sans-serif;
+    font-weight:bold;
+    text-align: center;
+    color:white;
+    font-size: 13px;
+}
+
+#createCharacterForm input, #createCharacterForm select, #createCharacterForm option {
+    padding: 10px;
+    border-radius: 0px;
+    margin-bottom: 3px;
+    width: 30%;
+    height: 2.5rem;
+    box-sizing: border-box;
+    color: #2C3E50;
+    font-size: 13px;
+}
+
+#createCharacterForm textarea{
+    padding: 10px;
+    border-radius: 0px;
+    margin-bottom: 3px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #2C3E50;
+    font-size: 13px;
 }
 
 /*buttons*/
-#createCharacterform .action-button {
+#createCharacterForm .action-button {
     width: 100px;
     background: #2c59d4f1;
     font-weight: bold;
@@ -23,6 +61,6 @@
     margin: 10px 5px;
 }
 
-#createCharacterform .action-button:hover, #msform .action-button:focus {
+#createCharacterForm .action-button:hover, #msform .action-button:focus {
     box-shadow: 0 0 0 2px white, 0 0 0 3px #2c59d4f1;
 }
