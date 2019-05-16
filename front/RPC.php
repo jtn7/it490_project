@@ -56,7 +56,7 @@ class RPC
 		}
 
 		$this->connection = new AMQPStreamConnection(
-			'rabbit', // host
+			'rabbitNode', // host
 			5672, // port
 			$user, // username
 			'pass', // password
