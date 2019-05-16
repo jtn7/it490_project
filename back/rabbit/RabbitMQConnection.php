@@ -10,34 +10,14 @@ class RabbitMQConnection {
 	private $queue_name;
 
 	public function __construct($user, $exchange, $vhost) {
-		// Create a cURL handle
-		$ch = curl_init('http://rabbitNode/health');
-		$connection = null;
-
-		// Execute
-		curl_exec($ch);
-
-		// Check HTTP status code
-		if (!curl_errno($ch)) {
-			$this->connection = new AMQPStreamConnection(
-				'rabbitNode', // host
-				5672, // port
-				$user, // username
-				'pass', // password
-				$vhost, //vhost
-			);
-		} else {
-			$this->connection = new AMQPStreamConnection(
-				'rabbitNode2', // host
-				5672, // port
-				$user, // username
-				'pass', // password
-				$vhost, //vhost
-			);
-		}
-		curl_close($ch);
-
-		$this->channel  = $connection->channel();
+		$this->connection = new AMQPStreamConnection(
+			'rabbitNode', // host
+			5672, // port
+			$user, // username
+			'pass', // password
+			$vhost, //vhost
+		);
+		$this->channel  = $this->connection->channel();
 
 		$this->channel->exchange_declare($exchange, 'direct', false, false, false);
 		list($this->queue_name, ,) = $this->channel->queue_declare('', false, false, true, false);
