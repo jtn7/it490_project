@@ -3,7 +3,15 @@ services:
 
   rabbit:
     image: jtn7/rabbit
-    container_name: rabbit
+    container_name: rabbitNode
+    ports:
+      - "15672:15672"
+    networks:
+      - frontend
+
+  rabbit2:
+    image: jtn7/rabbit
+    container_name: rabbitNode2
     ports:
       - "15672:15672"
     networks:
