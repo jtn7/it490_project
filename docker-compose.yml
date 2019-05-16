@@ -9,16 +9,35 @@ services:
     networks:
       - frontend
 
+  reverse_proxy:
+    image: jtn7/reverse_proxy
+    container_name: reverse_proxy
+    volumes:
+      - ./logs/nginx/:/var/log/nginx/
+    ports:
+      - "80:80"
+    networks:
+      - frontend
+
   front:
     image: jtn7/php-apache
     container_name: front
-    ports:
-      - "8090:80"
     depends_on:
       - rabbit
     volumes:
       - ./front:/var/www/html/front/
       - ./logs/front/:/var/log/dnd/
+    networks:
+      - frontend
+
+  front2:
+    image: jtn7/php-apache
+    container_name: front2
+    depends_on:
+      - rabbit
+    volumes:
+      - ./front2:/var/www/html/front/
+      - ./logs/front2/:/var/log/dnd/
     networks:
       - frontend
 
@@ -30,13 +49,13 @@ services:
     networks:
       - backend
 
-  sqldb-slave:
-    image: jtn7/db:slave
-    container_name: sqldb-slave
-    environment:
-      - MYSQL_ROOT_PASSWORD=pass
-    networks:
-      - backend
+  # sqldb-slave:
+  #   image: jtn7/db:slave
+  #   container_name: sqldb-slave
+  #   environment:
+  #     - MYSQL_ROOT_PASSWORD=pass
+  #   networks:
+  #     - backend
 
   mongodb:
     image: mongo:4
@@ -48,6 +67,22 @@ services:
     - backend
 
   back:
+    image: jtn7/php-backend
+    container_name: back
+    working_dir: /step2/back
+    command: ./start.sh
+    volumes:
+      - ./back:/step2/back
+      - ./logs/back/:/var/log/dnd/
+    restart: always
+    depends_on:
+      - sqldb-master
+      - mongodb
+    networks:
+      - frontend
+      - backend
+
+  back2:
     image: jtn7/php-backend
     container_name: back
     working_dir: /step2/back
