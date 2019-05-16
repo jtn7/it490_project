@@ -21,7 +21,7 @@ services:
 
   front:
     image: jtn7/php-apache
-    container_name: front
+    container_name: frontNode
     depends_on:
       - rabbit
     volumes:
@@ -32,7 +32,7 @@ services:
 
   front2:
     image: jtn7/php-apache
-    container_name: front2
+    container_name: frontNode2
     depends_on:
       - rabbit
     volumes:
