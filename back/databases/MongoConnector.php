@@ -29,17 +29,17 @@ class MongoConnector {
 
 	public static function initUserStorage($username) {
 		$mongo_client = (new MongoConnector())->getConnection();
-		$database = $mongo_client->userStorage;
-		$userData = $database->userData;
+		$userObjects = $mongo_client->site->users;
 
-		$arr = array (
+		$newObject = array (
 			'username' => $username,
 			'characters' => array(),
 			'parties_in' => array(),
-			'parties_managed' => array()
+			'parties_managed' => array(),
+			'notifications' => array()
 		);
 
-		$userData->insertOne($arr);
+		$userObjects->insertOne($newObject);
 	}
 }
 ?>

@@ -2,35 +2,38 @@
 session_start();
 require_once 'RPC.php';
 require_once 'models/Models.php';
+require_once 'logging/LogWriter.php';
 use rabbit\RPC;
 use models\Models;
+use logging\LogWriter;
 
+$logger = new LogWriter('/var/log/dnd/frontend.log');
 if(!empty($_POST)) {
-	$createCharacter_rpc = new RPC("storeCharacter");
+	$characters_rpc = new RPC("Characters");
 	$character = Models::getDefaultCharacter();
 
-	foreach ($character as $key => $value) {
-		if (isset($_POST[$key])) {
-			$character[$key] = $_POST[$key];
-		}
-	}
+	$_POST['class'] = json_decode($_POST['class'], true);
+	$logger->debug($_POST);
 
-	$createCharacterMSG = serialize(array("updateCharacter", $character));
+	$resp = 'E';
 
-	$response = $createCharacter_rpc->call($createCharacterMSG);
+	// foreach ($character as $key => $value) {
+	// 	if (isset($_POST[$key])) {
+	// 		$character[$key] = $_POST[$key];
+	// 	}
+	// }
 
-	if ($response==="S"){
-		header('Location: index.php');
+	// $createCharacter = serialize(array('createCharacter', $character));
+
+	// $resp = $characters_rpc->call($createCharacter);
+
+	if ($resp ==="S"){
+		header('Location: characters.php?success=S');
 	}
 	else {
 		header('Location: createCharacter.php?success=F');
 	}
 }
+?>
 
-if (isset($_GET['success']) && $_GET['success'] === 'F') {
-	echo "<script type='text/javascript'>alert('There was an error in creating a character. Try Again.');</script>";
-}
-
-include 'header.php';
-include 'html/character_form.html';
-include 'footer.php';
+<?php include 'html/createCharacter_html.php' ?>

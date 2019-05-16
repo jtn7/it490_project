@@ -139,6 +139,15 @@
 			"arguments": {}
 		},
 		{
+			"name": "UserObjectExchange",
+			"vhost": "storage",
+			"type": "direct",
+			"durable": false,
+			"auto_delete": false,
+			"internal": false,
+			"arguments": {}
+		},
+		{
 			"name": "RegisterExchange",
 			"vhost": "authentication",
 			"type": "direct",

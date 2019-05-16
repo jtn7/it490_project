@@ -43,25 +43,45 @@ class RPC
 				$vhost = 'messageBoard';
 				$user = 'forums_user';
 				break;
-			case 'StoreJSON':
-				$this->exchange = 'StoreExchange';
+			case 'Characters':
+				$this->exchange = 'CharactersExchange';
 				$vhost = 'storage';
 				$user = 'storage_user';
 				break;
-			case 'RetrieveJSON':
-				$this->exchange = 'RetrieveExchange';
+			case 'getUserObject':
+				$this->exchange = 'UserObjectExchange';
 				$vhost = 'storage';
 				$user = 'storage_user';
 				break;
 		}
 
-		$this->connection = new AMQPStreamConnection(
-			'rabbit', // host
-			5672, // port
-			$user, // username
-			'pass', // password
-			$vhost, //vhost
-		);
+		// Create a cURL handle
+		$ch = curl_init('http://rabbitNode/health');
+
+		// Execute
+		curl_exec($ch);
+
+		// Check HTTP status code
+		if (!curl_errno($ch)) {
+			$this->connection = new AMQPStreamConnection(
+				'rabbitNode', // host
+				5672, // port
+				$user, // username
+				'pass', // password
+				$vhost, //vhost
+			);
+		} else {
+			$this->connection = new AMQPStreamConnection(
+				'rabbitNode2', // host
+				5672, // port
+				$user, // username
+				'pass', // password
+				$vhost, //vhost
+			);
+		}
+
+		// Close handle
+		curl_close($ch);
 
 		$this->channel = $this->connection->channel();
 		$this->channel->exchange_declare($this->exchange, 'direct', false, false, false);

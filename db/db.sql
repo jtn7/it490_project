@@ -182,4 +182,19 @@ GRANT EXECUTE ON PROCEDURE messageBoard.getReplies TO 'forum-client'@'%';
 GRANT EXECUTE ON PROCEDURE messageBoard.createThread TO 'forum-client'@'%';
 GRANT EXECUTE ON PROCEDURE messageBoard.createReply TO 'forum-client'@'%';
 
-ALTER USER 'root' IDENTIFIED WITH mysql_native_password BY 'pass'
+ALTER USER 'root' IDENTIFIED WITH mysql_native_password BY 'pass';
+
+INSERT INTO `forums` (`Name`, `Description`) VALUES (
+  'Looking For Players',
+  'Gathering players for your next session? Ask here!'
+);
+
+INSERT INTO `forums` (`Name`, `Description`) VALUES (
+  "Adventurer's Log",
+  'Use this forum to let everyone know about the exploits of your characters.'
+);
+
+INSERT INTO `forums` (`Name`, `Description`) VALUES (
+  'Meta',
+  'A place to discuss the layout and features of the site. Suggestions welcome.'
+);

@@ -25,3 +25,4 @@ RUN apt-get update \
 RUN mkdir /var/log/dnd && chmod 777 /var/log/dnd
 
 COPY --from=vendor /app/vendor /var/www/html/vendor
+COPY ./apache2.conf /etc/apache2/sites-available/000-default.conf

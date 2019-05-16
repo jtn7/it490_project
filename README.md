@@ -27,10 +27,20 @@ Forums for discussion
   * createReply(ThreadID, Content, User)
 
 ## Frontend
-* Forums Page
-* Threads Page 
-* Replies Page
+* 404 Page
+* Blank Page
+* Characters Page
+* Create Character Page
 * Create Thread Page
+* DnD Guide Page
+* Password Retrieval Page
+* Forums Page
+* Homepage Page
+* Main Dashboard Page
+* Login Page
+* Replies Page
+* Sign Up Page
+* Threads Page 
 
 ## Backend
 * Retrieves message board data
