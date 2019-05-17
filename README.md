@@ -9,7 +9,8 @@ A website that will facilitate  communication, planning, creating, storing of co
 - [x] Character dashboard
 - [ ] Party dashboard
 - [ ] Calendar integration
-- [ ] Notifications
+- [x] Notifications
+- [x] Google Hangouts Launch
 
 # Message Boards
 Forums for discussion
