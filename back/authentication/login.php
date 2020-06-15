@@ -7,7 +7,11 @@ use PhpAmqpLib\Message\AMQPMessage;
 use rabbit\RabbitMQConnection;
 use logging\LogWriter;
 
+
+//Feature change
+
 // Conflicting Change
+
 
 $rmq_connection = new RabbitMQConnection('auth_user','LoginExchange', 'authentication');
 $rmq_channel = $rmq_connection->getChannel();
