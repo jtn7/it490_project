@@ -10,14 +10,14 @@ class RabbitMQConnection {
 	private $queue_name;
 
 	public function __construct($user, $exchange, $vhost) {
-		$connection = new AMQPStreamConnection (
-			'172.17.0.2', // host
+		$this->connection = new AMQPStreamConnection(
+			'rabbitNode', // host
 			5672, // port
-			$user, // user
-			'pass', // pass
-			$vhost  // virtual host
+			$user, // username
+			'pass', // password
+			$vhost, //vhost
 		);
-		$this->channel  = $connection->channel();
+		$this->channel  = $this->connection->channel();
 
 		$this->channel->exchange_declare($exchange, 'direct', false, false, false);
 		list($this->queue_name, ,) = $this->channel->queue_declare('', false, false, true, false);

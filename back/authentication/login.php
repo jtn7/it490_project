@@ -1,23 +1,27 @@
 <?php
 require_once '../vendor/autoload.php';
-require_once '../databases/AuthDB.php';
-require_once '../rabbit/RabbitMQConnection.php';
-require_once '../logging/LogWriter.php';
+require_once 'databases/AuthDB.php';
+require_once 'rabbit/RabbitMQConnection.php';
+require_once 'logging/LogWriter.php';
 use PhpAmqpLib\Message\AMQPMessage;
 use rabbit\RabbitMQConnection;
 use logging\LogWriter;
+
+
+//Feature change
+
+// Conflicting Change
+
 
 $rmq_connection = new RabbitMQConnection('auth_user','LoginExchange', 'authentication');
 $rmq_channel = $rmq_connection->getChannel();
 
 $login_callback = function($request) {
 	$db_connection = (new AuthDB())->getConnection();
-	$logger = new LogWriter('/var/log/dnd/login.log');
-	$logger->info("Logging in username...");
+	$logger = new LogWriter('/var/log/dnd/backend.log');
+	$logger->info("Validating user login");
+	$logger->debug("Request Body: " . $request->body);
 	$requestData = unserialize($request->body);
-	$logger->info("This is body: " . $request->body);
-	$logger->info("This is 0: " . $requestData[0]);
-	$logger->info("This is 1: " . $requestData[1]);
 	$username = $requestData[0];
 	$pass = $requestData[1];
 	$error = 'E';
@@ -53,7 +57,9 @@ $login_callback = function($request) {
 					$success,
 					array('correlation_id' => $request->get('correlation_id'))
 				);
-				$logger->info("Success");
+				$logger->info("Successful Login");
+			} else {
+				$logger->info("Incorrect Credentials");
 			}
 		}
 
@@ -62,7 +68,7 @@ $login_callback = function($request) {
 	}
 
 	$request->delivery_info['channel']->basic_publish($msg, '', $request->get('reply_to'));
-	$logger->info("Sent back Message");
+	$logger->info("Replied to request");
 
 };
 
@@ -70,10 +76,12 @@ $rmq_channel->basic_qos(null, 1, null);
 
 $rmq_channel->basic_consume($rmq_connection->getQueueName(), '', false, true, false, false, $login_callback);
 
+echo "login.php is starting\n";
 while (true) {
 	$rmq_channel->wait();
 }
 
+echo "login.php is closing";
 $rmq_connection->close();
 
 ?>

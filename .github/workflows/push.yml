@@ -1,0 +1,18 @@
+name: Need to test tag value
+
+on:
+  release:
+    types: [released, prereleased]
+
+jobs:
+  tweet_pre-release:
+    if: github.event.action == 'prereleased'
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{ github.event.release.tag_name }} pre-release is out!"
+
+  tweet_release:
+    if: github.event.action == 'released'
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{ github.event.release.tag_name }} is out!"

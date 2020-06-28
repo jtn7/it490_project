@@ -9,7 +9,8 @@ A website that will facilitate  communication, planning, creating, storing of co
 - [x] Character dashboard
 - [ ] Party dashboard
 - [ ] Calendar integration
-- [ ] Notifications
+- [x] Notifications
+- [x] Google Hangouts Launch
 
 # Message Boards
 Forums for discussion
@@ -27,10 +28,20 @@ Forums for discussion
   * createReply(ThreadID, Content, User)
 
 ## Frontend
-* Forums Page
-* Threads Page 
-* Replies Page
+* 404 Page
+* Blank Page
+* Characters Page
+* Create Character Page
 * Create Thread Page
+* DnD Guide Page
+* Password Retrieval Page
+* Forums Page
+* Homepage Page
+* Main Dashboard Page
+* Login Page
+* Replies Page
+* Sign Up Page
+* Threads Page 
 
 ## Backend
 * Retrieves message board data

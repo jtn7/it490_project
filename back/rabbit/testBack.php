@@ -1,5 +1,5 @@
 <?php
-require_once '../vendor/autoload.php';
+require_once '../../vendor/autoload.php';
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 use PhpAmqpLib\Message\AMQPMessage;
 
@@ -11,7 +11,7 @@ class RabbitMQConnection {
 
 	public function __construct($user, $exchange, $vhost) {
 		$connection = new AMQPStreamConnection (
-			'172.17.0.2', // host
+			'rabbit', // host
 			5672, // port
 			$user, // user
 			'pass', // pass
@@ -38,14 +38,14 @@ class RabbitMQConnection {
 	}
 }
 
-$rmq_connection = new RabbitMQConnection('auth_user', 'LoginExchange', 'authentication');
+$rmq_connection = new RabbitMQConnection('auth_user', 'RegisterExchange', 'authentication');
 $rmq_channel = $rmq_connection->getChannel();
 
 //register
 $register_callback = function ($request) {
-	echo "sending msg";
+	echo $request->body;
 	$msg = new AMQPMessage (
-		"blah",
+		"goodbye",
 		array('correlation_id' => $request->get('correlation_id'))
 	);
 
@@ -53,11 +53,12 @@ $register_callback = function ($request) {
 };
 
 $rmq_channel->basic_qos(null, 1, null);
-echo $rmq_connection->getQueueName() . PHP_EOL;
 $rmq_channel->basic_consume($rmq_connection->getQueueName(), '', false, true, false, false, $register_callback);
 
+echo 'testBack.php started';
 while (true) {
 	$rmq_channel->wait();
 }
 
+echo 'Closing rabbit connection';
 $rmq_connection->close();

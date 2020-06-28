@@ -24,20 +24,4 @@ if(isset($_GET['success'])){
 
 ?>
 
-<?php include 'header.php';?>
-
-<div class="Body">
-	<div class="Content">
-		<h1>Create a Forum Thread</h1>
-		<form action="" id="createThread" method="POST">
-			Title:
-			<input type="text" name="Name" required>
-			<br><br>
-			Content:<br> <textarea name="Content" form="createThread" required></textarea>
-			<br><br>
-			<input type="submit" name="createThreadSubmit" value="Create Thread">
-		</form>
-	</div>
-</div>
-
-<?php include 'footer.php';?>
+<?php include 'html/createThread_html.php' ?>

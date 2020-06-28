@@ -1,8 +1,8 @@
 <?php
 require_once '../vendor/autoload.php';
-require_once '../databases/ForumsDB.php';
-require_once '../rabbit/RabbitMQConnection.php';
-require_once '../logging/LogWriter.php';
+require_once 'databases/ForumsDB.php';
+require_once 'rabbit/RabbitMQConnection.php';
+require_once 'logging/LogWriter.php';
 use PhpAmqpLib\Message\AMQPMessage;
 use rabbit\RabbitMQConnection;
 use logging\LogWriter;
@@ -12,7 +12,7 @@ $rmq_channel = $rmq_connection->getChannel();
 
 //get forums
 $GetForums_callback = function ($request) {
-	$logger = new LogWriter('/var/log/dnd/getForums.log');
+	$logger = new LogWriter('/var/log/dnd/backend.log');
 	$db_connection = (new ForumsDB())->getConnection();
 
 	$requestData = unserialize($request->body);
@@ -29,6 +29,7 @@ $GetForums_callback = function ($request) {
 				$logger->info("getting forums");
 				$stmt->execute();
 				$db_response = $stmt->fetchAll();
+				$logger->debug($db_response);
 				break;
 			case "getThreads":
 				$logger->info("getting threads for user");
@@ -81,9 +82,11 @@ $GetForums_callback = function ($request) {
 $rmq_channel->basic_qos(null, 1, null);
 $rmq_channel->basic_consume($queue_name, '', false, true, false, false, $GetForums_callback);
 
+echo "getForums.php is starting\n";
 while (true) {
 	$rmq_channel->wait();
 }
 
+echo "getForums.php is closing\n";
 $rmq_connection->close();
 ?>

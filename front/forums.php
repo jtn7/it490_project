@@ -5,41 +5,19 @@ if (!isset($_SESSION['username'])) {
 }
 
 require_once 'RPC.php';
+require_once 'logging/LogWriter.php';
 use rabbit\RPC;
+use logging\LogWriter;
+
+$logger = new LogWriter('/var/log/dnd/frontend.log');
+$logger->info('forums.php accessed');
 
 $forums_rpc = new RPC("getPosts");
 $getForums = serialize(array("getForums"));
-$response = $forums_rpc->call($getForums);
+$responseForums = $forums_rpc->call($getForums);
+
+// Testing Purpose Only
+// $logger->debug($responseForums);
 ?>
 
-<?php include 'header.php' ?>
-
-<div class="Body">
-	<div class="Content">
-		<h1>Forums</h1>
-		<?php
-		// echo "<h2>";
-		// print_r($response);
-		// echo "<h2>";
-		$unserArr = unserialize($response);
-
-		foreach ($unserArr as $forumArr) {
-			echo
-			'<table>
-			<tr>
-				<td>
-				<a href="threads.php?forumID=' . $forumArr['ForumID'] . '&forumName=' . $forumArr['Name'] . '">' . $forumArr['Name'] . '</a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<p>' . $forumArr['Description'] . '</p>
-				</td>
-			</tr>
-			</table>';
-		}
-		?>
-	</div>
-</div>
-
-<?php include 'footer.php' ?>
+<?php include 'html/forums_html.php' ?>
