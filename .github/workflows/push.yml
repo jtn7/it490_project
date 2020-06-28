@@ -1,11 +1,14 @@
 name: Need to test tag value
 
 on:
-  push
+  release:
+    types: [released prereleased]
 
 jobs:
   yeet:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: echo $GITHUB_REF $GITHUB_SHA
+      - run: echo "${{ github.event.release.tag_name }}"
+      - run: echo $GITHUB_EVENT_NAME
+      - run: echo "${{ github.event.action }}"
