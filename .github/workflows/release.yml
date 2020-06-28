@@ -1,5 +1,5 @@
 name: Tweet on Release
-on: [released]
+on: [release]
 jobs:
   tweet:
     runs-on: ubuntu-latest
