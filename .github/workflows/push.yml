@@ -2,7 +2,7 @@ name: Need to test tag value
 
 on:
   release:
-    types: [released prereleased]
+    types: [released, prereleased]
 
 jobs:
   yeet:
