@@ -29,3 +29,5 @@ move to the Production environment.
 `-l` `--log-dir` | a directory path to store the log
 
 > Paths can be absolute or relative to the binary
+
+blah
