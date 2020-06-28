@@ -5,4 +5,5 @@ on:
 
 jobs:
   yeet:
-    run: echo ${{ github.event.release.tag_name }}
+    steps:
+      run: echo ${{ github.event.release.tag_name }}
