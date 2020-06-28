@@ -1,9 +1,10 @@
 name: Need to test tag value
 
 on:
-  create
+  push
 
 jobs:
   yeet:
     steps:
-      run: echo ${{ github.event.release.tag_name }}
+      - uses: actions/checkout@v2
+      - run: echo ${{ github.event.release.tag_name }}
