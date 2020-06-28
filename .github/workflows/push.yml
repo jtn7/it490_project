@@ -1,0 +1,8 @@
+name: Need to test tag value
+
+on:
+  create
+
+jobs:
+  yeet:
+    run: echo ${{ github.event.release.tag_name }}

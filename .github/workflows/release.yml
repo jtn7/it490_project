@@ -10,8 +10,8 @@ jobs:
     steps:
       - uses: ethomson/send-tweet-action@v1
         with:
-          status: "${GITHUB_REF} has been released (Testing automated tweet)"
+          status: ${{ github.event.release.tag_name }} + " has been released (Testing automated tweet)"
           consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
           consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
           access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
-          access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+          access-token-secret: "Break"
