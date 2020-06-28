@@ -8,4 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: echo ${{ github.event.release.tag_name }}
+      - run: echo $GITHUB_REF $GITHUB_SHA
