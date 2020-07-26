@@ -35,6 +35,7 @@ const (
 	backUsage = "name of the backend container if one is present"
 )
 
+// Awesome comment
 var packageDir string
 var outputDir string
 var daemonPort string
